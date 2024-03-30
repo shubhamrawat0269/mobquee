@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="TextView" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.TextView.TextView" visible="true" visibleInTableView="true" imagePath="assets/toolbox/ico_textview.png" description="Here is the label description"
+		helpLink_EN="/text_view2.htm" helpLink_JP="/sheet002.htm#RANGE!A250">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="fieldname" input="spark.components.DropDownList123">
+				<dataSource source="@dbTable:fieldswithBracket" labelField="fieldname" />
+				<dependentActions>
+					<when condition="compare" compareTarget="@dbTable:" compareBy="IS_NULL_OR_EMPTY" at="initForm" @stopCommit="true">
+						<action target="{@form[fieldname]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[fieldname]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[fieldname]:}" method="setOptions" value="@dbTable:fieldswithBracket" labelField="fieldname" caseOf="false"/> 
+					</when>
+					<when condition="compare" compareTarget="{@form[fieldname]:value}" compareBy="IS_NULL_OR_EMPTY" at="postCommit">
+						<action target="{@form[text]:}" method="setValue" value="{@form[fieldname]:value}" chainedEvent="change" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="RefFileHidden" dataType="Boolean" input="spark.components.CheckBox" init="true" value="true" disable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[RefFileHidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[refFileURL]:}" method="folded" value="false" caseOf="true" />
+						<action target="{@form[refFileURL]:}" method="folded" value="true" caseOf="false" />
+						<action target="{@form[text]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[text]:}" method="folded" value="false" caseOf="false" />
+						<action target="{@form[charLimit]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[charLimit]:}" method="folded" value="false" caseOf="false" />
+					</when>
+				</dependentActions>
+			</property>
+			<property path="refFileURL" input="spark.components.TextInput" disable="true" validator="URLValidator"/>
+			<property path="text" dataType="String" input="spark.components.TextArea" copyable="true"/>
+			<property path="placeholder" dataType="String" input="spark.components.TextInput" maxlength="50" copyable="true"/>
+			<property path="setInputlabel" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="charLimit" dataType="Number" input="spark.components.NumericStepper" min="-1" max="99999" inc="1" init="-1" copyable="true"/>
+			<property path="editable" dataType="Boolean" input="spark.components.CheckBox" value="true" copyable="true"/>
+			<property path="autocapitalizationType" input="spark.components.DropDownList" dataType="array" init="None" copyable="true">
+				<dataSource>
+					<data name="None"/>
+					<data name="Words"/>
+					<data name="Sentences"/>
+					<data name="AllCharacters"/>
+				</dataSource>
+			</property>
+			<property path="trim" dataType="Boolean" input="spark.components.CheckBox" value="true" copyable="true"/>
+			<property path="replaceEmptyLine" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="flexibleHeight" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true">
+				<dependentActions>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@page[pageid])}" compareBy="EQ" compareWith="TableView">
+						<action target="{@form[flexibleHeight]:}" method="folded" value="false" caseOf="true" />
+						<action target="{@form[flexibleHeight]:}" method="folded" value="true" caseOf="false" />
+					</when>
+				</dependentActions>
+			</property>
+			<property path="keyboardType" input="spark.components.DropDownList" dataType="array" init="Default" copyable="true">
+			  	<dataSource labelField="name" valueField="name">
+					<data name="Default" toolTip=""/>
+					<data name="HW" toolTip="Pop-up handwriting keyboard"/>
+					<data name="Flic" toolTip="Pop-up Japanese supported keyboard"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[keyboardType]:value}" compareBy="EQ" compareWith="HW" at="initForm, postCommit">
+						<action target="{@form[hwType]:}" method="folded" value="false" caseOf="true"/>
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[hwType]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+								<action target="{@form[hwCharKanji]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[hwCharHiragana]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[hwCharKatakana]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[hwAlphabet]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[hwCharNumeric]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[hwCharGreek]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[hwCharSign]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[hwCharKutoten]:}" method="folded" value="false" caseOf="true"/>
+							</when>
+						</action>
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[hwType]:value}" compareBy="EQ" compareWith="1" at="initForm, postCommit">
+								<action target="{@form[hwDictionary]:}" method="folded" value="false" caseOf="true"/>
+							</when>
+						</action>
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[hwType]:value}" compareBy="EQ" compareWith="2" at="initForm, postCommit">
+								<action target="{@form[hwCorpus]:}" method="folded" value="false" caseOf="true"/>
+							</when>
+						</action>
+						<action target="{@form[hwType]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCharKanji]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCharHiragana]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCharKatakana]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwAlphabet]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCharNumeric]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCharGreek]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCharSign]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCharKutoten]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwDictionary]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[hwCorpus]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="hwType" input="spark.components.DropDownList" dataType="array" init="Character" copyable="true">
+				<dataSource labelField="name" valueField="value">
+					<data name="Character" value="0"/>
+					<data name="Dictionary" value="1"/>
+					<data name="Corpus" value="2"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[hwType]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[hwCharKanji]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwCharHiragana]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwCharKatakana]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwAlphabet]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwCharNumeric]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwCharGreek]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwCharSign]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwCharKutoten]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwDictionary]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCorpus]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[hwType]:value}" compareBy="EQ" compareWith="1" at="initForm, postCommit">
+						<action target="{@form[hwCharKanji]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharHiragana]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharKatakana]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwAlphabet]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharNumeric]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharGreek]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharSign]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharKutoten]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwDictionary]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[hwCorpus]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[hwType]:value}" compareBy="EQ" compareWith="2" at="initForm, postCommit">
+						<action target="{@form[hwCharKanji]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharHiragana]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharKatakana]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwAlphabet]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharNumeric]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharGreek]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharSign]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCharKutoten]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwDictionary]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[hwCorpus]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="hwCharKanji" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="hwCharHiragana" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="hwCharKatakana" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="hwAlphabet" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="hwCharNumeric" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="hwCharGreek" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="hwCharSign" dataType="Boolean" input="spark.components.CheckBox" value="true" copyable="true"/>
+			<property path="hwCharKutoten" dataType="Boolean" input="spark.components.CheckBox" value="true" copyable="true"/>
+			<property path="hwDictionary" input="spark.components.TextInput" copyable="true"/>
+			<property path="hwCorpus" input="spark.components.TextInput" copyable="true"/>
+			
+			<property path="scrollable" dataType="Boolean" input="spark.components.CheckBox" value="0" copyable="true">
+				<dependentActions>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@page:pageid)}" compareBy="EQ" compareWith="BaseView">
+						<action target="{@form[scrollable]:}" method="folded" value="true" caseOf="true" />
+					</when>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@page:pageid)}" compareBy="EQ" compareWith="ScrollView">
+						<action target="{@form[scrollable]:}" method="folded" value="false" caseOf="true" />
+					</when>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@page:pageid)}" compareBy="EQ" compareWith="TableView">
+						<action target="{@form[scrollable]:}" method="folded" value="false" caseOf="true" />
+					</when>
+				</dependentActions>
+			</property>
+			<property path="scrollPosition" input="spark.components.DropDownList" dataType="array" init="" copyable="true">
+ 				<dataSource>
+ 					<data name=""/>
+ 					<data name="start"/>
+ 					<data name="end"/>
+ 				</dataSource>
+ 			</property>
+			<property path="voiceRecognizable" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true" disable="true"/>
+ 			<property path="continueVR" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true" disable="true"/>
+ 			<property path="recognitionType" input="spark.components.DropDownList" dataType="array" init="number" copyable="true" disable="true">
+ 				<dataSource labelField="name" valueField="name">
+ 					<data name="number" disable=""/>
+ 					<data name="general text" disable="true"/>
+ 				</dataSource>
+ 			</property>
+ 			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>	
+			<property path="taborder" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" copyable="true"/>
+ 		</type>
+			
+		<type name="Style" @stopCommit="true">
+		    <property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="borderWeight" dataType="Number" input="spark.components.NumericStepper" min="0" max="10" inc="1" init="1" copyable="true"/>
+		    <property path="borderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="borderColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="cornerRadius" dataType="Number" input="spark.components.NumericStepper" min="0" max="25" inc="1" init="0" copyable="true"/>
+			<property path="onfocusBackgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" disable="true"/>			
+			<property path="onfocusBorderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="boxShadow" dataType="Boolean" input="spark.components.CheckBox" value="false" disable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[boxShadow]:value}" compareBy="EQ" compareWith="1" at="initForm, postCommit">
+						<action target="{@form[boxShadowWidth]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[boxShadowWidth]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[boxShadowColor]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[boxShadowColor]:}" method="folded" value="true" caseOf="false"/>						
+					</when>
+				</dependentActions>
+			</property>
+			<property path="boxShadowWidth" input="spark.components.NumericStepper" min="0" max="10" inc="1" disable="true"/>
+			<property path="boxShadowColor" dataType="ColorDic" input="mx.controls.ColorPicker" disable="true"/>
+		</type>
+		
+		<type name="font" @stopCommit="true">
+			<property path="font.fontName" input="spark.components.DropDownList" dataType="array" init="system" copyable="true">
+				<dataSource source="{@base:getFontNames()}" />
+			</property>
+			<property path="font.fontSize" input="spark.components.NumericStepper" min="6" max="100" inc="1" init="12" copyable="true"/>
+			<property path="font.fontWeight" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="font.fontStyle" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="underline" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="strikeout" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="font.textColor" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="font.textAlignment" input="spark.components.RadioButton" init="left" copyable="true">
+				<dataSource>
+					<data name="left" path="left"/>
+					<data name="center" path="center"/>
+					<data name="right" path="right"/>
+				</dataSource>
+			</property>
+			<property path="verticalAlignment" dataType="custom" input="spark.components.RadioButton" init="top" copyable="true">
+				<dataSource>
+					<data name="top" path="top"/>
+					<data name="middle" path="middle"/>
+					<data name="bottom" path="bottom"/>
+				</dataSource>
+			</property>
+			<property path="placeholderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+		</type>
+		<type name="TextPadding" @stopCommit="true">
+			<property path="padding.top" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" inc="1" init="2" copyable="true"/>
+			<property path="padding.left" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" inc="1" init="2" copyable="true"/>
+			<property path="padding.right" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" inc="1" init="2" copyable="true"/>
+			<property path="padding.bottom" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" inc="1" init="2" copyable="true"/>
+		</type>
+		<type name="Actions">
+			<property path="actions.DidBeginEditing" input="LabelWithButton" />
+			<property path="actions.DidEndEditing" input="LabelWithButton" />			
+			<property path="actions.DidChange" input="LabelWithButton" />
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="10" max="10000" init="88" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="10" max="10000" init="44" copyable="true"/>
+			<property path="frame.rotation" input="spark.components.NumericStepper" min="0" max="360" inc="5" copyable="true"/>
+		</type> 
+	</properties>
+</item>

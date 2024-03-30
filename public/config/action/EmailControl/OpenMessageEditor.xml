@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="openMessageEditor" category="EmailAction" type="Email" method="openMessageEditor"
+		helpLink_EN="/open_message_editor.htm" helpLink_JP="/act.htm#_メール編集画面表示‌">
+	<properties>	
+		<type name="parameters" input="None">
+			<property path="params.subject" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			
+			<property path="params.toRecipientsList" input="spark.components.List" labelField="EmailRecipient" itemClass="com.mobilous.builder.client.lib.adf.action.EmailRecipientsParamDic">
+				<dependentActions>
+					<when at="initForm, postIndexChange">
+						<action target="{@form[params.toRecipientsList[*].EmailRecipient]:}" method="setValue" 
+								value="{@base:params.toRecipientsList[@form[params.toRecipientsList]:selectedIndex].EmailRecipient}"/>
+						<action  target="{@form[params.toRecipientsList[*].EmailRecipient]:}" method="setPath"
+								value="{&quot;params.toRecipientsList[&quot; + @form[params.toRecipientsList]:selectedIndex + &quot;].EmailRecipient&quot;}"/>		
+								
+					</when>	
+					<when at="postCommit">
+						<action target="{@base:params.toRecipients}" method="keyValueList" value ="{@base:params.toRecipientsList}"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property formKey="params.toRecipientsList[*].EmailRecipient" path="params.toRecipientsList[*].EmailRecipient" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+				<dependentActions>
+					<when at="postCommit">
+						<action target="{@base:params.toRecipients}" method="keyValueList" value ="{@base:params.toRecipientsList}"/>
+					</when>	
+				</dependentActions>
+			</property>			
+			
+			<property path="params.ccRecipientsList" input="spark.components.List" labelField="EmailRecipient" itemClass="com.mobilous.builder.client.lib.adf.action.EmailRecipientsParamDic">
+				<dependentActions>
+					<when at="initForm, postIndexChange">
+						<action target="{@form[params.ccRecipientsList[*].EmailRecipient]:}" method="setValue" 
+								value="{@base:params.ccRecipientsList[@form[params.ccRecipientsList]:selectedIndex].EmailRecipient}"/>
+						<action  target="{@form[params.ccRecipientsList[*].EmailRecipient]:}" method="setPath"
+								value="{&quot;params.ccRecipientsList[&quot; + @form[params.ccRecipientsList]:selectedIndex + &quot;].EmailRecipient&quot;}"/>		
+								
+					</when>	
+					<when at="postCommit">
+						<action target="{@base:params.ccRecipients}" method="keyValueList" value ="{@base:params.ccRecipientsList}"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property formKey="params.ccRecipientsList[*].EmailRecipient" path="params.ccRecipientsList[*].EmailRecipient" input="spark.components.TextInput">
+				<dependentActions>
+					<when at="postCommit">
+						<action target="{@base:params.ccRecipients}" method="keyValueList" value ="{@base:params.ccRecipientsList}"/>
+					</when>	
+				</dependentActions>
+			</property>	
+			
+			<property path="params.bccRecipientsList" input="spark.components.List" labelField="EmailRecipient" itemClass="com.mobilous.builder.client.lib.adf.action.EmailRecipientsParamDic">
+				<dependentActions>
+					<when at="initForm, postIndexChange">
+						<action target="{@form[params.bccRecipientsList[*].EmailRecipient]:}" method="setValue" 
+								value="{@base:params.bccRecipientsList[@form[params.bccRecipientsList]:selectedIndex].EmailRecipient}"/>
+						<action  target="{@form[params.bccRecipientsList[*].EmailRecipient]:}" method="setPath"
+								value="{&quot;params.bccRecipientsList[&quot; + @form[params.bccRecipientsList]:selectedIndex + &quot;].EmailRecipient&quot;}"/>		
+								
+					</when>	
+					<when at="postCommit">
+						<action target="{@base:params.bccRecipients}" method="keyValueList" value ="{@base:params.bccRecipientsList}"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property formKey="params.bccRecipientsList[*].EmailRecipient" path="params.bccRecipientsList[*].EmailRecipient" input="spark.components.TextInput">
+				<dependentActions>
+					<when at="postCommit">
+						<action target="{@base:params.bccRecipients}" method="keyValueList" value ="{@base:params.bccRecipientsList}"/>
+					</when>	
+				</dependentActions>
+			</property>			
+						
+			<property path="params.messageBody" dataType="String" input="spark.components.TextArea" copyable="true"/>
+
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

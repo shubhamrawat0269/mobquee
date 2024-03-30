@@ -1,0 +1,16 @@
+.date-picker-section {
+    display: table;
+    text-align: center;
+    border-radius: 1rem;
+    border: 0.75rem solid #000;
+}
+
+.date-picker-label {
+    min-width: 4rem;
+    min-height: 10rem;
+    vertical-align: middle;
+    color: #000;
+    background-color: #FFF;
+    font-size: 1.5rem;
+    border: 1px solid;
+}

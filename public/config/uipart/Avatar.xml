@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="Avatar" mockup="" visible="true" visibleInTableView="true" imagePath="" description="" helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="type" dataType="array" input="spark.components.DropDownList" init="Letter">
+				<dataSource labelField="name" valueField="name">
+					<data name="Letter"/>
+					<data name="Image"/>
+					<data name="Icon"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[type]:value}" compareBy="EQ" compareWith="Letter" at="initForm, postCommit">
+						<action target="{@form[avatarTxt]:}" method="hide" value="true" caseOf="true"/>						
+						<action target="{@form[avatarSrc]:}" method="hide" value="false" caseOf="true"/>
+						<action target="{@form[avatarTxt]:}" method="hide" value="false" caseOf="false"/>						
+						<action target="{@form[avatarSrc]:}" method="hide" value="true" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="avatarTxt" input="spark.components.TextInput" copyable="true"/>
+			<property formKey="avatarSrc" path="avatarSrc" input="TextInputWithButton" copyable="true">
+ 			</property>
+  			<property path="altText" input="spark.components.TextInput" disable="true"/>
+			<property path="variant" input="spark.components.DropDownList" dataType="array" init="rounded" copyable="true">
+				<dataSource>
+					<data name="rounded"/>
+					<data name="square"/>
+				</dataSource>
+			</property>
+   			<property path="size" input="spark.components.DropDownList" dataType="array" init="medium" sortable="false">
+				<dataSource>
+					<data name="small"/>
+					<data name="medium"/>
+					<data name="large"/>
+					<data name="xlarge"/>
+				</dataSource>
+			</property>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>			
+		<type name="Style" @stopCommit="true">	
+			<property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.rotation" input="spark.components.NumericStepper" min="0" max="360" inc="5" copyable="true"/>
+		</type> 
+	</properties>
+</item>

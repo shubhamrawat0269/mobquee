@@ -1,0 +1,15 @@
+.page-scroll-view {
+    flex-grow: 1;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    overflow: auto hidden;
+}
+
+.page-scroll-center-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-origin: 0;
+    overflow: hidden;
+}

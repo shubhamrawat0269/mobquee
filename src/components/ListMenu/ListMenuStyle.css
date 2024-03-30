@@ -1,0 +1,11 @@
+#list-menu-section {
+    /* height: "100%",
+    maxheight: 48,
+    width: "100%",
+    maxWidth: 80,
+    backgroundColor: theme.palette.primary.default, */
+
+    height: 100%;
+    width: 100%;
+    background-color: var(--pallete-bg-clr);
+}

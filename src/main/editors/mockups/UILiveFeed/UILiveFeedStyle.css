@@ -1,0 +1,14 @@
+.ui-live-feed-section {
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    display: table;
+}
+
+.ui-live-feed-txt {
+    min-width: 0.5rem;
+    min-height: 0.5rem;
+    display: flex;
+    overflow: hidden;
+    line-break: anywhere;
+}

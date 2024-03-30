@@ -1,0 +1,7 @@
+{
+  "server": "mobiloustesting10.mobilous.com",
+  "port": 443,
+  "version": 4.0,
+  "platform": "html",
+  "partner": "mobilous"
+}

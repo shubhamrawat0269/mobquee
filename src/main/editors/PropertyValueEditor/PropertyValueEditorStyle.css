@@ -1,0 +1,21 @@
+.property-value-editor {
+    padding: 0 !important;
+}
+
+.property-list-header {
+    max-height: 3.2rem;
+    border: 0.1rem solid var(--tab-brder) !important;
+    background-color: var(--menu-tab-clr) !important;
+    padding: 0 0.5rem;
+}
+
+.property-list-header h4,
+.property-list-header svg {
+    color: var(--editor-tab-heading);
+}
+
+
+.editor-collapse-section {
+    background-color: var(--setting-bg-inner-bg-clr);
+    color: var(--setting-bg-txt-clr);
+}

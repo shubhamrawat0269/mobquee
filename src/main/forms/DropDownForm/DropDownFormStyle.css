@@ -1,0 +1,10 @@
+.drop-down-input {
+    width: 12rem;
+    height: 2.5rem;
+    position: relative;
+    background: #FFF !important;
+    border: 0.1rem solid #ced4da;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}

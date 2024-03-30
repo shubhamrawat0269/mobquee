@@ -1,0 +1,26 @@
+.list-chkbx-frm{
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    padding: 0.3rem;
+    margin: 0.4rem 0;
+    background-color: #FFF;
+}
+
+.list-chkbx-frm:focus{
+
+}
+
+.list-chkbx-frm-item{
+    height: 2.4rem;
+    max-height: 2.4rem;
+    padding: 0.2rem;
+    font-size: 1.4rem;
+}
+
+.list-chkbx-frm-item:hover{
+    background-color: var(--spam-clr);
+    color: #000;
+}
+

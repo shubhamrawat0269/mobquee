@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="Form" mockup="" visible="true" visibleInTableView="true" imagePath="" description=""	>
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="title" input="spark.components.TextInput"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Style" @stopCommit="true">
+			<property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="borderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="borderColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="borderWeight" dataType="Number" input="spark.components.NumericStepper" min="0" max="10" inc="1" init="0" copyable="true"/>
+			<property path="cornerRadius" dataType="Number" input="spark.components.NumericStepper" min="0" max="25" inc="1" init="0" copyable="true"/>
+		</type>
+		<type name="FormContent">
+			<property path="formItems[0].width" input="spark.components.NumericStepper" min="100" max="10000" inc="1" init="100" disable="true"/>
+			<property path="formItems[0].height" input="spark.components.NumericStepper" min="40" max="10000" inc="1" init="100" copyable="true"/>
+			<property path="formItems[0].gap" input="spark.components.NumericStepper" min="1" max="10000" inc="1" init="5" disable="true"/>
+			<property path="formItems[0].backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="formItems[0].backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="formItems[0].borderWeight" dataType="Number" input="spark.components.NumericStepper" min="0" max="10" inc="1" init="0" copyable="true"/>
+			<property path="formItems[0].borderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="formItems[0].borderColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="formItems[0].cornerRadius" dataType="Number" input="spark.components.NumericStepper" min="0" max="25" inc="1" init="0" copyable="true"/>
+			<property path="formItems[0].font.fontName" input="spark.components.DropDownList" dataType="array" init="system" copyable="true">
+				<dataSource source="{@base:getFontNames()}" />
+			</property>
+			<property path="formItems[0].font.fontSize" dataType="Number" input="spark.components.NumericStepper" min="6" max="100" inc="1" init="14" copyable="true">
+			</property>
+			<property path="formItems[0].font.fontWeight" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="formItems[0].font.fontStyle" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="formItems[0].font.textColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="formItems[0].font.textAlignment" dataType="custom" input="spark.components.RadioButton" init="left" disable="true">
+				<dataSource>
+					<data name="left" path="left"/>
+					<data name="center" path="center"/>
+					<data name="right" path="right"/>
+				</dataSource>
+			</property>
+			<property path="formItems[0].itemAlignment" dataType="custom" input="spark.components.RadioButton" init="middle" copyable="true">
+				<dataSource>
+					<data name="top" path="top"/>
+					<data name="middle" path="middle"/>
+					<data name="bottom" path="bottom"/>
+				</dataSource>
+			</property>
+			<property formKey="formItems" path="formItems" input="spark.components.List" labelField="label" copyable="true"/>
+			<property formKey="formItems[*].label" path="formItems[*].label" input="spark.components.TextInput"/>
+			<property formKey="formItems[*].Fields" path="formItems[*]" input="LabelWithButton" popup="CellEditor" source="Form" fieldname="Fields">
+				<dependentActions>
+					<when at="preCommit" stopCommit="true">
+						<action target="{@form[formItems[*].Fields]:}" method="{@base:notifyChange()}"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property formKey="formItems[*].required" path="formItems[*].required" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>		
+		<type name="Padding" @stopCommit="true">
+			<property path="padding.top" dataType="Number" input="spark.components.NumericStepper" min="10" max="1000" inc="1" init="10" copyable="true"/>
+			<property path="padding.left" dataType="Number" input="spark.components.NumericStepper" min="10" max="1000" inc="1" init="10" copyable="true"/>
+			<property path="padding.right" dataType="Number" input="spark.components.NumericStepper" min="10" max="1000" inc="1" init="10" copyable="true"/>
+			<property path="padding.bottom" dataType="Number" input="spark.components.NumericStepper" min="10" max="1000" inc="1" init="10" copyable="true"/>
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="20" max="10000" init="44" copyable="true"/>
+		</type>
+	</properties>
+</item>

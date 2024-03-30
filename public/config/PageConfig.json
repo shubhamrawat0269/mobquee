@@ -1,0 +1,80 @@
+{
+    "container": [ 
+       {
+          "targetClass": "BaseView",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+         "targetClass": "ScrollView",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "TableView",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "TableViewList",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "TableListSelector",
+          "include": "false",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },	  
+       {
+          "targetClass": "DbTableView",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "DbTableViewList",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "DbTableListSelector",
+          "include": "false",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "RemoteTableView",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "RemoteTableViewList",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "RemoteTableListSelector",
+          "include": "false",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "DbTableViewNestedList",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "PageScrollView",
+          "include": "true",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "DbPageScrollView",
+          "include": "false",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       },
+       {
+          "targetClass": "SplitView",
+          "include": "false",
+          "imagePath": "assets/toolbox/ico_notExist.png"
+       }       
+ 
+    ]
+ }

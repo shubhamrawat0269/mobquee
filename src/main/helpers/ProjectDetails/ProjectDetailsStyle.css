@@ -1,0 +1,227 @@
+.project-credential-sidebar {
+    padding-top: 1rem;
+}
+
+
+.project-credential-info-container {
+    padding: 1.25rem;
+    margin: 1rem;
+    border: 2px solid var(--tab-brder);
+    border-radius: 1rem;
+    background-color: var(--container-clr);
+}
+
+.project-credential-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.credential-preview-icon {
+    /* width: 3.35rem;
+    height: 3.35rem;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute; */
+    /* right: 1.35rem; */
+    /* top: 4rem; */
+    /* cursor: pointer;
+    display: grid;
+    place-items: center; */
+    /* left: 5rem;
+    top: -12.5rem; */
+}
+
+.credential-setting-icon {
+    /* width: 3.35rem;
+    height: 3.35rem;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute; */
+    /* bottom: 5.4rem; */
+    /* right: 5.35rem; */
+    /* top: 0rem; */
+    /* cursor: pointer;
+    display: grid;
+    place-items: center; */
+}
+
+.credential-alert-icon {
+    /* top: -17.5rem;
+    left: 24.5rem; */
+    place-items: center;
+}
+
+.credential-setting-icon svg {
+    font-size: 2rem;
+}
+
+.project-detail-preview-container {
+    width: 15rem;
+    padding: 0.75rem;
+}
+
+.project-credential-screen-resolution {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-credential-tab {
+    width: 4rem !important;
+    min-width: 8rem !important;
+    background-color: var(--modal-clr);
+}
+
+.heading {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.project-detail-credential-sidebar {
+    padding: 0.35rem;
+}
+
+.preview-btn-container {
+    padding: 0.3rem 3rem;
+}
+
+.label-box {
+    margin-right: 0 !important;
+}
+
+.label-box span {
+    width: 5.35vw;
+}
+
+.resolution-option {
+    padding: 0.35rem;
+    margin-left: 0.5rem;
+}
+
+.preview-btn {
+    background-color: var(--btn-bg-clr) !important;
+    color: var(--btn-txt-clr) !important;
+    width: 8rem !important;
+    padding: 0.35rem !important;
+    font-size: 1.2rem !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.project-poput-setting-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 1rem;
+}
+
+.project-poput-setting-modal button {
+    font-size: 1.4rem;
+    padding: 0.4rem;
+    border: none;
+    border-bottom: 0.1rem solid;
+    background: none;
+    cursor: pointer;
+}
+
+
+.project-popup-modal {
+    position: absolute;
+    overflow: hidden;
+}
+
+.selected-screen {
+    width: 12rem;
+    margin: 0 1.2rem;
+    font-size: 1rem;
+}
+
+.selected-screen-btn {
+    text-transform: none;
+}
+
+.selected-screen-title {
+    padding: 0.2rem 1.6rem;
+}
+
+.selected-screen-config-name {
+    margin: 0.4rem;
+}
+
+.project-detail-panel {
+    margin: 0.5rem;
+    border: 1px solid;
+    border-bottom: 0.2rem solid;
+}
+
+.project-detail-panel-detail {
+    padding: 1rem;
+    /* max-height: 30rem; */
+    height: 8rem;
+    overflow: scroll;
+}
+
+.project-detail-panel-helpdetail {
+    text-align: start;
+    margin: 0 !important;
+    background-color: var(--menu-bg-clr) !important;
+    border-radius: 0.8rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+}
+
+.project-detail-panel-helpdetail h6 {
+    color: #FFF;
+}
+
+.project-panel {
+    margin: 0.5rem;
+}
+
+.project-accordion-summary {
+    width: 100%;
+    min-height: 4.5rem;
+    padding: 0 0.1rem;
+    background-color: var(--menu-bg-clr) !important;
+}
+
+.project-accordion-summary h4 {
+    color: var(--txt-clr);
+}
+
+.project-log-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.2rem 0;
+}
+
+.project-numeric-input {
+    width: 4rem;
+    height: 2.2rem;
+    background-color: grey;
+}
+
+
+
+@media(max-width: 1920px) {
+    .project-credential-tab {
+        min-width: 8.75rem !important;
+    }
+}
+
+@media(max-width: 1600px) {
+    .project-credential-tab {
+        min-width: 8rem !important;
+    }
+}
+
+@media (max-width: 1367px) {
+    .project-credential-tab {
+        min-width: 8.5rem !important;
+    }
+}

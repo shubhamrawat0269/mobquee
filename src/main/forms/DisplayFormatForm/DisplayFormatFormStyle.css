@@ -1,0 +1,25 @@
+.displapy-fromat-tooltip {
+    background-color: grey;
+    color: #000;
+    max-width: 22rem;
+    font-size: 1.35rem;
+    border: 0.1rem solid #dadde9;
+}
+
+.display-format-dropdwn-input {
+    width: 11rem;
+    height: inherit;
+    position: relative;
+    background-color: #FFF;
+    border: 0.1rem solid #ced4da;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    padding: 0.2rem 0.8rem 0 0.8rem;
+}
+
+.display-format-dropdwn-input:focus {
+    border-radius: 0.4rem;
+    border-color: #000;
+    background-color: #FFF;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, .25);
+}

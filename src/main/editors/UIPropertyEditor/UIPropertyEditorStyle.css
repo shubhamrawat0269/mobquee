@@ -1,0 +1,16 @@
+.property-editor-list-item {
+    max-height: 3.2rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, .825);
+    background-color: var(--drawer-clr);
+    padding: 0 0.5rem;
+}
+
+.property-editor-list-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.property-editor-dense-list-item {
+    height: 100%;
+    padding: 0 1.5rem;
+}

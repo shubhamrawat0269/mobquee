@@ -1,0 +1,20 @@
+#database-section {
+  width: 100%;
+  padding: 0;
+  overflow: auto;
+  /* background-color: var(--bg-clr); */
+}
+
+.database-table-item {
+  background-color: var(--menu-bg-clr);
+  padding: 1rem 0.5rem;
+}
+
+.database-table-item h4 {
+  color: var(--txt-clr);
+}
+
+.database-table-item {
+  border: 1px solid black;
+  background-color: var(--drawer-clr);
+}

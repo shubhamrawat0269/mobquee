@@ -1,0 +1,27 @@
+.ui-combo-box {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ui-combo-text {
+  min-width: 0.5rem;
+  min-height: 0.5rem;
+  display: table-cell;
+  text-transform: none;
+  border-right: 1px solid var(--tab-brder);
+}
+
+
+.custom-icon{
+  min-width: 1rem;
+  min-height: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background-size: cover;
+  background-position: center;
+}

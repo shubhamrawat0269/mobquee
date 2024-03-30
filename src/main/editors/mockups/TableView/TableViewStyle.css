@@ -1,0 +1,239 @@
+.table-view-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+}
+
+.table-view-header-left {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.table-view-header-right {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    padding-left: 1.2rem;
+}
+
+.table-view-heading {
+    text-align: left;
+    padding-left: 0.8rem;
+    font-weight: bold;
+}
+
+.table-view-footer {
+    text-align: left;
+    padding-left: 0.8rem;
+}
+
+.flex-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.plain-multi-col{
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.grouped-multi-col{
+    width: 100%;
+    margin: 0;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+}
+
+.scrol-btn-content{
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    pointer-events: none;
+}
+
+.table-view-cell {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.table-view-cell-section {
+    width: 3.6rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.table-view-cell-collapse {
+    width: 2.4rem;
+    display: flex;
+    align-items: end;
+    padding: 0;
+}
+
+
+.contact-frm-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contact-frm-main-txt {
+    width: 40%;
+    text-align: left;
+    padding-left: 0.4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-frm-detail-txt {
+    width: 60%;
+    text-align: left;
+    padding-left: 0.4rem;
+    font-size: 1.3rem;
+    color: rgba(55, 81, 130, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.default-cell-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.default-cell-main-img {
+    position: absolute;
+    width: 3.2rem;
+    height: auto;
+    top: 0.4rem;
+    left: 0.4rem;
+    display: inline-block;
+}
+
+.default-cell-main-txt {
+    text-align: left;
+    padding-left: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subtitle-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle-main-img {
+    position: absolute;
+    width: 3.2rem;
+    height: auto;
+    top: 0.4rem;
+    left: 0.4rem;
+    display: inline-block;
+}
+
+.subtitle-main-txt {
+    text-align: left;
+    padding-left: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subtitle-detail-txt {
+    text-align: left;
+    padding-left: 4rem;
+    font-size: 1.3rem;
+    color: rgba(135, 135, 135, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.right-align-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.right-align-main-txt {
+    width: 50%;
+    text-align: left;
+    padding-left: 0.4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.right-align-detail-txt {
+    width: 50%;
+    text-align: right;
+    padding-left: 0.4rem;
+    font-size: 1.4rem;
+    color: rgba(55, 81, 130, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.simple-grid-cell-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.simple-grid-container {
+    height: 100%;
+    overflow: hidden;
+    border-right: 0.1rem solid;
+}
+
+.grid-canvas-section {
+    position: absolute;
+    height: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.grid-canvas-layout {
+    border-right: 0.1rem solid red;
+    border-bottom: 0.1rem solid red;
+    padding: 0;
+}
+
+.custom-layout-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.custom-layout-collapse {
+    width: 100%;
+    position: absolute;
+    border-top: 0.1rem solid black;
+}

@@ -1,0 +1,123 @@
+.manage-page-modal {
+  max-width: 100rem !important;
+  margin: 0 auto;
+}
+
+.new-page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.user-title-box label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+}
+
+.user-module-box label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+}
+
+.new-page-layout-option {
+  width: 33vw;
+  padding: 2.5rem;
+  border: 1px solid var(--tab-brder);
+  border-radius: 0.5rem;
+}
+
+.new-page-layout-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.popup-page-list-btn {
+  text-transform: none;
+  width: 7.2rem;
+  max-height: 3.2rem;
+  padding: 0.6rem;
+  margin: 0 0.4rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.popup-page-action-btn {
+  text-transform: none;
+  width: 7.2rem;
+  max-height: 2.4rem;
+  padding: 0;
+  margin: 0 0.4rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.popup-page-action-box {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.2rem;
+  background-color: #FFF;
+  border-top: 0.1rem solid var(--tab-brder);
+  padding-top: 0.4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.popup-page-action-container {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  max-width: 60rem;
+  max-height: 44rem;
+  min-width: 40rem;
+  height: 50rem;
+  padding: 1rem;
+}
+
+.selected-page-label {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.selected-page-label-title {
+  border: 1px solid var(--tab-brder);
+  width: 70%;
+  height: 1.89rem;
+}
+
+.popup-page-list-item {
+  padding-left: 0.4rem;
+  cursor: pointer;
+}
+
+.popup-page-list-item:hover {
+  background-color: var(--swap-clr);
+  transition: all 0.3s linear;
+}
+
+.popup-page-list-item:focus {
+  background-color: var(--swap-clr);
+  transition: all 0.3s linear;
+
+}
+
+.page-popup-container {
+  max-height: calc(100% - 80rem) !important;
+  max-width: 105rem !important;
+}
+
+.customized-dialog-info {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 0.5fr 0.5fr;
+  /* height: inherit;
+  overflow-x: hidden;
+  overflow-y: scroll; */
+}

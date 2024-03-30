@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StartGPSTrack" category="MotionAction" type="Motion" method="StartGPSTrack"
+		helpLink_EN="" helpLink_JP="" platformSpecific="true">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.filename" input="spark.components.TextInput"/>
+		</type>
+			
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+			<property path="actions.notAvailable" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

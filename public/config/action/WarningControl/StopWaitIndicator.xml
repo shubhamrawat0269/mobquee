@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StopWaitIndicator" category="AlertAction" type="Warning" method="StopWaitIndicator"
+		helpLink_EN="/stop_wait_indicator2.htm" helpLink_JP="/act.htm#_待機画面停止">
+	<properties>		
+		<type name="condition" input="None">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

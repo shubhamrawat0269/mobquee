@@ -1,0 +1,222 @@
+.video-viewer {
+    width: 45rem;
+    height: 45rem;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.video-viewer-titlebar {
+    height: 4.8rem;
+    width: 100%;
+    padding: 0 0.1rem;
+    margin: 0 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+.video-viewer-title,
+.audio-title {
+    color: #FFF;
+}
+
+.video-viewer-icon,
+.audio-viewer-icon,
+.resource-icon {
+    color: "rgba(255, 255, 255, 0.54)";
+}
+
+.audio-viewer {
+    width: 40rem;
+    height: 25rem;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.audio-viewer-title {
+    height: 4.8rem;
+    width: 100%;
+    padding: 0 0.1rem;
+    margin: 0 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+.resource-image-viewer {
+    width: 45rem;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.resource-viewer-header {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 0.1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+.resource-viewer-title-header {
+    width: 100%;
+    color: #FFF;
+    padding: 0 0.1rem;
+}
+
+.resource-viewer-icon-header {
+    color: #FFF;
+    padding: 0.75rem;
+}
+
+.resource-viewer-container {
+    width: 100%;
+    background-color: rgba(227, 227, 227, 0.2);
+}
+
+.img-uploader-btn {
+    margin-bottom: 0.5rem;
+}
+
+.img-uploader-file-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.img-uploader-file-btn {
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(128, 128, 128);
+    background-color: #FFF;
+    border: 0.2rem solid rgb(128, 128, 128);
+    border-radius: 0.8rem;
+    padding: 0.35rem;
+}
+
+.img-uploader-file-input {
+    position: absolute;
+    height: 4rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.1;
+}
+
+.img-uploader-aspect {
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+    min-width: 20rem;
+    min-height: 15rem;
+    max-width: 40rem;
+    max-height: 30rem;
+    padding: 0.8rem;
+    margin: 0.8rem;
+    border: 0.1rem solid rgb(227, 227, 227);
+    border-radius: 0.8rem;
+    background-color: rgba(227, 227, 227, 0.2);
+}
+
+
+.resource-editor {
+    width: 100%;
+    height: 3.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    background-color: #FFF;
+    border: 0.2rem solid rgb(227, 227, 227);
+    border-radius: 0.8rem;
+}
+
+.resource-editor-search-btn {
+    max-width: 3.2rem;
+    min-height: 3.2rem;
+    max-height: 3.2rem;
+}
+
+.resource-editor-search-input {
+    width: 100%;
+    height: calc(100% - 0.2rem);
+    padding: 0.35rem;
+    margin: 0 0.35rem;
+    font-size: 1rem;
+}
+
+.resource-editor-container {
+    width: 8rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-left: 0.1rem solid;
+}
+
+.resource-editor-item {
+    width: 3.2rem;
+    height: 3.2rem;
+    min-height: 3.2rem;
+}
+
+.resource-editor-select-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.resource-editor-file-btn {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(128, 128, 128);
+    background-color: #FFF;
+    border: 0.2rem solid rgb(128, 128, 128);
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
+
+.resource-editor-file-input {
+    position: absolute;
+    height: 4rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.01;
+}
+
+.resource-editor-aspect-video {
+    height: 100%;
+    min-width: 20rem;
+    min-height: 15rem;
+    max-width: 40rem;
+    max-height: 30rem;
+    padding: 0.8rem;
+    margin: 0.8rem;
+}
+
+.resource-editor-aspect-audio {
+    padding: 0.8rem;
+    margin: 0.8rem;
+}

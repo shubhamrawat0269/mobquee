@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<server>mobiloustesting10.mobilous.com</server>
+	<port>443</port>
+	<version>4.0</version>
+	<platform>html</platform>
+	<revision/>
+	<partner>mobilous</partner>
+</project>

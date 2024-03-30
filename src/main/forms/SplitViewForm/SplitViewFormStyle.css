@@ -1,0 +1,29 @@
+.split-view-frm{
+    position: relative;
+    overflow: auto;
+    height: 11.4rem;
+    padding: 0;
+    margin: 0.5rem;
+    background-color: #FFF;
+    border-bottom: 0.1rem solid #ced4da;
+}
+
+.split-view-frm:focus{
+    border-color: blue;
+}
+
+
+.split-view-frm-item{
+    height: 2.4rem;
+    max-height: 2.4rem;
+    padding: 0.2rem;
+    font-size: 1.4rem;
+}
+
+.split-view-frm-item:focus{
+    color: #000;
+}
+
+.split-view-frm-item:hover{
+    color: #000;
+}

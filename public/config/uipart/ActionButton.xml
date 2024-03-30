@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="ActionButton" mockup="" visible="true" visibleInTableView="true"  visibleInTableViewCell="false" imagePath="" description=""
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="floating" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="iconType" input="spark.components.DropDownList" init="add" sortable="false">
+				<dataSource>
+					<data name="add"/>
+					<data name="back"/>
+					<data name="bookmark"/>
+					<data name="camera"/>
+					<data name="compose"/>
+					<data name="fast-forward"/>
+					<data name="organize"/>
+					<data name="pause"/>
+					<data name="play"/>
+					<data name="refresh"/>
+					<data name="reply"/>
+					<data name="rewind"/>
+					<data name="search"/>
+					<data name="settings"/>
+					<data name="stop"/>
+					<data name="trash"/>
+					<data name="custom"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[iconType]:value}" compareBy="EQ" compareWith="custom" at="initForm, postCommit">
+						<action target="{@form[customImage]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[customImage]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property formKey="customImage" path="customImage" input="TextInputWithButton" copyable="true"/>
+			<property path="size" input="spark.components.DropDownList" dataType="array" init="medium" sortable="false">
+				<dataSource>
+					<data name="small"/>
+					<data name="medium"/>
+					<data name="large"/>
+					<data name="xlarge"/>
+				</dataSource>
+			</property>
+			<property path="showElevation" dataType="Boolean" input="spark.components.CheckBox" value="true" copyable="true"/>
+			<property path="enableRipple" dataType="Boolean" input="spark.components.CheckBox" value="true" copyable="true"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			
+		</type>
+		<type name="Style" @stopCommit="true">	
+			<property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+		</type>
+		<type name="Actions">
+			<property path="actions.clicked" input="LabelWithButton" />
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+		</type> 
+	</properties>
+</item>

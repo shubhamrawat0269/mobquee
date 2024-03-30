@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="setDateFormat" category="ControlAction" type="Property" method="setDateFormat">
+	<properties>
+		<type name="parameters" input="None">	
+			<property path="params.name" input="spark.components.TextInput"/>	
+			<property path="params.Year" input="spark.components.DropDownList">
+			   <dataSource>
+					<data name="Gregorian" value ="1"/>
+					<data name="Japanese" value ="0"/>
+					<data name="Buddhist" value ="0"/>
+					<data name="Coptic" value ="0"/>	
+					<data name="Ethiopic" value ="0"/>
+					<data name="Ethiopic, Amete Alem" value ="0"/>
+					<data name="Hebrew" value ="0"/>	
+					<data name="Indian" value ="0"/>
+					<data name="National" value ="0"/>
+					<data name="Islamic" value ="0"/>	
+					<data name="Islamic, Civil" value ="0"/>	
+					<data name="Persian" value ="0"/>					
+				</dataSource>
+			</property>
+			<property path="params.format" input="spark.components.DropDownList">
+			   <dataSource>
+					<data name="Full" value ="0"/>
+					<data name="Long" value ="0"/>
+					<data name="Middle" value ="1"/>
+					<data name="Short" value ="0"/>
+				</dataSource>
+			</property>	
+			<property path="params.date_delimiter" input="spark.components.CheckBox"/>			
+			<property path="params.time_delimiter" input="spark.components.CheckBox"/>					
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

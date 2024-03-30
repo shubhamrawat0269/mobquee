@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="setTableCellFrame" category="ControlAction" type="Property" method="setTableCellFrame"
+		helpLink_EN="" helpLink_JP="‌">
+	<properties>
+		<type name="parameters" input="None">	
+			<property path="params.targetPage" input="spark.components.DropDownList">
+			    <validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getPageCacheList(DbTableViewList,RemoteTableViewList,DbTableViewNestedList)}" labelField="Title" valueField="pageid"/>
+				<dependentActions>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@form[params.targetPage]:value)}" compareBy="EQ" compareWith="">
+						<action target="{@form[params.cellHeight]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[params.nestedcellHeight]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@form[params.targetPage]:value)}" compareBy="EQ" compareWith="TableView">						
+						<action target="{@form[params.cellHeight]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.nestedcellHeight]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@form[params.targetPage]:value)}" compareBy="EQ" compareWith="TableViewNested">						
+						<action target="{@form[params.cellHeight]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.nestedcellHeight]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="params.cellHeight" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.nestedcellHeight" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

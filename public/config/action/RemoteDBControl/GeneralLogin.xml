@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="generalLogin" category="ComAction" type="Comm" method="generalLogin"
+		helpLink_EN="/general_login2.htm" helpLink_JP="/act.htm#_一般的なログイン‌">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.servicename" input="spark.components.DropDownList">
+				<dataSource source="{@project:getServices(remote)}" labelField="label" valueField="value"/>
+				<dependentActions>
+					<when at="initForm,postCommit" stopCommit="true">
+						<action target="{@form[params.table]:}" method="setOptions" value="{@project:getDbTableDicsByServiceName(@form[params.servicename]:value)}" labelField="tablename" valueField="tablename"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property path="params.table" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getDbTableDicsByServiceName(@base:params.servicename)}"  labelField="tablename" valueField="tablename"/>	
+				<dependentActions>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@form[params.table]:value}" compareBy="NE" compareWith="">						
+						<action target="{@form[params.usernameField]:}" method="setOptions" value="{@project:getDbFields(@form[params.servicename]:value, @form[params.table]:value)}" labelField="fieldname" valueField="fieldname" caseOf="true"/>
+						<action target="{@form[params.passwordField]:}" method="setOptions" value="{@project:getDbFields(@form[params.servicename]:value, @form[params.table]:value)}" labelField="fieldname" valueField="fieldname" caseOf="true"/>
+						<action target="{@form[params.resultFields]:}" method="setOptions" value="{@project:getDbFields(@form[params.servicename]:value, @form[params.table]:value)}" labelField="fieldname" valueField="fieldname" caseOf="true"/>
+					</when>
+				</dependentActions>		
+			</property>
+			<property path="params.usernameField" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.username" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.passwordField" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.password" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+					
+			<property path="params.resultFields" input="ListWithCheckBox" formheight="150" />
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="UploadCSV" category="DbAction" type="DataBase" method="UploadCSV">
+	<properties>
+		<type name="parameters" input="None">	
+			<property path="params.table" input="spark.components.DropDownList">
+			     <dataSource source="{@project:getDbTableDicsByServiceName()}" labelField="tablename" valueField="tablename"/>
+			</property>
+		
+			<property labelField="key" path="params.recordList" input="spark.components.List" itemClass="com.mobilous.builder.client.lib.adf.action.RecordValueDic">
+				<dependentActions>
+					<when at="initForm, postIndexChange">
+						<action target="{@form[params.recordList[*].key]:}" method="setValue" 
+								value="{@base:params.recordList[@form[params.recordList]:selectedIndex].key}"/>
+						<action target="{@form[params.recordList[*].key]:}" method="setPath"
+								value="{&quot;params.recordList[&quot; + @form[params.recordList]:selectedIndex + &quot;].key&quot;}"/>		
+						<action target="{@form[params.recordList[*].value]:}" method="setValue" 
+								value="{@base:params.recordList[@form[params.recordList]:selectedIndex].value}"/>
+						<action target="{@form[params.recordList[*].value]:}" method="setPath"
+								value="{&quot;params.recordList[&quot; + @form[params.recordList]:selectedIndex + &quot;].value&quot;}"/>						
+					</when>	
+					<when at="postCommit">
+						<action target="{@base:params.record}" method="keyValuePair" value ="{@base:params.recordList}"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property formKey="params.recordList[*].key" path="params.recordList[*].key" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+				<dependentActions>
+					<when at="postCommit">
+						<action target="{@base:params.record}" method="keyValuePair" value ="{@base:params.recordList}"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property formKey="params.recordList[*].value" path="params.recordList[*].value" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+				<dependentActions>
+					<when at="postCommit">
+						<action target="{@base:params.record}" method="keyValuePair" value ="{@base:params.recordList}"/>
+					</when>	
+				</dependentActions>
+			</property>	
+			
+		</type>
+		
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

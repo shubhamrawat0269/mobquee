@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StartGeoFencing" category="MotionAction" type="Motion" method="StartGeoFencing"
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.radius" input="spark.components.DropDownList">
+			  	<validations><validation validator="RequiredValueValidator"/></validations>
+			  	<dataSource>					
+					<data name="Best" value ="1"/>
+					<data name="100m" value ="0"/>					
+					<data name="200m" value ="0"/>
+					<data name="1000m" value ="0"/>
+				</dataSource>
+			</property>		
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+			<property path="actions.EnterFencing" input="LabelWithButton"/>
+			<property path="actions.ExitFencing" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

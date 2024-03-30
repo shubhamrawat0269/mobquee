@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="ClearTabData" category="SystemControlAction" type="SystemControl" method="ClearTabData"
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="parameters" input="None">		
+			<property path="params.allTabs" input="spark.components.CheckBox"/>
+			<property path="params.tabPageid" input="spark.components.ComboBox1" fieldnameRequired="false">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+				<dataSource source="{@project:getTabPageList()}" labelField="Title" valueField="pageid"/>			   
+			</property>			
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="RemoteNumRecords" category="ComAction" type="Comm" method="RemoteNumRecords"
+		helpLink_EN="/remote_numrecords.htm" helpLink_JP="/act.htm#_リモートDB制御">
+	<properties>
+		<type name="parameters" input="None">			
+			<property path="params.servicename" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getServices(remote)}" labelField="label" valueField="value"/>
+				<dependentActions>
+					<when at="initForm,postCommit" stopCommit="true">
+						<action target="{@form[params.tablename]:}" method="setOptions" value="{@project:getDbTableDicsByServiceName(@form[params.servicename]:value)}" labelField="tablename" valueField="tablename"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property path="params.tablename" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getDbTableDicsByServiceName(@base:params.servicename)}"  labelField="tablename" valueField="tablename"/>				
+			</property>
+			<property path="params.remotewhere" input="spark.components.TextInput"/>
+		</type>	   
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

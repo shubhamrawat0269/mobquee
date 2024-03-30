@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="PrepareReceiveMessage" category="ComAction" type="Comm" method="PrepareReceiveMessage">
+	<properties>
+		<type name="parameters" input="None">			
+			<property path="params.numOfReceive" input="spark.components.TextInput"/>
+			<property path="params.term" input="spark.components.TextInput"/>
+			<property path="params.expireTime" input="spark.components.TextInput"/>
+		</type>
+		
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

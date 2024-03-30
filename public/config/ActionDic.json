@@ -1,0 +1,1909 @@
+{
+  "Actions": [
+    {
+      "category": "",
+      "type": "",
+      "method": "",
+      "params": {
+        "pageTitle": "",
+        "condition": { "groupcases": [] }
+      },
+      "actions": {
+        "success": [],
+        "error": [],
+        "onElse": [],
+        "notAvailable": []
+      },
+      "Document": []
+    },
+    {
+      "category": "ViewAction",
+      "type": "Page",
+      "method": "View",
+      "params": {
+        "pageName": "",
+        "transferData": false,
+        "file": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "plist",
+          "url": ""
+        },
+        "transition": "",
+        "viewPage": "",
+        "animationType": "none"
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "Page",
+      "method": "SelectTab",
+      "params": {
+        "tab": 0,
+        "tabPageid": "",
+        "clearData": false,
+        "resetEvent": false,
+        "animationType": "none"
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "Page",
+      "method": "popViewController",
+      "params": {
+        "animationType": "none"
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "Page",
+      "method": "popToRootViewController",
+      "params": {
+        "animationType": "none"
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "Page",
+      "method": "ReturnToParentView",
+      "params": {
+        "pageName": "",
+        "file": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "plist",
+          "url": ""
+        },
+        "transition": "",
+        "viewPage": "",
+        "animationType": "none"
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "Page",
+      "method": "TransitToSiblingView",
+      "params": {
+        "pageName": "",
+        "transferData": false,
+        "file": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "plist",
+          "url": ""
+        },
+        "targetPage": "",
+        "transition": "",
+        "viewPage": "",
+        "animationType": "none"
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "Page",
+      "method": "TransitSidebar",
+      "params": {
+        "barFrame": {},
+        "barPosition": "left"
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "setParentData",
+      "params": {
+        "name": "",
+        "value": "",
+        "reference": false,
+        "refTargetObject": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "resetViewData",
+      "params": {
+        "targetPage": "",
+        "showWait": true
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "setViewData",
+      "params": {
+        "name": "",
+        "value": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "calculate",
+      "params": {
+        "name": "",
+        "value": "",
+        "numberFormat": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "appendString",
+      "params": {
+        "name": "",
+        "value": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "clearString",
+      "params": {
+        "name": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "deleteLastOneCharacter",
+      "params": {
+        "name": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "CSV",
+      "method": "combineToCsv",
+      "params": {
+        "prefix": "",
+        "result": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "CSV",
+      "method": "splitCsv",
+      "params": {
+        "prefix": "",
+        "csvRowData": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "StrToHex",
+      "params": {
+        "name": "",
+        "value": "",
+        "numberFormat": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ViewAction",
+      "type": "MainValue",
+      "method": "HexToStr",
+      "params": {
+        "name": "",
+        "value": "",
+        "numberFormat": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "GetValue",
+      "params": {
+        "sourceUIPart": "",
+        "key": "",
+        "value": "",
+        "targetPage": "",
+        "groupId": "",
+        "cellId": "",
+        "textName": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setValue",
+      "params": {
+        "name": "",
+        "key": "",
+        "value": "",
+        "targetPage": "",
+        "groupId": "",
+        "cellId": "",
+        "textName": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setVisible",
+      "params": {
+        "targetPage": "",
+        "uiparts": [],
+        "hidden": false
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setUIItemVisible",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "panels": [],
+        "hidden": false
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setImage",
+      "params": {
+        "name": "",
+        "image": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": "",
+          "imageName": "",
+          "author": "",
+          "copyright": ""
+        },
+        "reference": false,
+        "refTargetObject": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setColor",
+      "params": {
+        "name": "",
+        "color": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "uiproperty": [],
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setFrame",
+      "params": {
+        "name": "",
+        "x": "",
+        "y": "",
+        "width": "",
+        "height": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setPosition",
+      "params": {
+        "targetPage": "",
+        "uipartList": [{ "name": "", "frameX": "", "frameY": "" }]
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setUIItemDimension",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "items": "",
+        "height": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setToolbarFrame",
+      "params": {
+        "targetPage": "",
+        "barPosition": "top",
+        "frameHeight": 50
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setTableCellFrame",
+      "params": {
+        "targetPage": "",
+        "cellHeight": 50,
+        "nestedcellHeight": 50
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "moveObject",
+      "params": {
+        "name": "",
+        "x": "",
+        "y": "",
+        "animation": false,
+        "duration": 1,
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "rotateObject",
+      "params": {
+        "name": "",
+        "centerX": "",
+        "centerY": "",
+        "degree": "",
+        "animation": false,
+        "duration": 1,
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "movingFocus",
+      "params": {
+        "objectname": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "ControlAction",
+      "type": "Property",
+      "method": "setFocusOff",
+      "params": {
+        "objectname": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "Select",
+      "params": {
+        "servicename": "",
+        "tablename": "",
+        "localwhere": "",
+        "order": "",
+        "selectall": true,
+        "resultFields": []
+      },
+      "actions": { "detectRecords": [] }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "insert",
+      "params": {
+        "servicename": "",
+        "table": "",
+        "recordList": [{ "key": "", "value": "" }],
+        "record": {}
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "update",
+      "params": {
+        "servicename": "",
+        "table": "",
+        "where": "",
+        "recordList": [{ "key": "", "value": "" }],
+        "record": {}
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "delete",
+      "params": {
+        "servicename": "",
+        "table": "",
+        "where": ""
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "deleteAllRecords",
+      "params": {
+        "table": ""
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "NumRecords",
+      "params": {
+        "servicename": "",
+        "tablename": "",
+        "localwhere": ""
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "ChangeCondition",
+      "params": {
+        "pageName": "",
+        "group": 0,
+        "name": "",
+        "localwhere": "",
+        "order": ""
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "DownloadCSV",
+      "params": {
+        "table": "",
+        "recordList": [{ "key": "", "value": "" }],
+        "record": {}
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "UploadCSV",
+      "params": {
+        "table": "",
+        "recordList": [{ "key": "", "value": "" }],
+        "record": {}
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "UploadRecordsToDB",
+      "params": {
+        "servicename": "",
+        "table": "",
+        "type": "CSV",
+        "file": {
+          "srcLocation": "device",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        }
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "DownloadRecordsFromDB",
+      "params": {
+        "type": "CSV",
+        "filename": "",
+        "servicename": "",
+        "table": "",
+        "where": "",
+        "order": "",
+        "fields": ""
+      }
+    },
+    {
+      "category": "DbAction",
+      "type": "DataBase",
+      "method": "SetDeviceDatatoDB",
+      "params": {
+        "device": "",
+        "startdatetime": "",
+        "servicename": "",
+        "table": "",
+        "resultFields": []
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "generalLogin",
+      "params": {
+        "username": "",
+        "password": "",
+        "usernameField": "",
+        "passwordField": "",
+        "servicename": "Mobilous",
+        "table": "",
+        "resultFields": []
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "RemoteSelect",
+      "params": {
+        "servicename": "Mobilous",
+        "tablename": "",
+        "where": "",
+        "order": "",
+        "selectall": true,
+        "resultFields": [],
+        "encoderesponse": false
+      },
+      "actions": { "detectRecords": [] }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "RemoteInsert",
+      "params": {
+        "servicename": "Mobilous",
+        "database": "",
+        "table": "",
+        "recordList": [{ "key": "", "value": "" }],
+        "rec": {}
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "RemoteUpdate",
+      "params": {
+        "servicename": "Mobilous",
+        "table": "",
+        "where": "",
+        "recordList": [{ "key": "", "value": "" }],
+        "rec": {}
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "RemoteDelete",
+      "params": {
+        "servicename": "Mobilous",
+        "table": "",
+        "where": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "RemoteNumRecords",
+      "params": {
+        "servicename": "Mobilous",
+        "tablename": "",
+        "remotewhere": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "ChangeRemoteCondition",
+      "params": {
+        "pageName": "",
+        "group": 0,
+        "name": "",
+        "remotewhere": "",
+        "order": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "ChangeNestedCondition",
+      "params": {
+        "pageName": "",
+        "remotewhere": "",
+        "order": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "SynchronizeDB",
+      "params": {
+        "fromService": "",
+        "toService": "",
+        "fromTable": "",
+        "toTable": "",
+        "fromWhere": "",
+        "forceFlag": false,
+        "forceUpdate": false,
+        "encoderesponse": false,
+        "rec": {}
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "GetLiveData",
+      "params": {
+        "source": "",
+        "service": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "UploadRecordsToRemoteDB",
+      "params": {
+        "servicename": "Mobilous",
+        "table": "",
+        "type": "excel",
+        "file": {
+          "srcLocation": "device",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "getlogs": false,
+        "loguid": "",
+        "fieldrecords": ""
+      },
+      "actions": { "notAvailable": [] }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "RemoteDownloadRecords",
+      "params": {
+        "type": "CSV",
+        "filename": "",
+        "servicename": "Mobilous",
+        "table": "",
+        "where": "",
+        "order": "",
+        "resultFields": [],
+        "fields": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "GenerateAK",
+      "params": {}
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "ClearAK",
+      "params": {
+        "userid": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "UpdateAK",
+      "params": {
+        "userid": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Comm",
+      "method": "SendLog",
+      "params": {
+        "message": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "Play",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "Pause",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "StopPlay",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "PlaySE",
+      "params": {
+        "filename": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": "",
+          "soundName": "",
+          "soundURL": "",
+          "author": "",
+          "copyright": "",
+          "length": 100
+        }
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "Record",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "StopRecord",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "SwitchCamera",
+      "params": {
+        "targetPage": "",
+        "targetUIPart": "",
+        "side": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Library",
+      "method": "TakePhoto",
+      "params": {
+        "name": "",
+        "library": "",
+        "photoquality": "high",
+        "showWatermark": false,
+        "watermarkType": "text",
+        "watermarkText": "",
+        "watermarkTextColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "watermarkImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": "",
+          "imageName": "",
+          "author": "",
+          "copyright": ""
+        },
+        "watermarkImageWidth": 20,
+        "watermarkImageHeight": 20,
+        "watermarkPosition": "Bottom-Right"
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "QRScanner",
+      "params": {
+        "type": "QRcode",
+        "variablename": "",
+        "targetPage": "",
+        "multiScan": false
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "QRGenerate",
+      "params": {
+        "name": "",
+        "value": "",
+        "targetPage": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "OpenGallery",
+      "params": {
+        "mediatype": "image",
+        "filetype": "pdf",
+        "targetPage": "",
+        "name": "",
+        "multiple": false,
+        "limit": 1,
+        "refMediaList": [{ "key": "", "value": "" }],
+        "refMediaUIs": {},
+        "fileNameUI": "",
+        "fileSizeUI": "",
+        "imgquality": 0.6
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "OpenGalleryMultiple",
+      "params": {
+        "mediatype": "image",
+        "filetype": "pdf",
+        "targetPage": "",
+        "name": "",
+        "multiple": false,
+        "limit": 1,
+        "refMediaList": [{ "key": "", "value": "" }],
+        "refMediaUIs": {},
+        "fileNameUI": "",
+        "fileSizeUI": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "UploadMedia",
+      "params": {
+        "targetPage": "",
+        "mediatype": "image",
+        "targetLocation": "mongoDB",
+        "sourceUIPart": "",
+        "name": "",
+        "showprogress": false,
+        "refProgressUI": "",
+        "isThumbnail": false,
+        "refThumbnailUI": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "DeleteMedia",
+      "params": {
+        "targetPage": "",
+        "mediatype": "image",
+        "targetLocation": "mongoDB",
+        "sourceUIPart": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "DownloadMedia",
+      "params": {
+        "mediatype": "image",
+        "source": "",
+        "sourceUIPart": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "SaveMedia",
+      "params": {
+        "targetPage": "",
+        "mediatype": "image",
+        "sourceUIPart": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "UploadFile",
+      "params": {
+        "type": "pdf",
+        "name": "",
+        "file": {
+          "srcLocation": "device",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "showprogress": false,
+        "refProgressUI": ""
+      }
+    },
+    {
+      "category": "ComAction",
+      "type": "Media",
+      "method": "DownloadFile",
+      "params": {
+        "source": "remote",
+        "targetPage": "",
+        "sourceUIPart": "",
+        "refFiletype": "",
+        "refFilename": ""
+      }
+    },
+    {
+      "category": "MediaAction",
+      "type": "Media",
+      "method": "ShareVia",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "contenttype": "text",
+        "filetype": "image",
+        "source": "gallery"
+      }
+    },
+    {
+      "category": "LibraryAction",
+      "type": "Library",
+      "method": "FindMedia",
+      "params": {
+        "media": "",
+        "name": "",
+        "filename": "",
+        "library": ""
+      }
+    },
+    {
+      "category": "LibraryAction",
+      "type": "Library",
+      "method": "RemoveMedia",
+      "params": {
+        "media": "",
+        "name": "",
+        "filename": "",
+        "library": ""
+      }
+    },
+    {
+      "category": "LibraryAction",
+      "type": "Library",
+      "method": "MoveMedia",
+      "params": {
+        "media": "",
+        "filename": "",
+        "from": "",
+        "to": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "GoogleMap",
+      "method": "ShowLocationInfo",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "locationName": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "GoogleMap",
+      "method": "ShowRegionInfo",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "regionName": "",
+        "mode": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "GoogleMap",
+      "method": "OpenTargetScope",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "GoogleMap",
+      "method": "CloseTargetScope",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "GoogleMap",
+      "method": "OpenCurrentPosition",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "GoogleMap",
+      "method": "CloseCurrentPosition",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapMarker",
+      "method": "AddPinMarker",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "markerid": "",
+        "title": "",
+        "subtitle": "",
+        "leftView": "",
+        "rightView": "",
+        "canShowCallout": false,
+        "lattitude": "",
+        "longitude": "",
+        "address": ""
+      },
+      "actions": { "LeftButtonClicked": [], "RightButtonClicked": [] }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapMarker",
+      "method": "AddMarker",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "markerid": "",
+        "markerType": "Custom",
+        "title": "",
+        "subtitle": "",
+        "canShowCallout": false,
+        "lattitude": "",
+        "longitude": "",
+        "markerfile": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "leftViewImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "rightViewImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "anchorX": 0,
+        "anchorY": 0,
+        "address": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapMarker",
+      "method": "AddMarkers",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "filename": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapMarker",
+      "method": "removeMarker",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "markerid": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapMarker",
+      "method": "removeMarkers",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "withoutDefault": false
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapMarker",
+      "method": "ShowDefaultMarkers",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "ShowRoute",
+      "params": {
+        "name": "",
+        "fromLocation": "",
+        "toLocation": "",
+        "trafic": "car",
+        "avoid": [],
+        "elevationEqv": 100,
+        "unit": "",
+        "timeCalculation": 0,
+        "arrivalTime": "",
+        "departureTime": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "ClearRoute",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "LoadFixedRouteFile",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "fixedRouteFile": "",
+        "fixedRouteFiletype": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "ShowFixedRoute",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "AddWayPoint",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "location": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "StartNavigation",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "derouteDistance": 0,
+        "derouteEvent": [],
+        "turnLocationDistances": [{ "key": "distance0", "value": "100" }],
+        "turnLocationEvent": []
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "StopNavigation",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "GetStartStep",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "location": "",
+        "address": "",
+        "step": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "GetNextStep",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "location": "",
+        "address": "",
+        "step": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "GetPreviousStep",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "location": "",
+        "address": "",
+        "step": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "GetCurrentStep",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "location": "",
+        "address": "",
+        "step": ""
+      }
+    },
+    {
+      "category": "GoogleMapAction",
+      "type": "MapRoute",
+      "method": "RouteList",
+      "params": {
+        "targetPage": "",
+        "name": ""
+      }
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "StartGPS",
+      "params": {
+        "accuracy": ""
+      },
+      "actions": { "ChangeLocation": [] }
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "StopGPS",
+      "params": {}
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "StartGPSTrack",
+      "params": {
+        "filename": ""
+      }
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "StopGPSTrack",
+      "params": {}
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "ConvertGPSLogToFile",
+      "params": {}
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "StartGeoFencing",
+      "params": {
+        "radius": ""
+      },
+      "actions": { "EnterFencing": [], "ExitFencing": [] }
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "StopGeoFencing",
+      "params": {}
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "GetDistance",
+      "params": {
+        "fromLat": "",
+        "fromLong": "",
+        "toLat": "",
+        "toLong": ""
+      }
+    },
+    {
+      "category": "MotionAction",
+      "type": "Motion",
+      "method": "ShowPlacesData",
+      "params": {
+        "country": "IN",
+        "placeSearch": "Text",
+        "name": ""
+      }
+    },
+    {
+      "category": "SensorAction",
+      "type": "Sensor",
+      "method": "StartTimer",
+      "params": {
+        "name": "",
+        "type": "",
+        "interval": "",
+        "repeat": false
+      }
+    },
+    {
+      "category": "SensorAction",
+      "type": "Sensor",
+      "method": "StopTimer",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "SensorAction",
+      "type": "Sensor",
+      "method": "StartStepCounter",
+      "params": {
+        "name": "",
+        "targetUIPart": "",
+        "isResume": false
+      }
+    },
+    {
+      "category": "SensorAction",
+      "type": "Sensor",
+      "method": "StopStepCounter",
+      "params": {
+        "name": "",
+        "isPause": false
+      }
+    },
+    {
+      "category": "SensorAction",
+      "type": "Sensor",
+      "method": "SaveStepCounter",
+      "params": {
+        "name": "",
+        "servicename": "",
+        "table": "",
+        "dateField": "",
+        "countField": ""
+      }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "Alert",
+      "params": {
+        "Style": "Default",
+        "Title": "",
+        "message": "",
+        "cancelTitle": "",
+        "position": "center"
+      },
+      "actions": { "onTapOk": [], "onTapCancel": [] }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "ActionSheet",
+      "params": {
+        "style": "Default",
+        "Title": "",
+        "cancelTitle": "",
+        "destructiveButtonTitle": "",
+        "otherBtnTitles": [
+          { "id": "ButtonName-0", "title": "", "actions": { "clicked": [] } }
+        ]
+      },
+      "actions": { "buttonActionList": [] }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "StartWaitIndicator",
+      "params": {
+        "timeout": 0,
+        "type": "Default",
+        "indicator": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": "",
+          "imageName": "",
+          "author": "",
+          "copyright": ""
+        },
+        "message": ""
+      }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "StopWaitIndicator",
+      "params": {}
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "ShowDialog",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "HideDialog",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "SnackBar",
+      "params": {
+        "Style": "Default",
+        "position": "bottom",
+        "message": "",
+        "showClose": true,
+        "autoHide": false,
+        "autoHideDuration": 5000,
+        "isModal": false
+      }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "Nudge",
+      "params": {
+        "targetPage": "",
+        "name": "",
+        "message": "",
+        "showClose": true,
+        "autoHide": true,
+        "autoHideDuration": 5000,
+        "isModal": false,
+        "bgColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "textColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        }
+      }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "ShowDrawer",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "AlertAction",
+      "type": "Warning",
+      "method": "HideDrawer",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "ContactAction",
+      "type": "Contact",
+      "method": "CallContact",
+      "params": {
+        "phonenumber": ""
+      }
+    },
+    {
+      "category": "ContactAction",
+      "type": "Contact",
+      "method": "SelectPerson",
+      "params": {
+        "multiple": false
+      },
+      "actions": { "detectRecords": [] }
+    },
+    {
+      "category": "ContactAction",
+      "type": "Contact",
+      "method": "InsertPerson",
+      "params": {
+        "service": "device",
+        "groupName": "",
+        "firstName": "",
+        "familyName": "",
+        "phoneticlname": "",
+        "phoneticfname": "",
+        "nickName": "",
+        "phoneNumber": "",
+        "workPhone": "",
+        "homePhone": "",
+        "email": "",
+        "companyName": "",
+        "street": "",
+        "city": "",
+        "state": "",
+        "postalCode": "",
+        "country": ""
+      }
+    },
+
+    {
+      "category": "EmailAction",
+      "type": "Email",
+      "method": "canSendEmail",
+      "params": {}
+    },
+    {
+      "category": "EmailAction",
+      "type": "Email",
+      "method": "openMessageEditor",
+      "params": {
+        "subject": "",
+        "messageBody": "",
+        "toRecipientsList": [{ "EmailRecipient": "" }],
+        "ccRecipientsList": [{ "EmailRecipient": "" }],
+        "bccRecipientsList": [{ "EmailRecipient": "" }],
+        "toRecipients": [],
+        "ccRecipients": [],
+        "bccRecipients": []
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "CallExternalApp",
+      "params": {
+        "name": "",
+        "command": "",
+        "target": "default",
+        "encryptparam": false
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "NetworkAvailable",
+      "params": {
+        "targetURL": ""
+      },
+      "actions": {
+        "networkLevel1": [],
+        "networkLevel2": [],
+        "networkLevel3": [],
+        "networkLevel4": []
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "Loop",
+      "params": {
+        "initialList": [{ "key": "", "value": "" }],
+        "initial": {},
+        "nextList": [{ "key": "", "value": "" }],
+        "next": {},
+        "where": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "CallCustomAction",
+      "params": {
+        "actionname": "",
+        "parameterList": [{ "key": "", "value": "" }],
+        "parameter": {}
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "UploadFiletoFolder",
+      "params": {
+        "targetPage": "",
+        "target": "mongo",
+        "name": "",
+        "path": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "IdleTimeOut",
+      "params": {
+        "timeout": 0,
+        "showalert": false
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "UpdateAppVariables",
+      "params": {
+        "key": "",
+        "value": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "GetIPAddress",
+      "params": {}
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "GenerateDeviceId",
+      "params": {
+        "salt": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "GenerateAccessToken",
+      "params": {
+        "provider": "AAD",
+        "tenantid": "",
+        "clientid": "",
+        "clientsecret": "",
+        "redirecturi": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "RemoveAccessToken",
+      "params": {
+        "provider": "AAD",
+        "tenantid": "",
+        "clientid": "",
+        "redirecturi": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "InsertURLParams",
+      "params": {
+        "servicename": "",
+        "table": "",
+        "resultFields": []
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "SpeechRecognition",
+      "params": {
+        "targetUI": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "SetAppLocale",
+      "params": {
+        "locale": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "ClearTabData",
+      "params": {
+        "allTabs": true,
+        "tabPageid": ""
+      }
+    },
+    {
+      "category": "SystemControlAction",
+      "type": "SystemControl",
+      "method": "PayViaPaytm",
+      "params": {
+        "orderId": "",
+        "merchantId": "",
+        "customerId": "",
+        "industrytypeId": "Retail",
+        "website": "",
+        "txnamount": "",
+        "email": "",
+        "mobileno": "",
+        "checksumGenerator": "",
+        "checksumVerifier": ""
+      }
+    },
+    {
+      "category": "SendPushNotificationAction",
+      "type": "SendPushNotification",
+      "method": "RegisterUsersForPushNotification",
+      "params": {
+        "userid": "",
+        "clientid": "",
+        "group": ""
+      }
+    },
+    {
+      "category": "SendPushNotificationAction",
+      "type": "SendPushNotification",
+      "method": "UnregisterFromPushNotification",
+      "params": {
+        "clientid": "",
+        "userid": "",
+        "group": ""
+      }
+    },
+    {
+      "category": "SendPushNotificationAction",
+      "type": "SendPushNotification",
+      "method": "SendPushMessage",
+      "params": {
+        "userid": "",
+        "messageText": ""
+      },
+      "actions": { "noUser": [] }
+    },
+    {
+      "category": "LogsAnalyticsAction",
+      "type": "LogsAnalytics",
+      "method": "StartLogs",
+      "params": {
+        "provider": "Google Analytics",
+        "eventname": "module_visit",
+        "name": ""
+      }
+    },
+    {
+      "category": "LogsAnalyticsAction",
+      "type": "LogsAnalytics",
+      "method": "StopLogs",
+      "params": {
+        "provider": "Google Analytics",
+        "eventname": "module_visit",
+        "name": ""
+      }
+    },
+    {
+      "category": "LogsAnalyticsAction",
+      "type": "LogsAnalytics",
+      "method": "GetAnalyticsReport",
+      "params": {
+        "provider": "Google",
+        "startdate": "",
+        "enddate": "",
+        "dimensions": "",
+        "dimensionsfilter": "",
+        "dimensionsorder": "",
+        "metrics": "",
+        "metricaggregate": ""
+      },
+      "actions": { "detectRecords": [] }
+    },
+    {
+      "category": "LogsAnalyticsAction",
+      "type": "LogsAnalytics",
+      "method": "GenerateAnalyticsReport",
+      "params": {
+        "provider": "Google",
+        "startdate": "",
+        "enddate": "",
+        "dimensions": "",
+        "dimensionsfilter": "",
+        "dimensionsorder": "",
+        "metrics": "",
+        "metricaggregate": "",
+        "filename": ""
+      }
+    },
+    {
+      "category": "IoTAction",
+      "type": "IoT",
+      "method": "StartScan",
+      "params": {
+        "name": "",
+        "deffile": "",
+        "refresh_timer": 30
+      },
+      "actions": { "onDetectDevice": [] }
+    },
+    {
+      "category": "IoTAction",
+      "type": "IoT",
+      "method": "StopScan",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "IoTAction",
+      "type": "IoT",
+      "method": "Connect",
+      "params": {
+        "name": "",
+        "deviceid": ""
+      }
+    },
+    {
+      "category": "IoTAction",
+      "type": "IoT",
+      "method": "Disconnect",
+      "params": {
+        "name": "",
+        "deviceid": ""
+      }
+    },
+    {
+      "category": "IoTAction",
+      "type": "IoT",
+      "method": "Advertizing",
+      "params": {}
+    },
+    {
+      "category": "GadgetAction",
+      "type": "Gadget",
+      "method": "ShowGadget",
+      "params": {
+        "name": ""
+      }
+    },
+    {
+      "category": "GadgetAction",
+      "type": "Gadget",
+      "method": "HideGadget",
+      "params": {
+        "name": ""
+      }
+    }
+  ]
+}

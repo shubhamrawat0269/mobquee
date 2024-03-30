@@ -1,0 +1,16 @@
+.list-item-container {
+    max-height: 3.2rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, .825);
+    background-color: var(--drawer-clr);
+    padding: 0 0.4rem;
+}
+
+.list-item-txt {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.dense-list-item {
+    max-height: 3.2rem;
+    padding: 0 1.5rem;
+}

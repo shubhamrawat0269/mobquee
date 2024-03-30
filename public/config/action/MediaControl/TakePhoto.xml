@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="TakePhoto" category="MediaAction" type="Library" method="TakePhoto"
+		helpLink_EN="/take_photo3.htm" helpLink_JP="/act.htm#_写真撮影">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.name" input="spark.components.DropDownList" >
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@base:getTargetCameraUIParts(@page:pageid, @form[base.currentSettings]:value)}" labelField="uiname" valueField="uiname"/>
+			</property>
+			<property path="params.library" input="spark.components.DropDownList">
+			  	<validations><validation validator="RequiredValueValidator"/></validations>
+			  	<dataSource labelField="name" valueField="name">
+					<data name="Local" value ="0" toolTip="No support for MW"/>
+					<data name="Gallery" value ="0" toolTip="No support for MW"/>
+					<data name="RemoteDB" value ="0" toolTip=""/>
+				</dataSource>
+			</property>
+			<property path="params.photoquality" input="spark.components.DropDownList">
+			  	<dataSource>
+					<data name="low"/>
+					<data name="medium"/>
+					<data name="high"/>
+				</dataSource>
+			</property>
+			
+			<property path="params.showWatermark" dataType="Boolean" input="spark.components.CheckBox" init="0" >
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[params.showWatermark]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[params.watermarkPosition]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkType]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkText]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkTextColor]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.srcLocation]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.url]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.filename]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImageWidth]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImageHeight]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkPosition]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[params.watermarkType]:}" method="folded" value="false" caseOf="false"/>
+						<action method="dependentConditions" caseOf="false">
+							<when condition="compare" compareTarget="{@form[params.watermarkType]:value}" compareBy="EQ" compareWith="text" at="initForm, postCommit">
+								<action target="{@form[params.watermarkText]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[params.watermarkTextColor]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[params.watermarkImage.srcLocation]:}" method="folded" value="true" caseOf="true"/>
+								<action target="{@form[params.watermarkImage]:}" method="folded" value="true" caseOf="true"/>
+								<action target="{@form[params.watermarkImage.url]:}" method="folded" value="true" caseOf="true"/>
+								<action target="{@form[params.watermarkImage.filename]:}" method="folded" value="true" caseOf="true"/>
+	 							<action target="{@form[params.watermarkImageWidth]:}" method="folded" value="true" caseOf="true"/>
+	 							<action target="{@form[params.watermarkImageHeight]:}" method="folded" value="true" caseOf="true"/>
+							</when>
+						</action>
+						<action method="dependentConditions" caseOf="false">
+							<when condition="compare" compareTarget="{@form[params.watermarkType]:value}" compareBy="EQ" compareWith="image" at="initForm, postCommit">
+								<action target="{@form[params.watermarkText]:}" method="folded" value="true" caseOf="true"/>
+								<action target="{@form[params.watermarkTextColor]:}" method="folded" value="true" caseOf="true"/>
+								<action target="{@form[params.watermarkImage.srcLocation]:}" method="folded" value="false" caseOf="true"/>
+								<action method="dependentConditions" caseOf="true">
+									<when condition="compare" compareTarget="{@form[params.watermarkImage.srcLocation]:value}" compareBy="EQ" compareWith="bundle" at="initForm, postCommit">
+										<action target="{@form[params.watermarkImage]:}" method="folded" value="false" caseOf="true"/>
+										<action target="{@form[params.watermarkImage]:}" method="folded" value="true" caseOf="false"/>
+									</when>
+								</action>
+	 							<action target="{@form[params.watermarkImageWidth]:}" method="folded" value="false" caseOf="true"/>
+	 							<action target="{@form[params.watermarkImageHeight]:}" method="folded" value="false" caseOf="true"/>
+							</when>
+						</action>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="params.watermarkPosition" input="spark.components.DropDownList">
+			  	<dataSource>
+					<data name="Top-Left"/>
+					<data name="Top-Center"/>
+					<data name="Top-Right"/>
+					<data name="Bottom-Left"/>
+					<data name="Bottom-Center"/>
+					<data name="Bottom-Right"/>
+				</dataSource>
+			</property>
+			<property path="params.watermarkType" input="spark.components.DropDownList">
+			  	<dataSource>
+					<data name="text"/>
+					<data name="image"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[params.watermarkType]:value}" compareBy="NE" compareWith="text" at="postCommit">						
+						<action target="{@form[params.watermarkText]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkText]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[params.watermarkTextColor]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkTextColor]:}" method="folded" value="false" caseOf="false"/>
+						
+						<action target="{@form[params.watermarkImage.srcLocation]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.srcLocation]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[params.watermarkImage]:}" method="folded" value="true" caseOf="false"/>
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[params.watermarkImage.srcLocation]:value}" compareBy="EQ" compareWith="bundle" at="initForm, postCommit">
+								<action target="{@form[params.watermarkImage]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[params.watermarkImage]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+						<action target="{@form[params.watermarkImageWidth]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.watermarkImageWidth]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[params.watermarkImageHeight]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.watermarkImageHeight]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="params.watermarkText" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.watermarkTextColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			
+			<property path="params.watermarkImage.srcLocation" dataType="array" input="spark.components.DropDownList" init="bundle">
+				<dataSource>
+					<data name="bundle"/>
+					<data name="remoteFile"/>
+					<data name="url"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[params.watermarkImage.srcLocation]:value}" compareBy="EQ" compareWith="bundle" at="initForm, postCommit">
+						<action target="{@form[params.watermarkImage]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.filename]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.url]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[params.watermarkImage.srcLocation]:value}" compareBy="EQ" compareWith="url" at="initForm, postCommit">
+						<action target="{@form[params.watermarkImage.url]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.watermarkImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.filename]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[params.watermarkImage.srcLocation]:value}" compareBy="EQ" compareWith="remoteFile" at="initForm, postCommit">
+						<action target="{@form[params.watermarkImage.filename]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.watermarkImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.watermarkImage.url]:}" method="folded" value="true" caseOf="true"/>
+					</when>			
+				</dependentActions>
+			</property>
+			<property path="params.watermarkImage" input="TextInputWithButton"/>
+			<property path="params.watermarkImage.url" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.watermarkImage.filename" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			
+			<property path="params.watermarkImageWidth" input="spark.components.NumericStepper" min="10" max="50" init="20"/>
+			<property path="params.watermarkImageHeight" input="spark.components.NumericStepper" min="10" max="50" init="20"/>
+		</type>
+		
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="Segment" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.Segment.SegmentView" visible="true" visibleInTableView="true" imagePath="assets/toolbox/ico_segment.png" description="Here is the label description"
+		helpLink_EN="/segment_button.htm" helpLink_JP="/sheet002.htm#RANGE!A850">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="segmentedControlStyle" dataType="array" input="spark.components.DropDownList" init="Plain" copyable="true">
+			   <dataSource>
+		    	  <data name="Plain"/>
+				  <data name="Bezeled"/>
+			   </dataSource>
+			</property>
+			<property path="segmentInitialValue" input="spark.components.TextInput" copyable="true">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Style" @stopCommit="true">
+			<property path="tintColor" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="borderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="borderColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="segmentItems[0].font.textColor" input="mx.controls.ColorPicker" copyable="true"/>
+		</type>	
+		<type name="Items" @stopCommit="true">				
+			<property formKey="segmentItems" path="segmentItems" input="spark.components.List" itemClass="com.mobilous.builder.client.lib.adf.uiparts.SegmentItemDic" labelField="text" copyable="true">
+			     <dependentActions>
+					<when at="initForm, postIndexChange">
+						<action target="{@form[segmentItems[*].type]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].type}" chainedEvent="change"/>
+						<action target="{@form[segmentItems[*].type]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].type&quot;}"/>
+						<action target="{@form[segmentItems[*].imageDic]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].imageDic}"/>
+						<action target="{@form[segmentItems[*].imageDic]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].imageDic&quot;}"/>
+						<action target="{@form[segmentItems[*].text]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].text}"/>
+						<action target="{@form[segmentItems[*].text]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].text&quot;}"/>
+						<action target="{@form[segmentItems[*].font.fontName]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].font.fontName}"/>
+						<action target="{@form[segmentItems[*].font.fontName]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].font.fontName&quot;}"/>
+						<action target="{@form[segmentItems[*].font.fontSize]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].font.fontSize}"/>
+						<action target="{@form[segmentItems[*].font.fontSize]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].font.fontSize&quot;}"/>
+						<action target="{@form[segmentItems[*].onTapTintColor]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].onTapTintColor}"/>
+						<action target="{@form[segmentItems[*].onTapTintColor]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].onTapTintColor&quot;}"/>
+						<action target="{@form[segmentItems[*].onTapTextColor]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].onTapTextColor}"/>
+						<action target="{@form[segmentItems[*].onTapTextColor]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].onTapTextColor&quot;}"/>
+						<action target="{@form[segmentItems[*].actions.clicked]:}" method="setValue" value="{@base:segmentItems[@form[segmentItems]:selectedIndex].actions.clicked}"/>
+						<action target="{@form[segmentItems[*].actions.clicked]:}" method="setPath" value="{&quot;segmentItems[&quot; + @form[segmentItems]:selectedIndex + &quot;].actions.clicked&quot;}"/>
+			       </when>
+			    </dependentActions>
+			</property>
+			<property formKey="segmentItems[*].type" path="segmentItems[*].type" input="spark.components.DropDownList" copyable="true" >
+				<dataSource>
+					<data name="TextItem"/>
+         			<data name="ImageItem"/>
+	    		</dataSource>
+			    <dependentActions>
+			        <when condition="compare" compareTarget="{@form[segmentItems[*].type]:value}" compareBy="EQ" compareWith="TextItem" at="initForm, postCommit">
+			            <action target="{@form[segmentItems[*].imageDic]:}" method="folded" value="true" caseOf="true"/>
+		            	<action target="{@form[segmentItems[*].imageDic]:}" method="folded" value="false" caseOf="false"/>
+			            <action target="{@form[segmentItems[*].text]:}" method="folded" value="false" caseOf="true"/>
+			            <action target="{@form[segmentItems[*].text]:}" method="folded" value="true" caseOf="false"/>
+			            <action target="{@form[segmentItems[*].font.fontName]:}" method="folded" value="false" caseOf="true"/>
+			            <action target="{@form[segmentItems[*].font.fontName]:}" method="folded" value="true" caseOf="false"/>			      
+			            <action target="{@form[segmentItems[*].font.fontSize]:}" method="folded" value="false" caseOf="true"/>
+			            <action target="{@form[segmentItems[*].font.fontSize]:}" method="folded" value="true" caseOf="false"/>
+			            <action target="{@form[segmentItems[*].onTapTextColor]:}" method="folded" value="false" caseOf="true"/>
+			            <action target="{@form[segmentItems[*].onTapTextColor]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[segmentItems[*].onTapTintColor]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[segmentItems[*].onTapTintColor]:}" method="folded" value="true" caseOf="false"/> 
+			        </when>
+			    </dependentActions>
+			</property>
+			<property formKey="segmentItems[*].imageDic" path="segmentItems[*].imageDic" dataType="ImageFileDic" input="TextInputWithButton" copyable="true" />
+			<property formKey="segmentItems[*].text" path="segmentItems[*].text" input="spark.components.TextInput" copyable="true"/>
+			<property formKey="segmentItems[*].font.fontName" path="segmentItems[*].font.fontName" input="spark.components.DropDownList" dataType="array" init="system" copyable="true">
+				<dataSource source="{@base:getFontNames()}" />
+			</property> 					
+			<property formKey="segmentItems[*].font.fontSize" path="segmentItems[*].font.fontSize" dataType="Numeric" input="spark.components.NumericStepper" min="6" max="300" inc="1" init="12" copyable="true" />
+			<property formKey="segmentItems[*].onTapTextColor" path="segmentItems[*].onTapTextColor" input="mx.controls.ColorPicker" />
+			<property formKey="segmentItems[*].onTapTintColor" path="segmentItems[*].onTapTintColor" input="mx.controls.ColorPicker"/> 
+			<property formKey="segmentItems[*].actions.clicked" path="segmentItems[*].actions.clicked" input="LabelWithButton"/>
+		</type>
+
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="10" max="10000" init="88" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="5" max="10000" init="44" copyable="true"/>
+			<property path="frame.rotation" input="spark.components.NumericStepper" min="0" max="360" inc="5" copyable="true"/>
+		</type> 
+	</properties>
+</item>

@@ -1,0 +1,51 @@
+.frm-section {
+    border-style: solid;
+    position: absolute;
+    left: 0;
+}
+
+.frm-header-section {
+    width: 100%;
+    display: table;
+}
+
+.frm-header-txt {
+    text-align: start;
+    padding-left: 1rem;
+    padding-right: 7rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+    line-height: 1;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.frm-item-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden auto;
+}
+
+.frm-item-required {
+    width: 2rem;
+    height: 3.2rem;
+    line-height: 1.3;
+    margin-left: 0.5rem;
+    color: red;
+    font-size: 3.2rem;
+}
+
+.frm-item-label {
+    width: inherit;
+    height: inherit;
+    line-height: 1;
+    margin-left: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    text-align: start;
+}

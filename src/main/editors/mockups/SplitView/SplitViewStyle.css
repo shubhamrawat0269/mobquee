@@ -1,0 +1,20 @@
+.split-view {
+    flex-grow: 1;
+    width: inherit;
+    height: inherit;
+    padding: absolute;
+    overflow: auto;
+}
+
+.split-inner-container {
+    position: absolute;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.splt-inner-frame {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

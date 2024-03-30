@@ -1,0 +1,54 @@
+.save-app-editor-msg {
+    /* textAlign: "start",
+    margin: theme.spacing(0.5),
+    padding: theme.spacing(1.5, 1),
+    color: theme.palette.common.black,
+    border: "2px solid rgb(227,0,0)",
+    borderRadius: 8,
+    whiteSpace: "pre-wrap", */
+    margin: 0.5rem;
+    padding: 1.25rem;
+    color: black;
+    border: none;
+    border-radius: 0.35rem;
+}
+
+.save-app-editor-section {
+    /* width: 400,
+    borderRadius: 8,
+    textAlign: "center", */
+
+    width: 20rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.save-app-editor-title {
+    /* textAlign: "start",
+    margin: theme.spacing(0.5),
+    padding: theme.spacing(1.5, 1),
+    color: theme.palette.common.white,
+    backgroundColor: theme.palette.grey[600],
+    border: "2px solid rgb(227,227,227)",
+    borderRadius: 8, */
+
+    padding: 0.15rem;
+    color: #FFF;
+    background-color: var(--bg-clr);
+}
+
+
+.notify-btn-section {
+    text-align: center;
+}
+
+.notify-btn {
+    background-color: #5C469C;
+    color: #FFF;
+    border: none;
+    border-radius: 0.35rem;
+    margin: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

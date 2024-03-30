@@ -1,0 +1,14 @@
+.text-area-frm-section {
+  position: relative;
+  height: 100%;
+  width: 12.5rem;
+  font-size: 1.35rem !important;
+  background-color: #FFF;
+  border: 0.1rem solid #ced4da;
+  border-radius: 0.45rem;
+  padding: 0.3rem 0.8rem;
+}
+
+.text-area-frm-section:focus {
+  box-shadow: 0 0 0 0.1rem;
+}

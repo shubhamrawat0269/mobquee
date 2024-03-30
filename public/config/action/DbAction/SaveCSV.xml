@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="saveCSV" category="DbAction" type="DataBase" method="saveCSV">
+	<properties>
+		<type name="parameters" input="None">	
+			<property path="params.table" input="spark.components.DropDownList">
+			     <dataSource source="{@project:getDbTableDicsByServiceName()}" labelField="tablename" valueField="tablename"/>
+			</property>
+			<property path="params.where" input="spark.components.TextInput"/>				
+			<property path="params.toFile" input="TextInputWithButton"/>		
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

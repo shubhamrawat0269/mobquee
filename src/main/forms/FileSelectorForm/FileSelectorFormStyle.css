@@ -1,0 +1,88 @@
+.file-selector-box {
+    width: 66rem;
+    height: 40rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    border: 0.2rem solid rgb(227, 227, 227);
+    border-radius: 0.8rem;
+}
+
+.file-selector-file-list {
+    width: 22.4rem;
+    padding: 0.8rem;
+    overflow: auto;
+}
+
+.file-selector-clear-item {
+    height: 2.8rem;
+    border: 0.1rem solid rgb(227, 227, 227);
+    border-radius: 0.4rem;
+}
+
+.file-selector-file-item {
+    height: 2.8rem;
+}
+
+.file-selector-viewer {
+    width: 40rem;
+    padding: 0.8rem;
+    border-left: 0.1rem solid rgb(227, 227, 227);
+    background-color: rgba(227, 227, 227, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-selector-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.file-selector-aspect {
+    height: 100%;
+    max-width: 36rem;
+    object-fit: scale-down;
+}
+
+.file-selector-infobox {
+    position: absolute;
+    top: 6rem;
+    width: 40rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+}
+
+.file-selector-info-txt {
+    text-align: start;
+    margin: 0.1rem;
+    padding: 0.35rem;
+    color: #FFF;
+    background-color: var(--drawer-clr);
+    border: 0.2rem solid rgb(227, 227, 227);
+    border-radius: 0.8rem;
+}
+
+.file-selector-icon-btn {
+    padding: 0.5rem;
+}
+
+.file-selector-txt-input {
+    position: relative;
+    width: 10rem;
+    height: 2.2rem;
+    font-size: 1.45rem;
+    padding: 0 0.8rem;
+    background-color: #FFF;
+    border: 0.1rem solid #ced4da;
+    border-radius: 0.4rem;
+}
+
+.file-selector-txt-input:focus {
+    /* "&:focus": {
+      boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.1rem`,
+      borderColor: theme.palette.primary.main,
+    }, */
+}

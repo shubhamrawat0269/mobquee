@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="DatePicker" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.DatePicker.DatePickerView" visible="true" imagePath="assets/toolbox/ico_pickerdate.png" description="Here is the label description"
+		helpLink_EN="/date_picker2.htm" helpLink_JP="/sheet002.htm#RANGE!A1250">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="fieldname" input="spark.components.DropDownList123">
+				<dataSource source="@dbTable:fieldswithBracket" labelField="fieldname" />
+				<dependentActions>
+					<when condition="compare" compareTarget="@dbTable:" compareBy="IS_NULL_OR_EMPTY" at="initForm" @stopCommit="true">
+						<action target="{@form[fieldname]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[fieldname]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[fieldname]:}" method="setOptions" value="@dbTable:fieldswithBracket" labelField="fieldname" caseOf="false"/> 
+					</when>
+					<when condition="compare" compareTarget="{@form[fieldname]:value}" compareBy="IS_NULL_OR_EMPTY" at="postCommit">
+						<action target="{@form[currentDate]:}" method="setValue" value="{@form[fieldname]:value}" chainedEvent="change" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			
+			<property path="mode" input="spark.components.DropDownList" dataType="array" init="Date" copyable="true"> 
+				<dataSource>
+					<data name="Date" />
+					<data name="Time" />
+					<data name="DateAndTime" />
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[mode]:value}" compareBy="EQ" compareWith="Date" at="initForm, postCommit">
+						<action target="{@form[currentDate]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[currentTime]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[currentDateTime]:}" method="folded" value="true" caseOf="true"/>	
+						<action target="{@form[timeFormat]:}" method="folded" value="true" caseOf="true"/>					
+					</when>										
+    		        <when condition="compare" compareTarget="{@form[mode]:value}" compareBy="EQ" compareWith="Time" at="initForm, postCommit">
+    		        	<action target="{@form[currentTime]:}" method="folded" value="false" caseOf="true"/>
+			            <action target="{@form[currentDate]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[currentDateTime]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[timeFormat]:}" method="folded" value="false" caseOf="true"/>
+			        </when>
+	 		        <when condition="compare" compareTarget="{@form[mode]:value}" compareBy="EQ" compareWith="DateAndTime" at="initForm, postCommit">
+						<action target="{@form[currentDateTime]:}" method="folded" value="false" caseOf="true"/>
+			            <action target="{@form[currentTime]:}" method="folded" value="true" caseOf="true"/>
+			            <action target="{@form[currentDate]:}" method="folded" value="true" caseOf="true"/>
+			            <action target="{@form[timeFormat]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+			    </dependentActions>
+			</property>
+			<property path="timeFormat" input="spark.components.DropDownList" dataType="array" init="24 Hour" copyable="true">
+				<dataSource>
+					<data name="12 Hour"/>
+					<data name="24 Hour"/>
+				</dataSource>
+			</property>
+			<property path="currentDate" input="DateFieldEditor" copyable="true" mode="Date"/>
+			<property formKey="currentTime" path="currentDate" input="DateFieldEditor" copyable="true" mode="Time"/>
+			<property formKey="currentDateTime" path="currentDate" input="DateFieldEditor" copyable="true" mode="DateAndTime"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Actions">
+			<property path="actions.valueChanged" input="LabelWithButton" />
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="9999" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="9999" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="260" max="9999" init="260" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="160" max="216" init="160" copyable="true"/>
+		</type> 
+	</properties>
+</item>

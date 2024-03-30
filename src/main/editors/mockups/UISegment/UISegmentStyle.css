@@ -1,0 +1,23 @@
+.ui-segment {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    overflow: auto hidden;
+}
+
+.ui-segment-item-layout {
+    min-width: 3rem;
+    min-height: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 0.2rem;
+    text-transform: none;
+}
+
+.ui-img-item {
+    min-width: 1rem;
+    min-height: 1rem;
+    background-size: cover;
+    background-position: center;
+}

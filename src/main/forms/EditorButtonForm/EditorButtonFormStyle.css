@@ -1,0 +1,33 @@
+.editor-btn-section {
+    width: 7rem;
+}
+
+.editor-badge {
+    width: 7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-evenly;
+    background: var(--action-btn);
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.15rem;
+    cursor: pointer;
+}
+
+.editor-btn-context {
+    width: 7rem;
+}
+
+.editor-badge h4 {
+    color: var(--scroll-clr);
+}
+
+.editor-chip {
+    background-color: var(--btn-bg-clr);
+    padding: 0.3rem;
+    width: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}

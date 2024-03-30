@@ -1,0 +1,8 @@
+.calendar-layout {
+  pointer-events: none;
+  border-style: solid;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}

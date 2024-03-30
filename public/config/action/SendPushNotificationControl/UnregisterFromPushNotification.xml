@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="UnregisterFromPushNotification" category="SendPushNotificationAction" type="SendPushNotification" method="UnregisterFromPushNotification"
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="parameters" input="None">			
+			<property path="params.clientid" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.userid" input="spark.components.TextInput" >
+			</property>	
+			<property path="params.group" input="spark.components.TextInput"/>
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>
+

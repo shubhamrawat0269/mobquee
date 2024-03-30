@@ -1,0 +1,421 @@
+@font-face {
+  font-family: myFont;
+  src: url("/fonts/Poppins-Bold.ttf");
+}
+
+
+/*
+++++++++++++++++++++   
+===========  theme used & theme -> dark and light  ================== 
+++++++++++++++++++++  
+*/
+
+:root {
+  --txt-clr: #000;
+  --para-color: #333;
+  --heading: #000;
+  --brdr-clr: #000;
+  --icon-bg: #5f5d5d;
+  --btn-bg-clr: #09146b;
+  --btn-txt-clr: #FFF;
+  --resizer-clr: #4286f4;
+  --hover-bg-clr: #e6e4e1;
+  --bg-clr: #F8F4F4;
+  --drawer-clr: #e4e4e4;
+  --modal-clr: #e4e4e4;
+  --container-clr: #FFF;
+  --tab-clr: #F8F4F4;
+  --tab-brder: silver;
+  --tab-bg: #F8F4F4;
+  --box-shadow-clr: #e4e4e4;
+  --pallete-bg-clr: #717572;
+  --pallete-txt-clr: #FFF;
+  --manage-page-btn: #5C469C;
+  --manage-page-txt-btn: #FFF;
+  --file-bg-clr: #05b53d;
+  --ic-clr: #000;
+  --swap-clr: #65bc45;
+  --tool-hover-bg-clr: #05b53d;
+  --white-txt-clr: #FFF;
+  --toolbar-bg-clr: #c0bcbc;
+  --menu-bg-clr: #c0bcbc;
+  --menu-tab-clr: #c0bcbc;
+  --toolbar-text-clr: #000;
+  --editor-brdr-clr: #000;
+  --editor-tab-heading: #000;
+  --setting-bg-clr: #F8F4F4;
+  --setting-bg-inner-bg-clr: #F8F4F4;
+  --setting-bg-txt-clr: #000;
+  --scroll-clr: #5f5d5d;
+  --shortcut-menu-clr: #c0bcbc;
+  --action-btn: #c0bcbc;
+  --check-btn: #5f5d5d;
+  --modal-bg: #c0bcbc;
+}
+
+.dark-theme {
+  --txt-clr: #FFF;
+  --para-color: #333;
+  --heading: #000;
+  --brdr-clr: #000;
+  --icon-bg: #23c4c1;
+  --btn-bg-clr: #23c4c1;
+  --resizer-clr: #4286f4;
+  --btn-txt-clr: #FFF;
+  --tab-bg: #001316;
+  --bg-clr: #001316;
+  --drawer-clr: #23c4c1;
+  --menu-tab-clr: #001316;
+  --tab-clr: #F8F4F4;
+  --tab-brder: #347365;
+  --hover-bg-clr: #e6e4e1;
+  --modal-clr: #5C469C;
+  --container-clr: #FFF;
+  --toolbar-bg-clr: #08343C;
+  --toolbar-text-clr: #FFF;
+  --box-shadow-clr: #e4e4e4;
+  --menu-bg-clr: #08343C;
+  --pallete-bg-clr: #001316;
+  --pallete-txt-clr: #FFF;
+  --action-btn: #08343C;
+  --editor-brdr-clr: #02515f;
+  --editor-tab-heading: #FFF;
+  --swap-clr: #65bc45;
+  --tool-hover-bg-clr: #05b53d;
+  --white-txt-clr: #FFF;
+  --manage-page-btn: #5C469C;
+  --manage-page-txt-btn: #FFF;
+  --file-bg-clr: #05b53d;
+  --ic-clr: #FFF;
+  --setting-tab-clr: #c0bcbc;
+  --setting-bg-clr: #08343C;
+  --setting-bg-inner-bg-clr: #02515f;
+  --setting-bg-txt-clr: silver;
+  --scroll-clr: #13a7c2;
+  --shortcut-menu-clr: #13a7c2;
+  --check-btn: #FFF;
+  --tool-header: #FFF;
+  --modal-bg: #02515f;
+}
+
+.light-theme {
+  --txt-clr: #000;
+  --para-color: #333;
+  --heading: #000;
+  --brdr-clr: #000;
+  --tab-bg: #F8F4F4;
+  --setting-bg-inner-bg-clr: ##F8F4F4;
+  --editor-tab-heading: #000;
+
+  --icon-bg: #5f5d5d;
+  --btn-bg-clr: #09146b;
+  --resizer-clr: #4286f4;
+  --menu-tab-clr: #c0bcbc;
+  --btn-txt-clr: #FFF;
+  --drawer-clr: #e4e4e4;
+  --tab-clr: #F8F4F4;
+  --container-clr: #FFF;
+  --tab-brder: silver;
+  --hover-bg-clr: #e6e4e1;
+  --bg-clr: #F8F4F4;
+  --modal-clr: #e4e4e4;
+  --editor-brdr-clr: #000;
+  --box-shadow-clr: #e4e4e4;
+  --pallete-bg-clr: #717572;
+  --pallete-txt-clr: #FFF;
+  --toolbar-bg-clr: #c0bcbc;
+  --setting-tab-clr: #c0bcbc;
+  --setting-bg-clr: #F8F4F4;
+  --toolbar-text-clr: #000;
+  --manage-page-btn: #5C469C;
+  --manage-page-txt-btn: #FFF;
+  --txt-clr: #000;
+  --menu-bg-clr: #c0bcbc;
+  --file-bg-clr: #05b53d;
+  --scroll-clr: #5f5d5d;
+  --swap-clr: #65bc45;
+  --tool-hover-bg-clr: #05b53d;
+  --white-txt-clr: #FFF;
+  --ic-clr: #000;
+  --setting-bg-txt-clr: #000;
+  --shortcut-menu-clr: #c0bcbc;
+  --action-btn: #c0bcbc;
+  --check-btn: #5f5d5d;
+  --tool-header: #FFF;
+  --modal-bg: #FFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: myFont;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+  scrollbar-width: thin;
+}
+
+
+body {
+  overflow: hidden;
+  background-color: var(--bg-clr);
+  font-family: myFont;
+}
+
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-clr);
+  border-radius: 9px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #000;
+  border-radius: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: myFont;
+}
+
+h1 {
+  color: var(--heading);
+  font-size: 6rem;
+  font-weight: 200;
+}
+
+
+h2 {
+  font-size: 4.4rem;
+  font-weight: 300;
+  white-space: normal;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.3rem;
+  color: var(--heading);
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+p,
+button {
+  /* color add here */
+  font-size: 1.65rem;
+  line-height: 1.5;
+  font-weight: 400;
+  /* border: none;
+  box-shadow: 0 0 2px 1px silver; */
+}
+
+.error-notify {
+  color: #FFF;
+}
+
+.page-lst-section .Mui-selected,
+.list-frm-form-list .Mui-selected {
+  background-color: #65bc45 !important;
+  color: #FFF !important;
+}
+
+.react-resizable {
+  top: 0;
+  left: 0;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+select {
+  font-size: 1.35rem !important;
+}
+
+.text--clr {
+  color: var(--txt-clr);
+}
+
+/*
+++++++++++++++++++++   
+===========       Reusable code throughout PE     ================== 
+++++++++++++++++++++  
+*/
+.section {
+  padding: 0.75rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  place-items: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.grid-two-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-column {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.icon {
+  color: var(--ic-clr);
+  cursor: pointer;
+}
+
+.srch-icon {
+  color: #000;
+  cursor: pointer;
+}
+
+.menu-icon {
+  position: relative;
+  z-index: 20;
+}
+
+.commmon-butn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #09146b;
+}
+
+
+
+
+/* code by Akshay Sir  */
+
+
+input[id="numinput"] {
+  display: block;
+  float: left;
+  padding: 0;
+  margin: 0;
+  padding-left: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+input[id="numinput"]:focus {
+  outline: 0;
+  border: 1px solid #3f51b5;
+  box-shadow: rgba(63, 81, 181, 0.25) 0 0 0 0.1rem;
+}
+
+input[id="numinput"]::-webkit-inner-spin-button {
+  cursor: pointer;
+  height: 22px;
+  opacity: 1;
+}
+
+.ComboBox {
+  display: block;
+  float: left;
+  padding: 0;
+  margin: 0;
+  padding-left: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.ComboBox:focus {
+  outline: 0;
+  border: 1px solid #3f51b5;
+  box-shadow: rgba(63, 81, 181, 0.25) 0 0 0 0.1rem;
+}
+
+.ComboBox::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  /* magic! */
+}
+
+
+
+@media(max-width: 1920px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media(max-width: 1600px) {
+  html {
+    font-size: 73.5%;
+  }
+}
+
+@media(max-width: 1536px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media(max-width: 1440px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media(max-width: 1367px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media(max-width: 1280px) {
+  html {
+    font-size: 62.5%;
+  }
+}

@@ -1,0 +1,11 @@
+.ui-grid-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ui-grid-main-container {
+    width: inherit;
+    height: inherit;
+    border: 0.1rem solid #000;
+}

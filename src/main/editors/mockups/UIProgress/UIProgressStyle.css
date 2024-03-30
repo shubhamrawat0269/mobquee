@@ -1,0 +1,10 @@
+.progress-bar {
+    position: relative;
+}
+
+.circular-btn {
+    min-width: 12rem;
+    min-height: 0.8rem;
+    width: 100%;
+    height: 100%;
+}

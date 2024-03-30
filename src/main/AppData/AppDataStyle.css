@@ -1,0 +1,13 @@
+#appexe-main-section {
+    display: grid;
+    grid-template-rows: 5vh 95vh;
+}
+
+.error-notify-btn {
+    width: 5rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    color: rebeccapurple;
+}

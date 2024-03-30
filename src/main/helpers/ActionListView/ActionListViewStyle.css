@@ -1,0 +1,95 @@
+.action-list-container {
+    width: 100%;
+    height: 100%;
+    min-width: 43.2rem;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.action-list {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+    margin-top: 0.2rem;
+}
+
+.action-resize-section {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: rgb(211, 211, 211);
+}
+
+.action-list-size-badge {
+    top: 50%;
+    right: 2.45rem;
+    border: 0.1rem solid var(--tab-brder);
+}
+
+.action-subtraction-list {
+    width: 100%;
+    max-height: 2.4rem;
+    padding: 0;
+    border-radius: 0.1rem;
+}
+
+.action-view-item {
+    max-height: 2.4rem;
+    border-radius: 0.5rem !important;
+    margin-left: 0.5rem;
+    padding: 0.25rem !important;
+}
+
+.action-view-item h6 {
+    padding: 0.35rem;
+}
+
+.action-view-item:focus {
+    background-color: var(--spam-clr);
+    color: #FFF;
+}
+
+.main-action-section {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.action-plus-icon {
+    position: absolute;
+    top: 1.25rem;
+    left: 2.75rem;
+    color: white;
+    z-index: 1;
+    font-size: 1.5rem !important;
+}
+
+.action-list-badge {
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-evenly;
+    background: var(--action-btn);
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.15rem;
+    cursor: pointer;
+}
+
+.action-list-chip {
+    background-color: var(--btn-bg-clr);
+    padding: 0.2rem;
+    width: 1.85rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+#subactionitem {
+    height: 2.75rem;
+}

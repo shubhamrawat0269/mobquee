@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="RemoteDelete" category="ComAction" type="Comm" method="RemoteDelete"
+		helpLink_EN="/remote_delete2.htm" helpLink_JP="/act.htm#_リモート削除">
+	<properties>
+		<type name="parameters" input="None">			
+			<property path="params.servicename" input="spark.components.DropDownList">
+			    <dataSource source="{@project:getServices(remote)}" labelField="label" valueField="value"/>
+				<dependentActions>
+					<when at="initForm,postCommit" stopCommit="true">
+						<action target="{@form[params.table]:}" method="setOptions" value="{@project:getDbTableDics_notViews_ByServiceName(@form[params.servicename]:value)}" labelField="tablename" valueField="tablename"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property path="params.table" input="spark.components.DropDownList">
+			    <validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getDbTableDics_notViews_ByServiceName(@base:params.servicename)}"  labelField="tablename" valueField="tablename"/>				
+			</property>
+			<property path="params.where" input="spark.components.TextInput">
+			    <validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+		</type>
+		
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

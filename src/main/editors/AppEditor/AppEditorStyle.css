@@ -1,0 +1,616 @@
+#page-explorer-section {
+    width: 100%;
+    /* height: 100%; */
+    color: var(--heading);
+}
+
+#app-edit-section {
+    display: grid;
+    grid-template-columns: 11.75vw 88.25vw;
+    /* transition: all 0.5s linear; */
+    height: 95vh;
+    background-color: #FFF;
+}
+
+#app-editor-swap-section {
+    display: grid;
+    grid-template-columns: 19vw 69.25vw;
+    height: 95vh;
+    background-color: #FFF;
+}
+
+.shrink-wrkspace#app-edit-section {
+    grid-template-columns: 2.5vw 78.5vw 19vw !important;
+}
+
+.shrink-wrkspace #app-editor-swap-section {
+    grid-template-columns: 20vw 77.5vw !important;
+}
+
+#setting-window-pallete {
+    border: 1px solid var(--tab-brder);
+}
+
+#app-editor-middle-section {
+    display: grid;
+    grid-template-columns: 68.75vw 19.5vw;
+}
+
+.shrink-wrkspace #app-editor-middle-section {
+    display: grid;
+    /* grid-template-columns: 78.85vw 18.65vw; */
+    grid-template-columns: 78.65vw 18.85vw;
+    width: 98vw;
+}
+
+.app-editor-heading h4 {
+    color: var(--txt-clr);
+}
+
+.drawer-icn {
+    color: var(--txt-clr);
+}
+
+.app-editor-heading h4:hover {
+    color: #FFF;
+}
+
+#pagelist {
+    margin: 1rem;
+    height: 100%;
+    max-height: 43rem;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+.file-margin {
+    width: 1rem;
+}
+
+#page-list-section {
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.4s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.page-list-section-overlay {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(41, 41, 42);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.open-pagelist-icon {
+    color: #000 !important;
+}
+
+.open-pagelist-icon svg {
+    font-size: 2rem;
+}
+
+.page-list-drawer-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 17rem;
+}
+
+.page-list-collapse-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 8rem;
+}
+
+.page-list-drawer-menu svg {
+    font-size: 2rem;
+}
+
+.app-editor-menu-open {
+    width: 2.35rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.manage-btn-context {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.page-module-wrapper {
+    padding: 1rem;
+    background-color: var(--drawer-clr);
+    text-align: center;
+}
+
+.manage-page-list-container {
+    height: 100%;
+    position: relative;
+    top: 5rem;
+    background-color: rgba(189, 189, 189, 0);
+}
+
+.manage-page-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem;
+    cursor: pointer;
+}
+
+.page-list-container {
+    left: 0;
+    width: 30rem;
+    height: 95vh;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--drawer-clr);
+}
+
+.page-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.page-list-num {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    background-color: var(--btn-bg-clr) !important;
+}
+
+.page-list-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-list-file-structure {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    height: 89vh;
+}
+
+.folder-icon {
+    width: 3.25rem;
+    height: 1.75rem;
+    padding-right: 1.65rem;
+}
+
+.collapse-btn-container {
+    height: 3rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    text-transform: none;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.collapse-btn {
+    margin-left: 1rem;
+}
+
+.pagemodule-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.blue {
+    background-color: blue;
+    color: #FFF;
+}
+
+.manage-btn-container {
+    background-color: var(--drawer-clr) !important;
+    box-shadow: none !important;
+    /* bottom: -11rem; */
+    top: auto;
+}
+
+.manage-page-btn h4 {
+    margin-left: 0.5rem;
+}
+
+
+.active-tool {
+    background-color: var(--pallete-bg-clr) !important;
+    color: var(--pallete-txt-clr) !important;
+}
+
+
+/* editor toolbar style here  */
+
+.app-editor-toolbar {
+    height: 90vh;
+    background-color: var(--toolbar-bg-clr);
+    color: var(--toolbar-text-clr);
+    transition: all 0.5s linear;
+}
+
+.app-editor-toolbar-list {
+    width: inherit;
+    height: 100%;
+    display: flex;
+    overflow: hidden auto;
+}
+
+#app-editor-toollist {
+    width: 100%;
+}
+
+.page-count {
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    background-color: rgb(0, 0, 255);
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+}
+
+
+.app-editor-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom-width: 1px;
+    border-bottom-color: silver;
+    border-bottom-style: solid;
+    margin-bottom: 0.05rem;
+    cursor: grab;
+    transition: all 0.3s linear;
+    background-color: white;
+}
+
+.color-appearance {
+    color: #FFF;
+}
+
+.menu-open-btn svg {
+    font-size: 1.75rem;
+}
+
+.app-editor-item:hover {
+    background-color: var(--tool-hover-bg-clr) !important;
+}
+
+.app-editor-item:hover.app-editor-item h4 {
+    color: var(--white-txt-clr);
+}
+
+
+.toolbar-menu-icons {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolbar-menu-icons li {
+    width: 4rem;
+    height: 3.35rem;
+    cursor: pointer;
+}
+
+.tool-img {
+    width: 2.5rem;
+}
+
+.app-editor-container {
+    background-color: #FFF;
+    padding: 0.35rem !important;
+}
+
+.app-editor-container:hover {
+    background-color: var(--pallete-bg-clr) !important;
+}
+
+.tab-container {
+    width: 100%;
+    position: absolute;
+    top: 1rem;
+    bottom: 0;
+}
+
+.app-editor-description {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.app-editor-validation-btn {
+    height: 2.8rem;
+    text-transform: none;
+}
+
+.app-editor-validation-note {
+    width: 100%;
+    padding-left: 1rem;
+    border-width: 0.1rem 0;
+    border-style: solid;
+    display: none;
+}
+
+.app-editor-validation-alert {
+    min-height: 3.2rem;
+    max-height: 30rem;
+    padding: 0.2rem;
+}
+
+.app-edtor-dialog-content {
+    min-height: 40rem;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+    height: calc(100% - 4.2rem);
+}
+
+.app-edtor-custom-tooltip {
+    background-color: var(--drawer-clr);
+    color: #000;
+    max-width: 42rem;
+    font-size: 1.45rem;
+    border: 0.1rem solid #dadde9;
+}
+
+
+@media(max-width: 1920px) {
+    .page-list-drawer-menu {
+        width: 20rem;
+    }
+
+    .toolbar-menu-icons li {
+        height: 3.25rem;
+    }
+
+    /* .manage-btn-container {
+        bottom: -24rem;
+    } */
+
+
+    #app-edit-section {
+        grid-template-columns: 13vw 87vw;
+    }
+
+    #app-editor-middle-section {
+        grid-template-columns: 67vw 20vw;
+    }
+
+    .shrink-wrkspace#app-edit-section {
+        grid-template-columns: 2.5vw 97.5vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-middle-section {
+        grid-template-columns: 77.5vw 20vw;
+    }
+
+    #app-editor-swap-section {
+        grid-template-columns: 20vw 67vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-swap-section {
+        grid-template-columns: 20vw 77.5vw !important;
+    }
+}
+
+@media(max-width: 1600px) {
+    .page-list-drawer-menu {
+        width: 16.75rem;
+    }
+
+    .toolbar-menu-icons li {
+        height: 3.26rem;
+    }
+
+    #app-edit-section {
+        grid-template-columns: 13vw 87vw;
+    }
+
+    #app-editor-middle-section {
+        grid-template-columns: 67vw 20vw;
+    }
+
+    .shrink-wrkspace#app-edit-section {
+        grid-template-columns: 3vw 97vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-middle-section {
+        grid-template-columns: 77vw 20vw;
+    }
+
+    #app-editor-swap-section {
+        grid-template-columns: 20vw 67vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-swap-section {
+        grid-template-columns: 20vw 77.5vw !important;
+    }
+}
+
+@media(max-width: 1545px) {
+    /* .manage-btn-container {
+        bottom: -21rem;
+    } */
+}
+
+@media(max-width: 1536px) {
+    .page-list-drawer-menu {
+        width: 19rem;
+    }
+
+    .toolbar-menu-icons li {
+        height: 3.45rem;
+    }
+
+    #app-edit-section {
+        grid-template-columns: 13vw 87vw;
+    }
+
+    #app-editor-middle-section {
+        grid-template-columns: 67vw 20vw;
+    }
+
+    .shrink-wrkspace#app-edit-section {
+        grid-template-columns: 2.5vw 97.5vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-middle-section {
+        grid-template-columns: 77.5vw 20vw;
+    }
+
+    #app-editor-swap-section {
+        grid-template-columns: 20vw 67vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-swap-section {
+        grid-template-columns: 20vw 77.5vw !important;
+    }
+}
+
+@media(max-width: 1440px) {
+    .page-list-drawer-menu {
+        width: 18.25rem;
+    }
+
+
+    .toolbar-menu-icons li {
+        height: 3.25rem;
+    }
+
+    /* .manage-btn-container {
+        bottom: 6rem;
+    } */
+
+    .toolbar-menu-icons li {
+        height: 3.28rem;
+    }
+
+    #app-edit-section {
+        grid-template-columns: 15vw 85vw;
+    }
+
+    #app-editor-middle-section {
+        grid-template-columns: 63vw 22vw;
+    }
+
+    .shrink-wrkspace#app-edit-section {
+        grid-template-columns: 3vw 97vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-middle-section {
+        grid-template-columns: 75vw 22vw;
+    }
+
+    #app-editor-swap-section {
+        grid-template-columns: 22vw 63vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-swap-section {
+        grid-template-columns: 22vw 75vw !important;
+    }
+}
+
+@media(max-width: 1367px) {
+    .page-list-drawer-menu {
+        width: 16.75rem;
+    }
+
+    .toolbar-menu-icons li {
+        height: 3.38rem;
+    }
+
+    #app-edit-section {
+        grid-template-columns: 13vw 87vw;
+    }
+
+    #app-editor-middle-section {
+        grid-template-columns: 67vw 20vw;
+    }
+
+    .shrink-wrkspace#app-edit-section {
+        grid-template-columns: 3vw 97vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-middle-section {
+        grid-template-columns: 77vw 20vw;
+    }
+
+    #app-editor-swap-section {
+        grid-template-columns: 20vw 67vw !important;
+    }
+}
+
+@media(max-width: 1280px) {
+    .page-list-drawer-menu {
+        width: 16.75rem;
+    }
+
+    #app-edit-section {
+        grid-template-columns: 14vw 86vw;
+    }
+
+    #app-editor-middle-section {
+        grid-template-columns: 66vw 20vw;
+    }
+
+
+    .shrink-wrkspace#app-edit-section {
+        grid-template-columns: 3vw 97vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-middle-section {
+        grid-template-columns: 77vw 20vw;
+    }
+
+    #app-editor-swap-section {
+        grid-template-columns: 20vw 66vw !important;
+    }
+
+}
+
+@media(max-width: 1200px) {
+    .page-list-drawer-menu {
+        width: 15.75rem;
+    }
+
+    #app-edit-section {
+        grid-template-columns: 14vw 86vw;
+    }
+
+    #app-editor-middle-section {
+        grid-template-columns: 64vw 22vw;
+    }
+
+
+    .shrink-wrkspace#app-edit-section {
+        grid-template-columns: 3vw 97vw !important;
+    }
+
+    .shrink-wrkspace #app-editor-middle-section {
+        grid-template-columns: 75vw 22vw;
+    }
+
+    #app-editor-swap-section {
+        grid-template-columns: 22vw 64vw !important;
+    }
+
+}

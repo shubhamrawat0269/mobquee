@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StartRelativeHeading" category="MotionAction" type="Motion" method="StartRelativeHeading">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.accuracy" input="spark.components.DropDownList">
+			  <dataSource>					
+					<data name="Best" value ="1"/>
+					<data name="1 degree" value ="0"/>					
+					<data name="3 degree" value ="0"/>
+					<data name="5 degree" value ="0"/>
+					<data name="10 degree" value ="0"/>
+				</dataSource>
+			</property>		
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

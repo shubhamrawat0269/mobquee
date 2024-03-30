@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="QRScanner" category="MediaAction" type="Media" method="QRScanner"
+	  platformSpecific="true" helpLink_EN="/qr_scanner.htm" helpLink_JP="">
+	<properties>
+		
+		<type name="parameters" input="None">
+			<property path="params.type" input="spark.components.DropDownList">
+			  	<dataSource>					
+					<data name="QRcode" />
+					<data name="Barcode" />
+				</dataSource>
+			</property>		
+			<property path="params.variablename" input="spark.components.DropDownList">
+       		<validations><validation validator="RequiredValueValidator"/></validations>
+       			<dependentActions>
+     				<when at="initForm">
+     					<action target="{@form[params.variablename]:}" method="setOptions" value="{@project:getUiElementList(@page:pageid, @form[base.currentSettings]:value)}"/>
+     					<action target="{@form[params.variablename]:}"  method="setProperty" property="selectedIndex" value="-1"/>
+      				</when>
+					<when condition="compare" compareTarget="{@form[params.variablename]:value}" compareBy="NE" compareWith="" at="initForm, postCommit">
+						<action target="{@form[params.targetPage]:}" method="setValue" value="{@base:setViewPageId(@page:pageid)}" caseOf="true"/>
+						<action target="{@form[params.targetPage]:}" method="setValue" value="{@base:setViewPageId()}" caseOf="false"/>						
+					</when>
+      			</dependentActions>
+    		</property>
+    		
+    		<property path="params.multiScan" input="spark.components.CheckBox" init="0"/>
+		</type>
+				
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+		
+	</properties>
+</item>

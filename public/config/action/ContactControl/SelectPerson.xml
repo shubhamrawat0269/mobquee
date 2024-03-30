@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="SelectPerson" category="ContactAction" type="Contact" method="SelectPerson">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.multiple" input="spark.components.CheckBox"/>	
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.detectRecords" input="LabelWithButton"/>
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

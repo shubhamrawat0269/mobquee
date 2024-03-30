@@ -1,0 +1,41 @@
+.ui-iconbtn {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.ui-icon-btn-layout {
+    min-width: 1.6rem;
+    min-height: 1.6rem;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    display: table;
+    overflow: hidden;
+}
+
+.ui-icon {
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    padding-bottom: 0;
+}
+
+.ui-icon-btn-layout {
+    min-width: 1.6rem;
+    min-height: 1.6rem;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bar-btn-icon {
+
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    padding: 0.2rem;
+
+}

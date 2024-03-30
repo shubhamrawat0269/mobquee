@@ -1,0 +1,35 @@
+.ui-radio-btn-group {
+    height: 100%;
+    display: table;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ui-radio-btn-label {
+    padding-left: 3rem;
+    line-height: 10px;
+    display: table-cell;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: pre;
+}
+
+.ui-radio-btn {
+    position: absolute !important;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    left: 0.2rem;
+    padding: 0 0.2rem;
+}
+
+.ui-radio-btn-img {
+    width: 2.2rem;
+    height: 2.2rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0.6rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

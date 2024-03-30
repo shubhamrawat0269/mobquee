@@ -1,0 +1,40 @@
+#login-modal {
+    width: 40rem;
+    height: 21rem;
+    border-radius: 0.5rem;
+}
+
+.login-title {
+    text-align: center;
+    margin: 1rem;
+}
+
+.login-frm {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+}
+
+.user-name,
+.pwd {
+    width: 75% !important;
+}
+
+.login-btn-section {
+    text-align: center;
+}
+
+.login-btn {
+    background-color: #5C469C;
+    color: #FFF;
+    border: none;
+    border-radius: 0.35rem;
+    margin: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
