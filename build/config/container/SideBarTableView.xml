@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="SideBarTableView" visible="false" imagePath="assets/toolbox/ico_notExist.png" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.ToolBarUI.SideBarUIView" description="Here is the TableView description">
+	<properties>
+		<type name="TableViewBase">
+			<property path="tableData[0].TableStyle" dataType="array" input="spark.components.DropDownList">
+				<dataSource>
+					<data name="Plain"/>
+					<data name="Grouped"/>
+				</dataSource>
+			</property>
+			<property path="tableData[0]._tmpCellStyle" dataType="array" input="spark.components.DropDownList" init="subtitle">
+				<dataSource>
+					<data name="default"/>
+					<data name="subtitle"/>
+					<data name="right-aligned"/>
+					<data name="contact-form"/>
+				</dataSource>
+				<dependentActions>
+					<when at="initForm, postCommit">
+						<action target="{@form[tableData[0].rowHeight]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainText]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].height]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].Fields]:}" method="folded" value="true" caseOf="true"/>						
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="default" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="contact-form" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="right-aligned" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="custom" at="initForm, postCommit">
+						<action target="{@form[tableData[0].rowHeight]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].height]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].Fields]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainText]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="tableData[0].rowHeight" input="spark.components.NumericStepper" min="20" max="1000" copyable="true" init="50">
+			</property>
+			
+			<property path="tableData[0].isAccordian" input="spark.components.CheckBox" init="0">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[tableData[0].isAccordian]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[tableData[0].accHeaderHeight]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[tableData[0].accHeaderHeight]:}" method="folded" value="false" caseOf="false" />
+						<action target="{@form[tableData[0].accHeaderBGColor]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[tableData[0].accHeaderBGColor]:}" method="folded" value="false" caseOf="false" />
+						<action target="{@form[tableData[0].accHeaderTextColor]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[tableData[0].accHeaderTextColor]:}" method="folded" value="false" caseOf="false" />
+						<action target="{@form[tableData[0].accHeaderIconPosition]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[tableData[0].accHeaderIconPosition]:}" method="folded" value="false" caseOf="false" />
+						<action target="{@form[tableData[0].accHeaderIconClose]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[tableData[0].accHeaderIconClose]:}" method="folded" value="false" caseOf="false" />
+						<action target="{@form[tableData[0].accHeaderIconOpen]:}" method="folded" value="true" caseOf="true" />
+						<action target="{@form[tableData[0].accHeaderIconOpen]:}" method="folded" value="false" caseOf="false" />
+					</when>
+				</dependentActions>
+			</property>
+			<property path="tableData[0].accHeaderHeight" input="spark.components.NumericStepper" min="32" max="56" copyable="true" init="32"/>
+			<property path="tableData[0].accHeaderBGColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			<property path="tableData[0].accHeaderTextColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			<property path="tableData[0].accHeaderIconPosition" dataType="array" input="spark.components.DropDownList" init="left">
+				<dataSource>
+					<data name="left"/>
+					<data name="right"/>
+				</dataSource>
+			</property>		
+			<property path="tableData[0].accHeaderIconClose" input="TextInputWithButton"/>
+			<property path="tableData[0].accHeaderIconOpen" input="TextInputWithButton"/>
+			
+		</type>
+
+		<type name="TableGroup">
+			<property path="tableData[0].Group.length" input="spark.components.NumericStepper" min="1" max="99">
+				<dependentActions>
+
+					<when condition="compare" compareTarget="{@form[tableData[0].Group.length]:value}" compareBy="GT" compareWith="{@base:tableData[0].Group.length}" stopCommit="true" at="preCommit">
+						<action target="{@form[tableData[0].Group.length]:}" method="{@base:tableData[0].addOneGroup()}" caseOf="true"/>
+						<action target="{@form[tableData[0].Group.length]:}" method="setValue" value="{@base:tableData[0].Group.length}" caseOf="true"/>
+					</when>
+
+					<when condition="compare" compareTarget="{@form[tableData[0].Group.length]:value}" compareBy="LT" compareWith="{@base:tableData[0].Group.length}" stopCommit="true" at="preCommit">
+						<action target="{@form[tableData[0].Group.length]:}" method="{@base:tableData[0].removeOneGroup()}" caseOf="true"/>
+						<action target="{@form[tableData[0].Group.length]:}" method="setValue" value="{@base:tableData[0].Group.length}" caseOf="true"/>
+					</when>
+
+					<when condition="compare" compareTarget="{@form[tableData[0].Group.length]:value}" compareBy="LE" compareWith="{@form[IndexOfGroup]:value}" stopCommit="true" at="postCommit">
+						<action target="{@form[IndexOfGroup]:}" method="setValue" value="{@base:tableData[0].Group.length - 1}" caseOf="true" chainedEvent="change"/>
+					</when>
+
+					<when stopCommit="true" at="initForm, postCommit">
+						<action target="{@form[IndexOfGroup]:}" method="setMax" value="{@base:tableData[0].Group.length - 1}" caseOf="true"/>
+					</when>
+
+				</dependentActions>
+			</property>
+
+			<property formKey="IndexOfGroup" input="spark.components.NumericStepper" min="0" max="9" init="0">
+				<dependentActions>
+					<when stopCommit="true" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].Title]:}" method="setValue" value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].Title}" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].Title]:}" method="setPath" value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].Title&quot;}" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray]:}" method="setValue" value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray}" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray]:}" method="setPath" value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray&quot;}" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray]:}" method="setProperty" property="selectedIndex" value="0" caseOf="true" chainedEvent="indexChange"/>
+						<action target="{@form[tableData[0].Group[*].Footer]:}" method="setValue" value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].Footer}" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].Footer]:}" method="setPath" value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].Footer&quot;}" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+
+			<property formKey="tableData[0].Group[*].Title" path="tableData[0].Group[0].Title" input="spark.components.TextInput"/>
+
+			<property formKey="tableData[0].Group[*].rowarray" path="tableData[0].Group[0].rowarray" input="spark.components.List" dragEnabled="true" itemClass="com.mobilous.builder.client.lib.adf.uiparts.TableViewCellDic" labelField="name">
+				<dependentActions>
+					<when at="initForm, postIndexChange" stopCommit="true">
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].name]:}" method="setValue" 
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].name}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].name]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].name&quot;}"/>
+								
+						<action target="{@form[tableData[0].Group[*].rowarray[*].backgroundColor]:}" method="setValue" 
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].backgroundColor}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].backgroundColor]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].backgroundColor&quot;}"/>		
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="setValue" 
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].mainImage}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="setPath" 
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].mainImage&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainText]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].mainText}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainText]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].mainText&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].detailText}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].detailText&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].height]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].height}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].height]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].height&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].Fields]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex]}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].Fields]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].Fields&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].editingAccessoryType]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].editingAccessoryType}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].editingAccessoryType]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].editingAccessoryType&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.accessoryButtonTappedForRowWithIndexPath]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].actions.accessoryButtonTappedForRowWithIndexPath}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.accessoryButtonTappedForRowWithIndexPath]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].actions.accessoryButtonTappedForRowWithIndexPath&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.didSelectRowAtIndexPath]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].actions.didSelectRowAtIndexPath}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.didSelectRowAtIndexPath]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].actions.didSelectRowAtIndexPath&quot;}"/>
+
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.flickRL]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].actions.flickRL}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.flickRL]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].actions.flickRL&quot;}"/>
+						
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.flickLR]:}" method="setValue"
+								value="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex].actions.flickLR}"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.flickLR]:}" method="setPath"
+								value="{&quot;tableData[0].Group[&quot; + @form[IndexOfGroup]:value + &quot;].rowarray[&quot; + @form[tableData[0].Group[*].rowarray]:selectedIndex + &quot;].actions.flickLR&quot;}"/>
+
+					</when>
+					
+					<when at="initForm, postIndexChange" condition="compare" compareTarget="{@form[tableData[0].Group[*].rowarray[*].editingAccessoryType]:value}" compareBy="EQ" compareWith="button">
+     					<action target="{@form[tableData[0].Group[*].rowarray[*].actions.accessoryButtonTappedForRowWithIndexPath]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.accessoryButtonTappedForRowWithIndexPath]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+					<when at="postCommit" stopCommit="true">
+						<action target="{@base:tableData[0].Group[@form[IndexOfGroup]:value].rowarray[@form[tableData[0].Group[*].rowarray]:selectedIndex]}" method="setProperty"
+								property="CellStyle" value="{@form[tableData[0]._tmpCellStyle]:value}"/>
+					</when>
+				</dependentActions>			
+			</property>
+
+			<property formKey="tableData[0].Group[*].Footer" path="tableData[0].Group[0].Footer" input="spark.components.TextInput"/>
+		</type>
+
+		<type name="TableCell">
+			<property formKey="tableData[0].Group[*].rowarray[*].name" path="tableData[0].Group[0].rowarray[0].name" input="spark.components.TextInput">
+				<dependentActions>
+					<when at="initForm, postCommit">
+						<action target="{@form[tableData[0].rowHeight]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainText]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].height]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].Fields]:}" method="folded" value="true" caseOf="true"/>						
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="custom" at="initForm, postCommit">
+						<action target="{@form[tableData[0].rowHeight]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].height]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].Fields]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainText]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="default" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+			
+			<property formKey="tableData[0].Group[*].rowarray[*].mainImage" path="tableData[0].Group[0].rowarray[0].mainImage" input="TextInputWithButton">
+				<dependentActions>
+					<when at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="custom" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="contact-form" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="right-aligned" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="default" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].detailText]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@base:tableData[0]._tmpCellStyle}" compareBy="EQ" compareWith="subtitle" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].mainImage]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property formKey="tableData[0].Group[*].rowarray[*].mainText" path="tableData[0].Group[0].rowarray[0].mainText" input="spark.components.TextInput"/>
+			<property formKey="tableData[0].Group[*].rowarray[*].detailText" path="tableData[0].Group[0].rowarray[0].detailText" input="spark.components.TextInput"/>
+			<property formKey="tableData[0].Group[*].rowarray[*].backgroundColor" path="tableData[0].Group[0].rowarray[0].backgroundColor" input="mx.controls.ColorPicker"/>
+			<property formKey="tableData[0].Group[*].rowarray[*].height" path="tableData[0].Group[0].rowarray[0].height" input="spark.components.NumericStepper" min="20" max="1000"/>
+			<property formKey="tableData[0].Group[*].rowarray[*].Fields" path="tableData[0].Group[0].rowarray[0]" input="LabelWithButton" popup="CellEditor">
+				<dependentActions>
+					<when at="preCommit" stopCommit="true">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].Fields]:}" method="{@base:notifyChange()}"/>
+					</when>
+				</dependentActions>
+			</property>
+
+			<property formKey="tableData[0].Group[*].rowarray[*].editingAccessoryType" path="tableData[0].Group[0].rowarray[0].editingAccessoryType" input="spark.components.DropDownList">
+				<dataSource>
+					<data name="indicator"/>
+					<data name="button"/>
+					<data name="none"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[tableData[0].Group[*].rowarray[*].editingAccessoryType]:value}" compareBy="EQ" compareWith="button" at="initForm, postCommit">
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.accessoryButtonTappedForRowWithIndexPath]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[tableData[0].Group[*].rowarray[*].actions.accessoryButtonTappedForRowWithIndexPath]:}" method="folded" value="true" caseOf="false"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property formKey="tableData[0].Group[*].rowarray[*].actions.accessoryButtonTappedForRowWithIndexPath" path="tableData[0].Group[0].rowarray[0].actions.accessoryButtonTappedForRowWithIndexPath" input="LabelWithButton"/>
+			<property formKey="tableData[0].Group[*].rowarray[*].actions.didSelectRowAtIndexPath" path="tableData[0].Group[0].rowarray[0].actions.didSelectRowAtIndexPath" input="LabelWithButton"/>
+			<property formKey="tableData[0].Group[*].rowarray[*].actions.flickRL" path="tableData[0].Group[0].rowarray[0].actions.flickRL" input="LabelWithButton"/>
+			<property formKey="tableData[0].Group[*].rowarray[*].actions.flickLR" path="tableData[0].Group[0].rowarray[0].actions.flickLR" input="LabelWithButton"/>
+		</type>
+		
+
+	</properties>
+</item>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="HeatMap" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.Map.GoogleMap" visible="true" imagePath="assets/toolbox/ico_map.png" description="Here is the label description"
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="vendor" input="spark.components.DropDownList" init="Google">
+				<dataSource>
+					<data name="Google"/>		
+				</dataSource>
+			</property>
+			<property path="mapTypeId" input="spark.components.DropDownList" init="satellite">
+				<dataSource>
+					<data name="satellite"/>
+					<data name="roadmap"/>		
+					<data name="terrain"/>
+					<data name="hybrid"/>
+				</dataSource>
+			</property>
+			<property path="initialPosition" dataType="String" input="spark.components.TextInput" copyable="true" validator="RequiredValueValidator"/>
+			<property path="zoom" dataType="Number" input="spark.components.NumericStepper" init="13" min="0" max="21" copyable="true"/>
+			<property path="GPS" dataType="Boolean" input="spark.components.CheckBox" value="1" visible="1" copyable="true"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Datablocks">
+			<property path="ServiceName" input="spark.components.DropDownList">
+				<dataSource source="@project:getServices()" labelField="label" valueField="value"/>
+				<dependentActions>
+					<when at="initForm,postCommit" stopCommit="true">
+						<action target="{@form[tablename]:}" method="setOptions" value="{@project:getDbTableDicsByServiceName(@form[ServiceName]:value)}" labelField="tablename" valueField="tablename"/>
+						<action target="{@form[tablename]:}"  method="setProperty" property="selectedIndex" value="-1" caseOf="true"/> 
+					</when>
+				</dependentActions>
+			</property>
+			<property path="tablename" input="spark.components.DropDownList">
+				<dataSource source="@project:getDbTableDicsByServiceName(@form[ServiceName]:value)" labelField="tablename" valueField="tablename"/>
+				<dependentActions>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@form[tablename]:value}" compareBy="NE" compareWith="">						
+						<action target="{@form[latField]:}" method="setOptions" value="{@project:getBracedDbFields(@form[ServiceName]:value, @form[tablename]:value)}" labelField="fieldname" valueField="fieldname" caseOf="true"/>
+						<action target="{@form[lngField]:}" method="setOptions" value="{@project:getBracedDbFields(@form[ServiceName]:value, @form[tablename]:value)}" labelField="fieldname" valueField="fieldname" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="latField" input="spark.components.DropDownList"/>
+			<property path="lngField" input="spark.components.DropDownList"/>
+			<property path="where" input="spark.components.TextInput" validator="whereClauseValidator"/>
+		</type>
+		<type name="Actions">
+			<property path="actions.WillStartLoadingMap" input="LabelWithButton" />
+			<property path="actions.DidFinishLoadingMap" input="LabelWithButton" />			
+			<property path="actions.DidFailLoadingMap" input="LabelWithButton" />
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="9999" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="9999" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="100" max="9999" init="300" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="100" max="9999" init="300" copyable="true"/>
+		</type> 
+	</properties>
+</item>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="AnalysisPauseRecording" category="SystemControlAction" type="SystemControl" method="AnalysisPauseRecording"
+	  platformSpecific="true" helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="parameters" input="None">						
+    		<property path="params.servicename" dataType="array" input="spark.components.DropDownList">
+		   		<validations><validation validator="RequiredValueValidator"/></validations>
+		   		<dataSource>
+		   			<data name="Repro"/>
+		  		</dataSource>
+   			</property>
+   		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

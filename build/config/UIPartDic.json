@@ -1,0 +1,2309 @@
+{
+  "UIParts": [
+    {
+      "name": "BaseUI",
+      "dic": {
+        "viewType": "",
+        "name": "",
+        "value": "",
+        "_enabledOnScreen": true,
+        "hidden": false,
+        "enabled": true,
+        "userInteractionEnabled": true,
+        "displayOrderOnScreen": 0,
+        "taborder": -1,
+        "tag": 0,
+        "contentMode": "Top",
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "backgroundGradient": "",
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "width": 9999,
+          "height": 9999,
+          "rotation": 0
+        },
+        "Document": [],
+        "Children": [],
+        "parent": "container1",
+        "stylename": "custom"
+      }
+    },
+    {
+      "name": "Label",
+      "dic": {
+        "viewType": "Label",
+        "text": "",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "displayFormat": "",
+        "dateFormat": "",
+        "dateDataType": "",
+        "customDateFormat": "",
+        "numberFormat": "",
+        "_numberFormat": {},
+        "numberDataType": "",
+        "numDisplayFormat": "",
+        "textFormat": "",
+        "variant": "singleline",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "cornerRadius": 0,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "trim": true,
+        "underline": false,
+        "strikeout": false,
+        "textShadow": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 }
+      }
+    },
+    {
+      "name": "TextField",
+      "dic": {
+        "viewType": "TextField",
+        "text": "",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "numeric": false,
+        "placeholder": "",
+        "setInputlabel": false,
+        "editable": true,
+        "dateDisplay": "",
+        "displayFormat": "",
+        "dateFormat": "",
+        "dateDataType": "",
+        "customDateFormat": "",
+        "numberFormat": "",
+        "_numberFormat": {},
+        "numberDataType": "",
+        "numDisplayFormat": "",
+        "textFormat": "",
+        "charLimit": -1,
+        "secure": false,
+        "required": false,
+        "autocomplete": false,
+        "autocapitalizationType": "None",
+        "trim": true,
+        "showIcon": false,
+        "iconPosition": "start",
+        "iconType": "custom",
+        "customIcon": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "keyboardType": "Default",
+        "hwType": "Character",
+        "hwCharKanji": true,
+        "hwCharHiragana": true,
+        "hwCharKatakana": true,
+        "hwAlphabet": true,
+        "hwCharNumeric": true,
+        "hwCharGreek": true,
+        "hwCharSign": true,
+        "hwCharKutoten": true,
+        "hwDictionary": "",
+        "hwCorpus": "",
+        "voiceRecognizable": false,
+        "recognitionType": "number",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "onfocusBackgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "onfocusBorderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "placeholderColor": {
+          "alpha": 1,
+          "red": 0.6,
+          "green": 0.6,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": {
+          "DidBeginEditing": [],
+          "DidChange": [],
+          "DidEndEditing": [],
+          "DidEndEditingError": [],
+          "DidPressEnter": [],
+          "DidEndVoiceRecognition": []
+        }
+      }
+    },
+    {
+      "name": "NumericField",
+      "dic": {
+        "viewType": "NumericField",
+        "text": "",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "numeric": true,
+        "placeholder": "",
+        "setInputlabel": false,
+        "charLimit": -1,
+        "dateDisplay": "",
+        "displayFormat": "",
+        "dateFormat": "",
+        "dateDataType": "",
+        "customDateFormat": "",
+        "numberFormat": "",
+        "_numberFormat": {},
+        "numberDataType": "",
+        "numDisplayFormat": "",
+        "textFormat": "",
+        "editable": true,
+        "secure": false,
+        "required": false,
+        "autocapitalizationType": "None",
+        "trim": true,
+        "showIcon": false,
+        "iconPosition": "start",
+        "iconType": "custom",
+        "customIcon": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "keyboardType": "Default",
+        "hwType": "Character",
+        "hwCharKanji": true,
+        "hwCharHiragana": true,
+        "hwCharKatakana": true,
+        "hwAlphabet": true,
+        "hwCharNumeric": true,
+        "hwCharGreek": true,
+        "hwCharSign": true,
+        "hwCharKutoten": true,
+        "hwDictionary": "",
+        "hwCorpus": "",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "onfocusBackgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "onfocusBorderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "placeholderColor": {
+          "alpha": 1,
+          "red": 0.6,
+          "green": 0.6,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": {
+          "DidBeginEditing": [],
+          "DidChange": [],
+          "DidEndEditing": [],
+          "DidEndEditingError": [],
+          "DidPressEnter": [],
+          "DidEndVoiceRecognition": []
+        }
+      }
+    },
+    {
+      "name": "TextView",
+      "dic": {
+        "viewType": "TextView",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "selectedRange": "default",
+        "text": "",
+        "placeholder": "",
+        "setInputlabel": false,
+        "charLimit": -1,
+        "refFileURL": "",
+        "RefFileHidden": true,
+        "displayFormat": "",
+        "dateFormat": "",
+        "dateDataType": "",
+        "customDateFormat": "",
+        "numberFormat": "",
+        "_numberFormat": {},
+        "numberDataType": "",
+        "numDisplayFormat": "",
+        "textFormat": "",
+        "editable": true,
+        "autocapitalizationType": "None",
+        "trim": true,
+        "replaceEmptyLine": false,
+        "underline": false,
+        "strikeout": false,
+        "flexibleHeight": false,
+        "scrollable": false,
+        "scrollPosition": "",
+        "voiceRecognizable": false,
+        "continueVR": false,
+        "recognitionType": "number",
+        "keyboardType": "Default",
+        "hwType": "Character",
+        "hwCharKanji": true,
+        "hwCharHiragana": true,
+        "hwCharKatakana": true,
+        "hwAlphabet": true,
+        "hwCharNumeric": true,
+        "hwCharGreek": true,
+        "hwCharSign": true,
+        "hwCharKutoten": true,
+        "hwDictionary": "",
+        "hwCorpus": "",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "onfocusBackgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "onfocusBorderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "placeholderColor": {
+          "alpha": 1,
+          "red": 0.6,
+          "green": 0.6,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 60, "rotation": 0 },
+        "actions": {
+          "DidBeginEditing": [],
+          "DidChange": [],
+          "DidEndEditing": []
+        }
+      }
+    },
+    {
+      "name": "Image",
+      "dic": {
+        "viewType": "Image",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "altText": "",
+        "image": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "enabled": true,
+        "scaleMode": "ScaleToFill",
+        "encstring": "",
+        "lazyLoad": false,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 45, "height": 45, "rotation": 0 }
+      }
+    },
+    {
+      "name": "Avatar",
+      "dic": {
+        "viewType": "Avatar",
+        "type": "Letter",
+        "avatarTxt": "",
+        "avatarSrc": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "altText": "",
+        "variant": "rounded",
+        "size": "medium",
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 0.6,
+          "green": 0.6,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 40, "height": 40, "rotation": 0 }
+      }
+    },
+    {
+      "name": "WebView",
+      "dic": {
+        "viewType": "WebView",
+        "filename": {
+          "srcLocation": "remoteFile",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "scalesPageToFit": false,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 100, "height": 100, "rotation": 0 },
+        "actions": {
+          "DidStartLoad": [],
+          "DidFailToLoad": [],
+          "DidFinishLoad": []
+        }
+      }
+    },
+    {
+      "name": "LinkLabel",
+      "dic": {
+        "viewType": "LinkLabel",
+        "text": "",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "displayFormat": "",
+        "dateFormat": "",
+        "dateDataType": "",
+        "customDateFormat": "",
+        "numberFormat": "",
+        "_numberFormat": {},
+        "numberDataType": "",
+        "numDisplayFormat": "",
+        "textFormat": "",
+        "link": "",
+        "option": 0,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "cornerRadius": 0,
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 }
+      }
+    },
+    {
+      "name": "SearchBar",
+      "dic": {
+        "viewType": "SearchBar",
+        "text": "",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "placeholder": "",
+        "prompt": "",
+        "barStyle": "blue",
+        "displayFormat": "",
+        "dateFormat": "",
+        "dateDataType": "",
+        "customDateFormat": "",
+        "numberFormat": "",
+        "_numberFormat": {},
+        "numberDataType": "",
+        "numDisplayFormat": "",
+        "textFormat": "",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "autocapitalizationType": "None",
+        "trim": true,
+        "underline": false,
+        "strikeout": false,
+        "textShadow": false,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 250, "height": 30, "rotation": 0 },
+        "actions": {
+          "textBeginEditing": [],
+          "texEndEditing": [],
+          "textDidChanged": [],
+          "CancelClicked": []
+        }
+      }
+    },
+    {
+      "name": "RoundButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "text",
+        "buttonType": "Round",
+        "title": "",
+        "fieldname": "",
+        "showElevation": false,
+        "enableRipple": false,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "normalFont": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "center",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "TailTruncation"
+        },
+        "verticalAlignment": "middle",
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "TextButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "text",
+        "buttonType": "Text",
+        "title": "",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "normalBackgroundImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "selectedBackgroundImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "showElevation": false,
+        "enableRipple": false,
+        "backgroundColor": {
+          "alpha": 0,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "normalFont": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "center",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "TailTruncation"
+        },
+        "verticalAlignment": "middle",
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "ImageButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "Image",
+        "buttonType": "Image",
+        "fieldname": "",
+        "normalImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "normalBackgroundImage": {
+          "srcLocation": "bundle",
+          "filename": "defaultImage",
+          "fileext": "png",
+          "url": ""
+        },
+        "selectedImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "selectedBackgroundImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "draggable": false,
+        "showElevation": false,
+        "enableRipple": false,
+        "backgroundColor": {
+          "alpha": 0,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 0,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "IconButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "Icon",
+        "buttonType": "Icon",
+        "title": "",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "iconImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "iconSelectedImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "iconPosition": "start",
+        "iconSize": "medium",
+        "showElevation": false,
+        "enableRipple": false,
+        "backgroundColor": {
+          "alpha": 0,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "normalFont": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "center",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "TailTruncation"
+        },
+        "verticalAlignment": "middle",
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "ToggleButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "Toggle",
+        "buttonType": "Toggle",
+        "on": false,
+        "normalTitle": "",
+        "selectedTitle": "",
+        "normalImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "selectedImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "valueField": "",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "normalFont": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "center",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "TailTruncation"
+        },
+        "verticalAlignment": "middle",
+        "frame": { "x": 0, "y": 0, "width": 45, "height": 45, "rotation": 0 },
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "actions": { "clicked": [], "on": [], "off": [] }
+      }
+    },
+    {
+      "name": "Switch",
+      "dic": {
+        "viewType": "Switch",
+        "on": false,
+        "valueField": "",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "draggable": false,
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "on": [], "off": [], "ValueChanged": [] }
+      }
+    },
+    {
+      "name": "CheckBox",
+      "dic": {
+        "viewType": "Button",
+        "type": "CheckBox",
+        "buttonType": "CheckBox",
+        "title": "",
+        "fieldname": "",
+        "fieldtype": "",
+        "on": false,
+        "normalImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "selectedImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "showElevation": false,
+        "enableRipple": false,
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alRefFileHiddenha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "normalFont": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "TailTruncation"
+        },
+        "verticalAlignment": "middle",
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "on": [], "off": [] }
+      }
+    },
+    {
+      "name": "RadioButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "Radio",
+        "buttonType": "Radio",
+        "title": "",
+        "groupname": "",
+        "fieldname": "",
+        "on": false,
+        "normalImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "selectedImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "showElevation": false,
+        "enableRipple": false,
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "normalFont": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "TailTruncation"
+        },
+        "verticalAlignment": "middle",
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 45, "rotation": 0 },
+        "actions": { "Selected": [] }
+      }
+    },
+    {
+      "name": "RadioButtonGroup",
+      "dic": {
+        "viewType": "Button",
+        "type": "RadioButtonGroup",
+        "buttonType": "RadioButtonGroup",
+        "valueField": "",
+        "fieldname": "",
+        "fieldtype": "",
+        "radioItems": [{ "text": "", "fieldvalue": "", "on": false }],
+        "selectedButtonIndex": 0,
+        "groupStyle": "Vertical",
+        "itemsgap": 0,
+        "normalImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "selectedImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 45, "rotation": 0 },
+        "actions": { "Selected": [] }
+      }
+    },
+    {
+      "name": "Segment",
+      "dic": {
+        "viewType": "Segment",
+        "title": "",
+        "valueField": "",
+        "fieldname": "",
+        "fieldtype": "",
+        "segmentedControlStyle": "Plain",
+        "tintColor": {
+          "alpha": 1,
+          "red": 0.8,
+          "green": 0.8,
+          "blue": 0.8,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "segmentInitialValue": "",
+        "selectedSegmentIndex": 0,
+        "segmentItemWidth": 80,
+        "scrollable": false,
+        "segmentItems": [
+          {
+            "type": "TextItem",
+            "text": "",
+            "imageDic": {
+              "srcLocation": "bundle",
+              "filename": "",
+              "fileext": "",
+              "url": ""
+            },
+            "font": {
+              "fontName": "system",
+              "fontSize": 14,
+              "fontWeight": false,
+              "fontStyle": false,
+              "textAlignment": "left",
+              "textColor": {
+                "red": 0,
+                "blue": 0,
+                "green": 0,
+                "alpha": 1,
+                "colorName": ""
+              },
+              "lineBreakMode": "TailTruncation"
+            },
+            "actions": { "clicked": [] },
+            "onTapTintColor": {
+              "alpha": 1,
+              "red": 1,
+              "green": 1,
+              "blue": 1,
+              "colorName": ""
+            },
+            "onTapTextColor": {
+              "alpha": 1,
+              "red": 1,
+              "green": 1,
+              "blue": 1,
+              "colorName": ""
+            }
+          }
+        ],
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "ActionButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "Action",
+        "buttonType": "Action",
+        "floating": false,
+        "variant": "",
+        "title": "",
+        "iconPosition": "start",
+        "iconType": "add",
+        "customImage": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "size": "medium",
+        "showElevation": true,
+        "enableRipple": true,
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "normalFont": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "center",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "TailTruncation"
+        },
+        "verticalAlignment": "middle",
+        "frame": { "x": 0, "y": 0, "width": 40, "height": 40, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "SystemButton",
+      "dic": {
+        "viewType": "Button",
+        "type": "System",
+        "buttonType": "add",
+        "showElevation": false,
+        "enableRipple": false,
+        "frame": { "x": 0, "y": 0, "width": 45, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "Camera",
+      "dic": {
+        "viewType": "Camera",
+        "mediaType": "image",
+        "cameraSide": "rear",
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 250, "rotation": 0 },
+        "actions": { "didFinishPickingMedia": [] }
+      }
+    },
+    {
+      "name": "SoundBox",
+      "dic": {
+        "viewType": "SoundBox",
+        "filename": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": "",
+          "soundName": "",
+          "soundURL": "",
+          "author": "",
+          "copyright": "",
+          "length": 100
+        },
+        "style": "Black",
+        "recording": false,
+        "autoplay": true,
+        "timeout": 10,
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 30, "rotation": 0 },
+        "actions": {
+          "didStartPlaySound": [],
+          "didPausePlaySound": [],
+          "didStopPlaySound": [],
+          "didFinishPlaySound": [],
+          "didStartRecordSound": [],
+          "didStopRecordSound": []
+        }
+      }
+    },
+    {
+      "name": "VideoBox",
+      "dic": {
+        "viewType": "VideoBox",
+        "label": "",
+        "video": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": "",
+          "videoName": "",
+          "author": "",
+          "copyright": "",
+          "length": 100
+        },
+        "startPlay": false,
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 250, "rotation": 0 },
+        "actions": {
+          "didPausePlayMovie": [],
+          "didStartPlayMovie": [],
+          "didStopPlayMovie": [],
+          "didFinishPlayMovie": []
+        }
+      }
+    },
+    {
+      "name": "GoogleMap",
+      "dic": {
+        "viewType": "GoogleMap",
+        "initialPosition": "India",
+        "zoom": 8,
+        "GPS": true,
+        "enabled": true,
+        "frame": { "x": 0, "y": 0, "width": 200, "height": 200, "rotation": 0 },
+        "actions": {
+          "regionWillChange": [],
+          "regionDidChange": [],
+          "WillStartLoadingMap": [],
+          "DidFinishLoadingMap": [],
+          "DidFailLoadingMap": []
+        }
+      }
+    },
+    {
+      "name": "DatePicker",
+      "dic": {
+        "viewType": "DatePicker",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "mode": "Date",
+        "timeFormat": "12 Hour",
+        "currentDate": "",
+        "frame": { "x": 0, "y": 0, "width": 250, "height": 150, "rotation": 0 },
+        "actions": { "valueChanged": [] }
+      }
+    },
+    {
+      "name": "Calendar",
+      "dic": {
+        "viewType": "Calendar",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "setInputlabel": false,
+        "placeholder": "dd-MM-yyyy",
+        "displayFormat": "dd-MM-yyyy",
+        "selectedDate": "",
+        "type": "Gregorian",
+        "jpYears": "Custom",
+        "minRange": "0",
+        "maxRange": "0",
+        "showIcon": true,
+        "showElevation": false,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "cornerRadius": 0,
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "placeholderColor": {
+          "alpha": 1,
+          "red": 0.6,
+          "green": 0.6,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 40, "rotation": 0 },
+        "actions": { "valueChanged": [] }
+      }
+    },
+    {
+      "name": "Picker",
+      "dic": {
+        "viewType": "Picker",
+        "dataarray": [
+          {
+            "type": "label",
+            "width": 300,
+            "height": 30,
+            "currentIndex": "",
+            "itemarray": [
+              {
+                "text": "",
+                "fieldname": "",
+                "font": {
+                  "fontName": "system",
+                  "fontSize": 14,
+                  "fontWeight": false,
+                  "fontStyle": false,
+                  "textAlignment": "left",
+                  "textColor": {
+                    "red": 0,
+                    "blue": 0,
+                    "green": 0,
+                    "alpha": 1,
+                    "colorName": ""
+                  },
+                  "lineBreakMode": "WordWrap"
+                }
+              }
+            ]
+          }
+        ],
+        "showsSelectionIndicator": true,
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 150, "rotation": 0 },
+        "actions": { "didSelectRow": [] }
+      }
+    },
+    {
+      "name": "ComboBox",
+      "dic": {
+        "viewType": "ComboBox",
+        "placeholder": "",
+        "setInputlabel": false,
+        "editable": true,
+        "showElevation": false,
+        "customIcon": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "type": "Fixed",
+        "dataarray": [{ "text": "", "fieldvalue": "" }],
+        "ServiceName": "",
+        "tablename": "",
+        "where": "",
+        "sort": "",
+        "fieldname": "",
+        "displayText": "",
+        "initialValue": "",
+        "SelectedIndex": 0,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "cornerRadius": 0,
+        "onfocusBackgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "onfocusBorderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "selectedOptionBGColor": {
+          "alpha": 1,
+          "red": 0.23921568628,
+          "green": 0.49411764706,
+          "blue": 0.84705882353,
+          "colorName": ""
+        },
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "placeholderColor": {
+          "alpha": 1,
+          "red": 0.6,
+          "green": 0.6,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 40, "rotation": 0 },
+        "actions": { "OnSelect": [] }
+      }
+    },
+    {
+      "name": "TileList",
+      "dic": {
+        "viewType": "TileList",
+        "direction": "Horizontal",
+        "paging": false,
+        "circular": false,
+        "shownext": false,
+        "showarrow": false,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "ServiceName": "",
+        "tablename": "",
+        "where": "",
+        "sort": "",
+        "limit": 25,
+        "fieldname": "",
+        "displayText": "",
+        "isAccordian": false,
+        "accHeaderHeight": 32,
+        "accHeaderBGColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "accHeaderTextColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "accHeaderIconOpen": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "accHeaderIconClose": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "accHeaderIconPosition": "left",
+        "accRecordsCount": true,
+        "accHeaderBorderWeight": 1,
+        "Groupby": "",
+        "dataarray": [
+          {
+            "columns": 1,
+            "rows": 1,
+            "gap": 4,
+            "CellStyle": "custom",
+            "Fields": [],
+            "width": 300,
+            "height": 110
+          }
+        ],
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 110, "rotation": 0 }
+      }
+    },
+    {
+      "name": "Tabs",
+      "dic": {
+        "viewType": "Tabs",
+        "title": "",
+        "valueField": "",
+        "fieldname": "",
+        "fieldtype": "",
+        "direction": "Horizontal",
+        "initialValue": "",
+        "scrollable": false,
+        "showElevation": false,
+        "enableRipple": false,
+        "tintColor": {
+          "alpha": 1,
+          "red": 0.8,
+          "green": 0.8,
+          "blue": 0.8,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "itemWidth": 80,
+        "itemGap": 0,
+        "tabItems": [
+          {
+            "type": "TextItem",
+            "text": "",
+            "imageDic": {
+              "srcLocation": "bundle",
+              "filename": "",
+              "fileext": "",
+              "url": ""
+            },
+            "font": {
+              "fontName": "system",
+              "fontSize": 14,
+              "fontWeight": false,
+              "fontStyle": false,
+              "textAlignment": "left",
+              "textColor": {
+                "red": 0,
+                "blue": 0,
+                "green": 0,
+                "alpha": 1,
+                "colorName": ""
+              },
+              "lineBreakMode": "TailTruncation"
+            },
+            "actions": { "clicked": [] },
+            "onTapTintColor": {
+              "alpha": 1,
+              "red": 1,
+              "green": 1,
+              "blue": 1,
+              "colorName": ""
+            },
+            "onTapTextColor": {
+              "alpha": 1,
+              "red": 0,
+              "green": 0,
+              "blue": 0,
+              "colorName": ""
+            },
+            "onTapFontWeight": true
+          }
+        ],
+        "showsSelectionIndicator": false,
+        "indicatorColor": {
+          "red": 0,
+          "blue": 0,
+          "green": 0,
+          "alpha": 1,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "clicked": [], "flickLR": [], "flickRL": [] }
+      }
+    },
+    {
+      "name": "Slider",
+      "dic": {
+        "viewType": "Slider",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "currentValue": 50,
+        "minimumValue": 0,
+        "maximumValue": 100,
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "trackGradientColor1": {
+          "alpha": 1,
+          "red": 0.4,
+          "green": 0.4,
+          "blue": 0.4,
+          "colorName": ""
+        },
+        "trackGradientColor2": {
+          "alpha": 1,
+          "red": 0.8,
+          "green": 0.8,
+          "blue": 0.8,
+          "colorName": ""
+        },
+        "thumbGradientColor1": {
+          "alpha": 1,
+          "red": 0.8,
+          "green": 1,
+          "blue": 0.1333,
+          "colorName": ""
+        },
+        "thumbGradientColor2": {
+          "alpha": 1,
+          "red": 1,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 30, "rotation": 0 },
+        "actions": { "valueChanged": [] }
+      }
+    },
+    {
+      "name": "Chart",
+      "dic": {
+        "viewType": "Chart",
+        "vendor": "Google",
+        "toggleFullScreen": false,
+        "chartType": "Line",
+        "chartTitle": "",
+        "subTitle": "",
+        "haxisTitle": "",
+        "vaxisTitle": "",
+        "showCurve": false,
+        "isStacked": false,
+        "is3D": false,
+        "isWaterfall": false,
+        "seriesType": "bars",
+        "showLegends": false,
+        "legendPosition": "right",
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "ServiceName": "",
+        "tablename": "",
+        "itemField": "",
+        "valueField": [],
+        "where": "",
+        "sort": "",
+        "style": false,
+        "annotation": false,
+        "seriesField": "",
+        "padding": { "top": 10, "right": 10, "bottom": 10, "left": 10 },
+        "frame": { "x": 0, "y": 0, "width": 350, "height": 250, "rotation": 0 }
+      }
+    },
+    {
+      "name": "HeatMap",
+      "dic": {
+        "viewType": "HeatMap",
+        "vendor": "Google",
+        "mapTypeId": "satellite",
+        "initialPosition": "New Delhi",
+        "zoom": 13,
+        "GPS": true,
+        "enabled": true,
+        "ServiceName": "",
+        "tablename": "",
+        "latField": "",
+        "lngField": "",
+        "where": "",
+        "sort": "",
+        "actions": {
+          "regionWillChange": [],
+          "regionDidChange": [],
+          "WillStartLoadingMap": [],
+          "DidFinishLoadingMap": [],
+          "DidFailLoadingMap": []
+        },
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 300, "rotation": 0 }
+      }
+    },
+    {
+      "name": "LiveFeed",
+      "dic": {
+        "viewType": "LiveFeed",
+        "text": "",
+        "source": "",
+        "table": "",
+        "item": "",
+        "field": "",
+        "highlightColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "font": {
+          "fontName": "system",
+          "fontSize": 14,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "center",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "verticalAlignment": "middle",
+        "underline": false,
+        "strikeout": false,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 },
+        "actions": { "OnValueChange": [] }
+      }
+    },
+    {
+      "name": "Dialog",
+      "dic": {
+        "viewType": "Dialog",
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 0,
+        "cornerRadius": 0,
+        "showheader": true,
+        "headerheight": 30,
+        "heading": "",
+        "headerfont": {
+          "fontName": "system",
+          "fontSize": 16,
+          "fontWeight": false,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "showclose": true,
+        "closeIcon": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "dataarray": [
+          {
+            "columns": 1,
+            "rows": 1,
+            "gap": 1,
+            "height": 400,
+            "CellStyle": "custom",
+            "Fields": []
+          }
+        ],
+        "showfooter": false,
+        "footerheight": 30,
+        "actionButtonsTintColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0.2,
+          "blue": 1,
+          "colorName": ""
+        },
+        "actionButtonsColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "actionButtons": [{ "title": "", "actions": { "clicked": [] } }],
+        "padding": { "top": 10, "right": 10, "bottom": 10, "left": 10 },
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 400, "rotation": 0 }
+      }
+    },
+    {
+      "name": "Drawer",
+      "dic": {
+        "viewType": "Drawer",
+        "position": "bottom",
+        "style": "cornered",
+        "showdragIndicator": true,
+        "showclose": false,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "dataarray": [
+          {
+            "columns": 1,
+            "rows": 1,
+            "gap": 1,
+            "height": 300,
+            "CellStyle": "custom",
+            "Fields": []
+          }
+        ],
+        "padding": { "top": 10, "right": 10, "bottom": 10, "left": 10 },
+        "frame": { "x": 0, "y": 0, "width": 300, "height": 400, "rotation": 0 }
+      }
+    },
+    {
+      "name": "Skeleton",
+      "dic": {
+        "viewType": "Skeleton",
+        "variant": "rectangular",
+        "animation": "pulse",
+        "backgroundColor": {
+          "alpha": 0.1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 90, "height": 45, "rotation": 0 }
+      }
+    },
+    {
+      "name": "Indicator",
+      "dic": {
+        "viewType": "Indicator",
+        "Style": "White",
+        "InitialState": "stop",
+        "StartIndicator": false,
+        "StopIndicator": true,
+        "StarthidesWhenStopped": true,
+        "frame": { "x": 0, "y": 0, "width": 45, "height": 45, "rotation": 0 }
+      }
+    },
+    {
+      "name": "ProgressBar",
+      "dic": {
+        "viewType": "ProgressBar",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "style": "Bar",
+        "progress": 0,
+        "arcRadius": 28,
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 0.9215,
+          "green": 0.9215,
+          "blue": 0.9215,
+          "colorName": ""
+        },
+        "fillColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0.2,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 15, "rotation": 0 }
+      }
+    },
+    {
+      "name": "ExpansionPanel",
+      "dic": {
+        "viewType": "ExpansionPanel",
+        "headerheight": 40,
+        "headerfont": {
+          "fontName": "system",
+          "fontSize": 16,
+          "fontWeight": true,
+          "fontStyle": false,
+          "textAlignment": "left",
+          "textColor": {
+            "red": 0,
+            "blue": 0,
+            "green": 0,
+            "alpha": 1,
+            "colorName": ""
+          },
+          "lineBreakMode": "WordWrap"
+        },
+        "headerIconPosition": "right",
+        "headerIconClose": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "headerIconOpen": {
+          "srcLocation": "bundle",
+          "filename": "",
+          "fileext": "",
+          "url": ""
+        },
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "gap": 2,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "panelItems": [
+          {
+            "id": 0,
+            "expanded": true,
+            "showheader": true,
+            "heading": "Heading",
+            "subheading": "",
+            "headerimage": {
+              "srcLocation": "bundle",
+              "filename": "",
+              "fileext": "",
+              "url": ""
+            },
+            "Fields": [],
+            "height": 260
+          }
+        ],
+        "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+        "frame": { "x": 0, "y": 0, "width": 350, "height": 300, "rotation": 0 }
+      }
+    },
+    {
+      "name": "SwipeableView",
+      "dic": {
+        "viewType": "SwipeableView",
+        "direction": "Horizontal",
+        "paging": false,
+        "circular": false,
+        "shownext": false,
+        "showarrow": true,
+        "borderColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "boxShadow": false,
+        "boxShadowWidth": 4,
+        "boxShadowColor": {
+          "alpha": 1,
+          "red": 0.870588,
+          "green": 0.870588,
+          "blue": 0.870588,
+          "colorName": ""
+        },
+        "swipeableItems": [
+          {
+            "id": 0,
+            "Fields": []
+          }
+        ],
+        "padding": { "top": 10, "right": 10, "bottom": 10, "left": 10 },
+        "frame": { "x": 0, "y": 0, "width": 375, "height": 200, "rotation": 0 }
+      }
+    },
+    {
+      "name": "FormView",
+      "dic": {
+        "viewType": "Form",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "title": "",
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 0,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "formItems": [
+          {
+            "label": "",
+            "font": {
+              "fontName": "system",
+              "fontSize": 14,
+              "fontWeight": false,
+              "fontStyle": false,
+              "textAlignment": "left",
+              "textColor": {
+                "red": 0,
+                "blue": 0,
+                "green": 0,
+                "alpha": 1,
+                "colorName": ""
+              },
+              "lineBreakMode": "TailTruncation"
+            },
+            "Fields": [],
+            "width": 300,
+            "height": 80,
+            "gap": 5,
+            "backgroundColor": {
+              "alpha": 1,
+              "red": 0.9215,
+              "green": 0.9215,
+              "blue": 0.9215,
+              "colorName": ""
+            },
+            "borderColor": {
+              "alpha": 1,
+              "red": 0,
+              "green": 0,
+              "blue": 0,
+              "colorName": ""
+            },
+            "borderWeight": 1,
+            "cornerRadius": 0,
+            "itemAlignment": "middle",
+            "required": false
+          }
+        ],
+        "padding": { "top": 10, "right": 10, "bottom": 10, "left": 10 },
+        "frame": { "x": 0, "y": 0, "width": 375, "height": 250, "rotation": 0 }
+      }
+    },
+    {
+      "name": "Grid",
+      "dic": {
+        "viewType": "Grid",
+        "item": 0,
+        "gridItems": [
+          {
+            "id": 0,
+            "heading": "row_0",
+            "indexColumn": 1,
+            "height": 50,
+            "columns": 1,
+            "columnList": [{ "id": 0, "width": 100, "Fields": [] }]
+          }
+        ],
+        "justifyContent": "center",
+        "alignItems": "center",
+        "rowSpacing": 2,
+        "columnSpacing": 2,
+        "direction": "row",
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 0,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 275, "height": 275, "rotation": 0 }
+      }
+    },
+    {
+      "name": "Card",
+      "dic": {
+        "viewType": "Card",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "rowSpacing": 2,
+        "columnSpacing": 2,
+        "direction": "row",
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "colorName": ""
+        },
+        "borderColor": {
+          "alpha": 0,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "colorName": ""
+        },
+        "borderWeight": 1,
+        "cornerRadius": 0,
+        "padding": { "top": 2, "right": 2, "bottom": 2, "left": 2 },
+        "frame": { "x": 0, "y": 0, "width": 275, "height": 275, "rotation": 0 },
+        "dataarray": [
+          {
+            "columns": 1,
+            "rows": 1,
+            "gap": 4,
+            "CellStyle": "custom",
+            "Fields": [],
+            "width": 500,
+            "height": 260
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stack",
+      "dic": {
+        "viewType": "Stack",
+        "item": 0,
+        "fieldname": "",
+        "fieldtype": "",
+        "style": "Bar",
+        "progress": 0,
+        "arcRadius": 28,
+        "backgroundColor": {
+          "alpha": 1,
+          "red": 0.9215,
+          "green": 0.9215,
+          "blue": 0.9215,
+          "colorName": ""
+        },
+        "fillColor": {
+          "alpha": 1,
+          "red": 0,
+          "green": 0.2,
+          "blue": 0.6,
+          "colorName": ""
+        },
+        "frame": { "x": 0, "y": 0, "width": 150, "height": 15, "rotation": 0 }
+      }
+    }
+  ]
+}

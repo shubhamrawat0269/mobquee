@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="Image" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.Image.ImageView" visible="true" visibleInTableView="true" imagePath="assets/toolbox/ico_imageview.png" description="Here is the label description"
+		helpLink_EN="/image_view.htm" helpLink_JP="/sheet002.htm#RANGE!A300">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>		
+			<property path="fieldname" input="spark.components.DropDownList123">
+				<dataSource source="@dbTable:fieldswithBracket" labelField="fieldname" />
+				<dependentActions>
+					<when condition="compare" compareTarget="@dbTable:" compareBy="IS_NULL_OR_EMPTY" at="initForm" @stopCommit="true">
+						<action target="{@form[fieldname]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[fieldname]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[fieldname]:}" method="setOptions" value="@dbTable:fieldswithBracket" labelField="fieldname" caseOf="false"/> 
+					</when>
+					<when condition="compare" compareTarget="{@form[fieldname]:value}" compareBy="IS_NULL_OR_EMPTY" at="postCommit">
+						<action target="{@form[image]:}" method="setValue" value="{@form[fieldname]:value}" chainedEvent="change" caseOf="false"/>
+						<action target="{@form[name]:}" method="setValue" value="{@form[fieldname]:value}" chainedEvent="change" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="altText" input="spark.components.TextInput" copyable="true"/>
+			<property path="image.srcLocation" dataType="array" input="spark.components.DropDownList" init="bundle">
+				<dataSource labelField="name" valueField="name">
+					<data name="bundle" toolTip=""/>
+					<data name="remoteFile" toolTip=""/>
+					<data name="url" toolTip=""/>
+				 	<data name="gallery" toolTip=""/>
+					<data name="local" toolTip="Supported on iOS only"/>
+					<data name="signature" toolTip=""/>
+					<data name="QRview" toolTip="Square shaped ui recommended "/>
+					<data name="reCaptcha" toolTip="Supported on web only"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="bundle" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="false" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="remoteFile" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="url" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="local" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="gallery" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="signature" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="QRview" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="false" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[image.srcLocation]:value}" compareBy="EQ" compareWith="reCaptcha" at="initForm, postCommit">
+						<action target="{@form[urlImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[bundleImage]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[remoteImage]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[galleryImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[localImage]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[scaleMode]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[encstring]:}" method="folded" value="true" caseOf="true"/>
+   						<action target="{@form[captchakey]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+					<when at="postCommit"  stopCommit="true">
+						<action target="{@form[urlImage]:}" method="setValue" value="{@base:image.imageName}"/>
+					</when>
+				</dependentActions>
+			</property>
+			
+			<property formKey="bundleImage" path="image" input="TextInputWithButton" copyable="true"/>
+ 			<property formKey="urlImage" path="image.imageName" input="spark.components.TextInput" copyable="true">
+ 				<dependentActions>
+ 					<when at="postCommit"  stopCommit="true">
+ 						<action target="{@form[urlImage]:}" method="setValue" value="{@base:image.imageName}"/>
+ 					</when>
+ 				</dependentActions>
+ 			</property>
+ 			<property formKey="remoteImage" path="image.filename" input="spark.components.TextInput" copyable="true">
+ 				<dependentActions>
+ 					<when at="postCommit"  stopCommit="true">
+ 						<action target="{@form[remoteImage]:}" method="setValue" value="{@base:image.filename}"/>
+ 					</when>
+ 				</dependentActions>
+ 			</property>
+ 			<property formKey="galleryImage" path="image.filename" input="spark.components.TextInput">
+  				<dependentActions>
+  					<when at="postCommit"  stopCommit="true">
+  						<action target="{@form[galleryImage]:}" method="setValue" value="{@base:image.filename}"/>
+  					</when>
+  				</dependentActions>
+  			</property>
+  			<property formKey="localImage" path="image.filename" input="spark.components.TextInput">
+  				<dependentActions>
+  					<when at="postCommit"  stopCommit="true">
+  						<action target="{@form[localImage]:}" method="setValue" value="{@base:image.filename}"/>
+  					</when>
+  				</dependentActions>
+  			</property>
+   			<property path="scaleMode" input="spark.components.DropDownList" copyable="true">
+				<dataSource>
+					<data name="ScaleToFill"/>
+					<data name="AspectFit"/>
+				</dataSource>
+			</property>
+  			<property path="encstring" input="spark.components.TextInput"/>
+  			<property path="captchakey" input="spark.components.TextInput"/>
+			<property path="pinchZoom" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="lazyLoad" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+			
+		<type name="Style" @stopCommit="true">	
+			<property path="borderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="borderWeight" dataType="Number" input="spark.components.NumericStepper" min="0" max="10" inc="1" init="1" copyable="true"/>
+			<property path="boxShadow" dataType="Boolean" input="spark.components.CheckBox" value="false" disable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[boxShadow]:value}" compareBy="EQ" compareWith="1" at="initForm, postCommit">
+						<action target="{@form[boxShadowWidth]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[boxShadowWidth]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[boxShadowColor]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[boxShadowColor]:}" method="folded" value="true" caseOf="false"/>						
+					</when>
+				</dependentActions>
+			</property>
+			<property path="boxShadowWidth" input="spark.components.NumericStepper" min="0" max="10" inc="1" disable="true"/>
+			<property path="boxShadowColor" dataType="ColorDic" input="mx.controls.ColorPicker" disable="true"/>
+		</type>
+
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="1" max="10000" init="44" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="1" max="10000" init="44" copyable="true"/>
+			<property path="frame.rotation" input="spark.components.NumericStepper" min="0" max="360" inc="5" copyable="true"/>
+		</type> 
+	</properties>
+</item>

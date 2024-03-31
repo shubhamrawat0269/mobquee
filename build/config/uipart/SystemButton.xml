@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="SystemButton" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.SystemButton.SystemButtonView" visible="true" visibleInTableView="true"  visibleInTableViewCell="false" imagePath="assets/toolbox/ico_systembutton.png" description="Here is the label description"
+		helpLink_EN="/system_button2.htm" helpLink_JP="/sheet002.htm#RANGE!A800">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="buttonType" input="spark.components.DropDownList" init="Detail">
+				<dataSource>
+					<data name="add"/>
+					<data name="Back"/>
+					<data name="Detail"/>
+					<data name="InfoDark"/>
+					<data name="InfoLight"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[buttonType]:value}" compareBy="EQ" compareWith="Back" at="initForm, postCommit">
+						<action target="{@form[backImage]:}" method="folded" value="false" caseOf="true"/>						
+						<action target="{@form[backText]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[backImage]:}" method="folded" value="true" caseOf="false"/>						
+						<action target="{@form[backText]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+			</dependentActions>
+			</property>
+			<property formKey="backImage" path="image" input="TextInputWithButton" copyable="true"/>
+			<property formKey="backText" path="text" input="spark.components.TextInput" copyable="true"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Actions">
+			<property path="actions.clicked" input="LabelWithButton" />
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="5" max="10000" init="44" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="5" max="10000" init="44" copyable="true"/>
+			<property path="frame.rotation" input="spark.components.NumericStepper" min="0" max="360" inc="5" copyable="true"/>
+		</type> 
+	</properties>
+</item>

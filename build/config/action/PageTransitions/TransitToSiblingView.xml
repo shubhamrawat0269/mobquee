@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="TransitToSiblingView" category="ViewAction" type="Page" method="TransitToSiblingView"
+  		helpLink_EN="" helpLink_JP="">
+  	<properties>
+  		<type name="parameters" input="None">
+ 
+ 			<property path="params.pageName" input="spark.components.DropDownList" >
+ 				<validations><validation validator="RequiredValueValidator"/></validations>
+ 			    <dataSource source="{@project:getSiblingPageList(@page:pageid)}" labelField="Title" valueField="pageid"/>
+ 			    <dependentActions>
+ 					<when at="initForm, postCommit" condition="compare" compareTarget="{@form[params.pageName]:value}" compareBy="NE" compareWith="">						
+ 						<action target="{@form[params.targetPage]:}" method="setOptions" value="{@project:getChildPageList(@form[params.pageName]:value)}" labelField="Title" valueField="pageid" caseOf="true"/>
+ 						<action target="{@form[params.targetPage]:}" method="folded" value="false" caseOf="true"/>
+ 					</when>
+ 				</dependentActions>
+ 			</property>
+ 			<property path="params.targetPage" input="spark.components.DropDownList" >
+ 			</property>
+ 			
+ 			<property path="params.transition" input="spark.components.DropDownList" >
+ 				<validations><validation validator="RequiredValueValidator"/></validations>
+  			    <dataSource source="{@base:getTransitionList(@page:parentid)}" labelField="name" valueField="type"/>
+  				<dependentActions>
+  					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getViewType(@page:parentid)}" compareBy="NE" compareWith="SplitView">						
+  						<action target="{@form[params.transition]:}" method="folded" value="true" caseOf="true"/>
+  						<action target="{@form[params.transition]:}" method="folded" value="false" caseOf="false"/>
+  					</when>	
+  					<when condition="compare" compareTarget="{@form[params.transition]:value}" compareBy="EQ" compareWith="transitView" at="initForm, postCommit">
+ 						<action target="{@form[params.viewPage]:}" method="setValue" value="{@base:setViewPageId(@page:pageid)}" caseOf="true"/>
+ 						<action target="{@form[params.viewPage]:}" method="setValue" value="{@base:setViewPageId()}" caseOf="false"/>						
+ 					</when>
+  				</dependentActions>
+  			</property>
+ 			
+ 			<property path="params.transferData" input="spark.components.CheckBox"/>
+ 			
+ 			<property path="params.animationType" input="spark.components.DropDownList" init="none" copyable="true">
+ 				<dataSource>
+ 					<data name="flip"/>
+ 					<data name="slide"/>
+ 					<data name="slidedown"/>
+ 					<data name="slideup"/>
+ 					<data name="turn"/>
+ 					<data name="none"/>
+ 				</dataSource>	
+ 			</property>
+ 			
+ 		</type>
+ 		<type name="condition" input="HRule">
+ 			<property path="params.condition" input="LabelWithButton"/>
+ 		</type>
+ 		<type name="resultEvents" input="HRule">
+ 			<property path="actions.success" input="LabelWithButton"/>
+ 			<property path="actions.error" input="LabelWithButton"/>
+ 		</type>
+ 	</properties>
+ </item>
+

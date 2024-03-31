@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="popViewController" category="ViewAction" type="Page" method="popViewController"
+		helpLink_EN="/return_to_previous_page2.htm" helpLink_JP="/act.htm#_前のページへ戻る">
+	<properties>			
+	
+		<type name="parameters" input="None">
+			<property path="params.animationType" input="spark.components.DropDownList" init="none" copyable="true">
+				<dataSource>
+					<data name="flip"/>
+					<data name="slide"/>
+					<data name="slidedown"/>
+					<data name="slideup"/>
+					<data name="turn"/>
+					<data name="none"/>
+				</dataSource>	
+			</property>
+		</type>
+			
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

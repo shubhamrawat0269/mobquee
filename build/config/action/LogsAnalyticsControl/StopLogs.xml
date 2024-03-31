@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StopLogs" category="LogsAnalyticsAction" type="LogsAnalytics" method="StopLogs"
+		helpLink_EN="" helpLink_JP="" >
+	<properties>
+		<type name="parameters" input="None">
+		<property path="params.provider" input="spark.components.DropDownList">
+				<dataSource>
+		   			<data name="Google Analytics"/>
+		  		</dataSource>
+			</property>
+			<property path="params.eventname" input="spark.components.DropDownList">
+				<dataSource>
+		   			<data name="module_visit"/>
+		  		</dataSource>
+			</property>
+			<property path="params.name" input="spark.components.TextInput">
+			  	<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>		
+		</type>		
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="None">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

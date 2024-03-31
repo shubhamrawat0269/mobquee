@@ -1,0 +1,374 @@
+{
+  "UIParts": [
+    {
+      "name": "Container",
+      "text": "Container",
+      "include": "true",
+      "items": [
+        {
+          "name": "Card",
+          "text": "Card View",
+          "visible": "false",
+          "imagePath": "assets/uitype/ico_cardview.png",
+          "description": ""
+        },
+        {
+          "name": "ExpansionPanel",
+          "text": "Expansion Panel",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_expansionpanel.png",
+          "description": "An Expansion Panel is a lightweight container that may either stand alone or be connected to a larger surface"
+        },
+        {
+          "name": "SwipeableView",
+          "text": "Swipeable Panel",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_swipeview.png",
+          "description": "A Swipeable View panel is a lightweight container that may either stand alone or be connected to a larger surface"
+        },
+        {
+          "name": "FormView",
+          "text": "Form View",
+          "visible": "false",
+          "imagePath": "assets/uitype/ico_formview.png",
+          "description": ""
+        },
+        {
+          "name": "Stack",
+          "text": "Stack",
+          "visible": "false",
+          "imagePath": "assets/uitype/ico_stackview.png",
+          "description": ""
+        },
+        {
+          "name": "Grid",
+          "text": "Grid",
+          "visible": "true",
+          "imagePath": "assets/uitype/grid.png",
+          "description": "Grid Container"
+        }
+      ]
+    },
+    {
+      "name": "TextAndImage",
+      "text": "Text and Image",
+      "include": "true",
+      "items": [
+        {
+          "name": "Label",
+          "text": "Label",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_label.png",
+          "description": "This is a simple Label component, represents a single line of text, It does not broadcast any events"
+        },
+        {
+          "name": "TextField",
+          "text": "Text Input",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_textfield.png",
+          "description": "This is a Text Input component for fetching text data from user"
+        },
+        {
+          "name": "NumericField",
+          "text": "Numeric Input",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_numericfield.png",
+          "description": "This is a Numeric Text Input for fetching numeric only data"
+        },
+        {
+          "name": "TextView",
+          "text": "Text Area",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_textview.png",
+          "description": "This is a Text Area component for fetching multi-line text input"
+        },
+        {
+          "name": "Image",
+          "text": "Image View",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_imageview.png",
+          "description": "This component enables to display images from the library of Images"
+        },
+        {
+          "name": "Avatar",
+          "text": "Avatar",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_avatar.png",
+          "description": "This component enables to display images from the library of Images"
+        },
+        {
+          "name": "WebView",
+          "text": "Web View",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_www.png",
+          "description": "This component enables to display web pages or online content"
+        },
+        {
+          "name": "Link",
+          "type": "Label",
+          "text": "Link Label",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_linklabel.png",
+          "description": "This is a Link-label component, used for navigation to a given URL"
+        },
+        {
+          "name": "SearchBar",
+          "text": "Search Bar",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_searchbar.png",
+          "description": "This is used to search or filter data displayed to the user"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "text": "Button",
+      "include": "true",
+      "items": [
+        {
+          "name": "Round",
+          "type": "Button",
+          "text": "Round Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_button.png",
+          "description": "This is a perfect Round Button"
+        },
+        {
+          "name": "Text",
+          "type": "Button",
+          "text": "Text Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_text.png",
+          "description": "This button can display some text or image"
+        },
+        {
+          "name": "Image",
+          "type": "Button",
+          "text": "Image Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_image.png",
+          "description": "This button enables to display image of users choice"
+        },
+        {
+          "name": "Icon",
+          "type": "Button",
+          "text": "Icon Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_iconbtn.png",
+          "description": "This button enables to display image of users choice"
+        },
+        {
+          "name": "Switch",
+          "text": "Switch Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_switch.png",
+          "description": "This portrays a slider control, a toggle switch to select between two options"
+        },
+        {
+          "name": "Toggle",
+          "type": "Button",
+          "text": "Toggle Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_toggle.png",
+          "description": "This portrays an On or Off control, to change setting between two states"
+        },
+        {
+          "name": "Check",
+          "type": "Box",
+          "text": "Check Box",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_checkmark.png",
+          "description": "Use Check boxes for options that users can select or clear"
+        },
+        {
+          "name": "Radio",
+          "type": "Button",
+          "text": "Radio Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_radiobutton.png",
+          "description": "This UI enables users to choose or select only one of a predefined set of options."
+        },
+        {
+          "name": "Segment",
+          "text": "Segment Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_segment.png",
+          "description": "This portrays a horizontal group of buttons, with an option to define Events on each"
+        },
+        {
+          "name": "Action",
+          "type": "Button",
+          "text": "Action Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_actionbutton.png",
+          "description": "Use System buttons for standard system specific icons and controls"
+        },
+        {
+          "name": "System",
+          "type": "Button",
+          "text": "System Button",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_systembutton.png",
+          "description": "Use System buttons for standard system specific icons and controls"
+        }
+      ]
+    },
+    {
+      "name": "MediaAndLibrary",
+      "text": "Media and Library",
+      "include": "true",
+      "items": [
+        {
+          "name": "Camera",
+          "text": "Camera Picker",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_camera.png",
+          "description": "This control enables for using Camera device"
+        },
+        {
+          "name": "SoundBox",
+          "text": "Sound Box",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_sound.png",
+          "description": "This control enables for playing Music on a player"
+        },
+        {
+          "name": "VideoBox",
+          "text": "Video Box",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_video.png",
+          "description": "This control enables for playing Video on a video player"
+        },
+        {
+          "name": "GoogleMap",
+          "text": "Map Control",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_map.png",
+          "description": "This control enables for displaying (Google) maps on a device"
+        }
+      ]
+    },
+    {
+      "name": "Selector",
+      "text": "Selector",
+      "include": "true",
+      "items": [
+        {
+          "name": "Calendar",
+          "text": "Calendar",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_calendar.png",
+          "description": "This provides an interface to set the Date"
+        },
+        {
+          "name": "DatePicker",
+          "text": "Date Picker",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_pickerdate.png",
+          "description": "This provides an interface to set the date, the time or the date and time, depending on the mode selected"
+        },
+        {
+          "name": "ComboBox",
+          "text": "Combo Box",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_combobox.png",
+          "description": "This widget provides the users to either type a value directly into the control or choose from the list of existing options."
+        },
+        {
+          "name": "Picker",
+          "text": "Picker",
+          "visible": "false",
+          "imagePath": "assets/uitype/ico_pickerview.png",
+          "description": "This provides an interface to choose multiple values, similar to a drop down menu"
+        },
+        {
+          "name": "TileList",
+          "text": "Tile List",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_tilelist.png",
+          "description": "A db-scrollable List which have items in multiple rows & columns"
+        },
+        {
+          "name": "Tabs",
+          "text": "Tabs",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_tabs.png",
+          "description": "It organize and allow navigation between groups of content that are related and at the same level of hierarchy"
+        },
+        {
+          "name": "Slider",
+          "text": "Slider",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_slider.png",
+          "description": "This is used to select value by moving slider thumb between the end points of the slider track"
+        },
+        {
+          "name": "Chart",
+          "text": "Chart View",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_chart.png",
+          "description": "This is used to display data as Chart"
+        },
+        {
+          "name": "HeatMap",
+          "text": "Heat Map",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_heatmap.png",
+          "description": "This control enables Heat map layer on Google maps on a device"
+        },
+        {
+          "name": "LiveFeed",
+          "text": "Live Feed",
+          "visible": "false",
+          "imagePath": "assets/uitype/ico_livefeed.png",
+          "description": "This is used to show live data coming from any feed/ stream"
+        }
+      ]
+    },
+    {
+      "name": "Indicator",
+      "text": "Overlay",
+      "include": "true",
+      "items": [
+        {
+          "name": "Dialog",
+          "text": "Dialog View",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_dialog.png",
+          "description": "This provides a overlay dialog window which have custom content & a set of actions"
+        },
+        {
+          "name": "Drawer",
+          "text": "Drawer View",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_drawer.png",
+          "description": "This provides a draggable window which have custom content & a set of actions"
+        },
+        {
+          "name": "Skeleton",
+          "text": "Skeleton",
+          "visible": "false",
+          "imagePath": "assets/uitype/ico_skeleton.png",
+          "description": "Display a placeholder preview of your content before the data gets loaded to reduce load-time frustration."
+        },
+        {
+          "name": "Indicator",
+          "text": "Indicator",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_indicator.png",
+          "description": "This enables for displaying an indicator while loading some data"
+        },
+        {
+          "name": "Progress",
+          "type": "Bar",
+          "text": "Progress Bar",
+          "visible": "true",
+          "imagePath": "assets/uitype/ico_progress.png",
+          "description": "This provides a visual representation of the progress of a task or event over time"
+        }
+      ]
+    },
+
+    { "name": "Gadget", "text": "Gadget", "include": "false", "items": [] }
+  ]
+}

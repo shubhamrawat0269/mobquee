@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StartGPS" category="MotionAction" type="Motion" method="StartGPS"
+		helpLink_EN="/start_gps4.htm" helpLink_JP="/act.htm#_GPS起動">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.accuracy" input="spark.components.DropDownList">
+			  	<validations><validation validator="RequiredValueValidator"/></validations>
+			  	<dataSource>					
+					<data name="Best" value ="1"/>
+					<data name="10m" value ="0"/>					
+					<data name="100m" value ="0"/>
+					<data name="1km" value ="0"/>
+					<data name="3km" value ="0"/>
+				</dataSource>
+			</property>		
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+			<property path="actions.notAvailable" input="LabelWithButton"/>
+			<property path="actions.ChangeLocation" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

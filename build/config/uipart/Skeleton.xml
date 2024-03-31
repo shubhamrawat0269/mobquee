@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="Skeleton" mockup="" visible="true"  imagePath="" description="" helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="variant" dataType="String" input="spark.components.DropDownList" init="rectangular" copyable="true">
+				<dataSource>
+					<data name="circular"/>
+					<data name="rectangular"/>
+					<data name="rounded"/>
+				</dataSource>
+			</property>
+			<property path="animation" dataType="String" input="spark.components.DropDownList" init="pulse" copyable="true">
+				<dataSource>
+					<data name="none"/>
+					<data name="pulse"/>
+					<data name="wave"/>
+				</dataSource>
+			</property>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Style" @stopCommit="true">
+			<property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="20" max="10000" init="44" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="20" max="10000" init="44" copyable="true"/>
+		</type> 
+	</properties>
+</item>

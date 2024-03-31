@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="strokeRec" category="CanvasAction" type="Canvas" method="strokeRec">
+	<properties>	
+		<type name="parameters" input="None">
+			<property path="params.name" input="spark.components.TextInput"/>	
+			<property path = "params.startPoint.x"  input="spark.components.TextInput"/>				
+			<property path = "params.startPoint.y"  input="spark.components.TextInput"/>
+			<property path = "params.startPoint.width"  input="spark.components.TextInput"/>				
+			<property path = "params.startPoint.height"  input="spark.components.TextInput"/>	
+			<property path="params.group" input="spark.components.TextInput"/>
+			<property path="params.targetPage" input="spark.components.DropDownList">
+			    <dataSource source="{@project:getPageCacheList()}" labelField="Title" valueField="pageid"/>
+			</property>			
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

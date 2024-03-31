@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StopGeoFencing" category="MotionAction" type="Motion" method="StopGeoFencing"
+		helpLink_EN="" helpLink_JP="">
+	<properties>		
+		<type name="resultEvents" input="None">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

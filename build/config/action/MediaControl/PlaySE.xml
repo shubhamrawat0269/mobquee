@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="PlaySE" category="MediaAction" type="Media" method="PlaySE"
+		helpLink_EN="/play_sound_effect2.htm" helpLink_JP="/act.htm#_効果音再生">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.filename.srcLocation" dataType="array" input="spark.components.DropDownList" init="bundle">
+ 				<dataSource>
+ 					<data name="bundle"/>
+ 					<data name="url"/>
+ 				</dataSource>
+ 				<dependentActions>
+ 					<when condition="compare" compareTarget="{@form[params.filename.srcLocation]:value}" compareBy="EQ" compareWith="bundle" at="initForm, postCommit">
+ 						<action target="{@form[urlSound]:}" method="folded" value="true" caseOf="true"/>
+ 						<action target="{@form[bundleSound]:}" method="folded" value="false" caseOf="true"/>						
+ 					</when>
+ 					<when condition="compare" compareTarget="{@form[params.filename.srcLocation]:value}" compareBy="EQ" compareWith="url" at="initForm, postCommit">
+ 						<action target="{@form[urlSound]:}" method="folded" value="false" caseOf="true"/>
+ 						<action target="{@form[bundleSound]:}" method="folded" value="true" caseOf="true"/>						
+ 					</when>
+ 					<when at="postCommit"  stopCommit="true">
+ 						<action target="{@form[urlSound]:}" method="setValue" value="{@base:params.filename.soundURL}"/>
+ 					</when>
+ 				</dependentActions>
+ 			</property>
+ 			<property formKey="bundleSound" path="params.filename" dataType="SoundFileDic" input="TextInputWithButton" resourceType="soundeffect" restict="true"/>
+ 			<property formKey="urlSound" path="params.filename.soundURL" input="spark.components.TextInput" copyable="true">
+ 				<dependentActions>
+ 					<when at="postCommit"  stopCommit="true">
+ 						<action target="{@form[urlSound]:}" method="setValue" value="{@base:params.filename.soundURL}"/>
+ 					</when>
+ 				</dependentActions>
+ 			</property>
+			
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

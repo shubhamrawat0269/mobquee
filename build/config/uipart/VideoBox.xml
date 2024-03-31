@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="VideoBox" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.VideoBox.VideoBoxView" visible="true" imagePath="assets/toolbox/ico_movie.png" description="Here is the label description"
+		helpLink_EN="/video_box.htm" helpLink_JP="/sheet002.htm#RANGE!A1050">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="label" dataType="String" input="spark.components.TextInput" copyable="true"/>
+			
+			<property path="video.srcLocation" dataType="array" input="spark.components.DropDownList" init="bundle">
+     			<dataSource>
+     				<data name="bundle"/>
+     				<data name="url"/>
+     			</dataSource>
+     			<dependentActions>
+     				<when condition="compare" compareTarget="{@form[video.srcLocation]:value}" compareBy="EQ" compareWith="bundle" at="initForm, postCommit">
+     					<action target="{@form[bundleVideo]:}" method="folded" value="false" caseOf="true"/>						
+     					<action target="{@form[urlVideo]:}" method="folded" value="true" caseOf="true"/>
+     					<action target="{@form[remoteVideo]:}" method="folded" value="true" caseOf="true"/>
+     				</when>
+     				<when condition="compare" compareTarget="{@form[video.srcLocation]:value}" compareBy="EQ" compareWith="url" at="initForm, postCommit">
+     					<action target="{@form[bundleVideo]:}" method="folded" value="true" caseOf="true"/>						
+     					<action target="{@form[urlVideo]:}" method="folded" value="false" caseOf="true"/>
+     					<action target="{@form[remoteVideo]:}" method="folded" value="true" caseOf="true"/>
+     				</when>
+     				<when condition="compare" compareTarget="{@form[video.srcLocation]:value}" compareBy="EQ" compareWith="remoteFile" at="initForm, postCommit">
+     					<action target="{@form[bundleVideo]:}" method="folded" value="true" caseOf="true"/>						
+     					<action target="{@form[urlVideo]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[remoteVideo]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[video.srcLocation]:value}" compareBy="EQ" compareWith="gallery" at="initForm, postCommit">
+						<action target="{@form[bundleVideo]:}" method="folded" value="true" caseOf="true"/>						
+     					<action target="{@form[urlVideo]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[remoteVideo]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+     				<when at="postCommit"  stopCommit="true">
+     					<action target="{@form[urlVideo]:}" method="setValue" value="{@base:video.videoName}"/>
+     				</when>
+     			</dependentActions>
+     		</property>
+     			
+     		<property formKey="bundleVideo" path="video" dataType="VideoFileDic" input="TextInputWithButton" copyable="true" resourceType="video"/>
+     		<property formKey="urlVideo" path="video.videoName" input="spark.components.TextInput" copyable="true">
+     			<dependentActions>
+     				<when at="postCommit"  stopCommit="true">
+     					<action target="{@form[urlVideo]:}" method="setValue" value="{@base:video.videoName}"/>
+     				</when>
+    			</dependentActions>
+    		</property>
+    		<property formKey="remoteVideo" path="video.videoName" input="spark.components.TextInput" copyable="true">
+ 				<dependentActions>
+ 					<when at="postCommit"  stopCommit="true">
+ 						<action target="{@form[remoteVideo]:}" method="setValue" value="{@base:video.videoName}"/>
+ 					</when>
+ 				</dependentActions>
+ 			</property>
+    
+			<property path="startPlay" dataType="Boolean" input="spark.components.CheckBox" value="0" copyable="true"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Actions">			
+			<property path="actions.didPausePlayMovie" input="LabelWithButton" />
+			<property path="actions.didStartPlayMovie" input="LabelWithButton" />
+			<property path="actions.didStopPlayMovie" input="LabelWithButton" />
+			<property path="actions.didFinishPlayMovie" input="LabelWithButton" />
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="9999" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="9999" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="150" max="9999" init="320" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="150" max="9999" init="240" copyable="true"/>
+		</type> 
+	</properties>
+</item>

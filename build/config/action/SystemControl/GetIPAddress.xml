@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="GetIPAddress" category="SystemControlAction" type="SystemControl" method="GetIPAddress"
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

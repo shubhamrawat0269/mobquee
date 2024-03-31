@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StopPosture" category="MotionAction" type="Motion" method="StopPosture">
+	<properties>
+		<type name="condition" input="None">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

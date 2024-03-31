@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="ConvertGPSLogToFile" category="MotionAction" type="Motion" method="ConvertGPSLogToFile"
+		helpLink_EN="" helpLink_JP="" platformSpecific="true">
+	<properties>		
+		
+		<type name="resultEvents" input="None">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+			<property path="actions.notAvailable" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

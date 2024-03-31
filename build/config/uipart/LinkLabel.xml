@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="LinkLabel" mockup="com.mobilous.builder.client.pageeditor.editor.mockup.LinkLabel.LinkLabelView" visible="true" visibleInTableView="true" imagePath="assets/toolbox/ico_linklabel.png" description="Here is the label description"
+		helpLink_EN="/link_label.htm" helpLink_JP="">
+	<properties>
+		<type name="Type" @stopCommit="true">
+			<property path="name" input="spark.components.TextInput">
+				<validations>
+					<validation validator="UniqUINameValidator">
+						<args>
+							<arg property="currentSettings" value="{@currentSettings:}"/>
+							<arg property="pageContainerDic" value="{@page:}"/>
+							<arg property="uiPartDic" value="{@base:}"/>
+							<arg property="tableViewCellDic" value="{@tableviewCell:}"/>
+							<arg property="toolbarUiDic" value="{@toolbarUiDic:}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="fieldname" input="spark.components.DropDownList123">
+				<dataSource source="@dbTable:fieldswithBracket" labelField="fieldname" />
+				<dependentActions>
+					<when condition="compare" compareTarget="@dbTable:" compareBy="IS_NULL_OR_EMPTY" at="initForm" @stopCommit="true">
+						<action target="{@form[fieldname]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[fieldname]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[fieldname]:}" method="setOptions" value="@dbTable:fieldswithBracket" labelField="fieldname" caseOf="false"/> 
+					</when>
+					<when condition="compare" compareTarget="{@form[fieldname]:value}" compareBy="IS_NULL_OR_EMPTY" at="postCommit">
+						<action target="{@form[text]:}" method="setValue" value="{@form[fieldname]:value}" chainedEvent="change" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="text" input="spark.components.TextInput" copyable="true"/>
+			
+			<property path="displayFormat" input="spark.components.DropDownList" copyable="true">
+				<dataSource>
+					<data name=""/>
+					<data name="DateTime"/>
+					<data name="Number"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[displayFormat]:value}" compareBy="EQ" compareWith="" at="initForm, postCommit">
+						<action target="{@form[dateFormat]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[dateDataType]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[customDateFormat]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[numberDataType]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[_numberFormat]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[numDisplayFormat]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[displayFormat]:value}" compareBy="EQ" compareWith="DateTime" at="initForm, postCommit">
+						<action target="{@form[dateFormat]:}" method="folded" value="false" caseOf="true"/>	
+						<action target="{@form[numberDataType]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[_numberFormat]:}" method="folded" value="true" caseOf="true"/>						
+						<action target="{@form[numDisplayFormat]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[displayFormat]:value}" compareBy="EQ" compareWith="Number" at="initForm, postCommit">
+						<action target="{@form[dateFormat]:}" method="folded" value="true" caseOf="true"/>	
+						<action target="{@form[dateDataType]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[customDateFormat]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[numberDataType]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[_numberFormat]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="dateFormat" displayFormat="DateTimeFormat" input="InputFormatForm" copyable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[displayFormat]:value}" compareBy="EQ" compareWith="DateTime" at="initForm">
+						<action target="{@form[dateFormat]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[dateFormat]:}" method="folded" value="true" caseOf="false"/>
+					</when>	
+					<when condition="compare" compareTarget="{@form[dateFormat]:value}" compareBy="EQ" compareWith="Custom" at="initForm, postCommit">
+						<action target="{@form[dateDataType]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[dateDataType]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[customDateFormat]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>	
+			<property path="dateDataType" input="spark.components.DropDownList" dataType="array" copyable="true">
+				<dataSource>
+					<data name="date"/>
+					<data name="datetime"/>
+					<data name="time"/>
+					<data name="timestamp"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[dateDataType]:value}" compareBy="NE" compareWith="" at="initForm, postCommit">
+						<action target="{@form[dateDataType]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[customDateFormat]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[customDateFormat]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="customDateFormat" input="spark.components.TextInput" copyable="true" validator="datetimeFormatValidator">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[dateDataType]:value}" compareBy="NE" compareWith="" at="initForm, postCommit">
+						<action target="{@form[customDateFormat]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[customDateFormat]:}" method="folded" value="true" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>	
+			<property path="numberDataType" input="spark.components.DropDownList" dataType="array" copyable="true">
+				<dataSource>
+					<data name="boolean"/>
+					<data name="double"/>
+					<data name="integer"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[numberDataType]:value}" compareBy="NE" compareWith="" at="initForm, postCommit">
+						<action target="{@form[_numberFormat]:}" method="setOptions" value="{@form[_numberFormat]:getNumberFormatValue(@form[numberDataType]:value)}" labelField="label" valueField="value" caseOf="true"/>
+						<action target="{@form[_numberFormat]:}" method="folded" value="false" caseOf="true"/> 
+					</when>
+					<when condition="compare" compareTarget="{@form[numberDataType]:value}" compareBy="EQ" compareWith="boolean" at="initForm, postCommit">
+						<action target="{@form[numDisplayFormat]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[numberDataType]:value}" compareBy="EQ" compareWith="double" at="initForm, postCommit">
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[_numberFormat]:value.value}" compareBy="EQ" compareWith="f" at="initForm, postCommit">
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>
+					<when condition="compare" compareTarget="{@form[numberDataType]:value}" compareBy="EQ" compareWith="integer" at="initForm, postCommit">
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[_numberFormat]:value.value}" compareBy="EQ" compareWith="d" at="initForm, postCommit">
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>	
+				</dependentActions>
+			</property>
+			<property path="_numberFormat" displayFormat="NumberFormat" input="InputFormatForm" labelField="label" copyable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[numberDataType]:value}" compareBy="EQ" compareWith="double" at="initForm, postCommit">
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[_numberFormat]:value.value}" compareBy="EQ" compareWith="f" at="initForm, postCommit">
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>
+					<when condition="compare" compareTarget="{@form[numberDataType]:value}" compareBy="EQ" compareWith="integer" at="initForm, postCommit">
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[_numberFormat]:value.value}" compareBy="EQ" compareWith="d" at="initForm, postCommit">
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[numDisplayFormat]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>	
+				</dependentActions>
+			</property>	
+			<property path="numDisplayFormat" displayFormat="NumberFormat" input="spark.components.TextInput" copyable="true">
+			</property>
+			
+			<property path="link" input="spark.components.TextInput" copyable="true"/>
+			<property path="option" dataType="Number" input="spark.components.NumericStepper" min="0" max="2" inc="1" init="0" copyable="true"/>
+			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
+		<type name="Style" @stopCommit="true">
+			<property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+			<property path="borderWeight" dataType="Number" input="spark.components.NumericStepper" min="0" max="10" inc="1" init="0" copyable="true"/>
+			<property path="borderColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="borderColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
+		</type>
+		
+		<type name="TextFont" @stopCommit="true">
+			<property path="font.fontName" input="spark.components.DropDownList" dataType="array" init="system" copyable="true">
+				<dataSource source="{@base:getFontNames()}" />
+			</property>
+			<property path="font.fontSize" dataType="Number" input="spark.components.NumericStepper" min="6" max="100" inc="1" init="14" copyable="true"/>
+			<property path="underline" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="strikeout" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+			<property path="font.textColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
+			<property path="font.textAlignment" dataType="custom" input="spark.components.RadioButton" init="left" copyable="true">
+				<dataSource>
+					<data name="left" path="left"/>
+					<data name="center" path="center"/>
+					<data name="right" path="right"/>
+				</dataSource>
+			</property>
+			<property path="verticalAlignment" dataType="custom" input="spark.components.RadioButton" init="middle" copyable="true">
+				<dataSource>
+					<data name="top" path="top"/>
+					<data name="middle" path="middle"/>
+					<data name="bottom" path="bottom"/>
+				</dataSource>
+			</property>
+		</type>
+		<type name="TextPadding" @stopCommit="true">
+			<property path="padding.top" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
+			<property path="padding.left" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
+			<property path="padding.right" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
+			<property path="padding.bottom" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
+		</type>
+		<type name="Geometry" @stopCommit="true">
+			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" inc="1" copyable="true"/>
+			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" inc="1" copyable="true"/>
+			<property path="frame.width" dataType="Number" input="spark.components.NumericStepper" min="5" max="10000" inc="1" init="88" copyable="true"/>
+			<property path="frame.height" dataType="Number" input="spark.components.NumericStepper" min="5" max="10000" inc="1" init="44" copyable="true"/>
+			<property path="frame.rotation" input="spark.components.NumericStepper" min="0" max="360" inc="5" copyable="true"/>
+		</type> 
+	</properties>
+</item>

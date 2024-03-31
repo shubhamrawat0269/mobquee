@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="ActionSheet" category="AlertAction" type="Warning" method="ActionSheet"
+		helpLink_EN="/action_sheet2.htm" helpLink_JP="/act.htm#_アクションメニュー表示‌">
+	<properties>
+		<type name="parameters" input="None">	
+			<property path="params.style" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			  	<dataSource>
+					<data name="Default" value ="1"/>									
+					<data name="BlackTranslucent" value ="0"/>
+					<data name="BlackOpaque" value ="0"/>
+				</dataSource>
+			</property>
+			<property path="params.Title" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.cancelTitle" input="spark.components.TextInput" copyable="false">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+		
+			<property path="params.otherBtnTitles" input="spark.components.List" labelField="title" itemClass="com.mobilous.builder.client.lib.adf.action.ActionSheetButtonDic">
+				<dependentActions>
+					<when at="initForm, postIndexChange">
+						<action target="{@form[params.otherBtnTitles[*].title]:}" method="setValue" 
+								value="{@base:params.otherBtnTitles[@form[params.otherBtnTitles]:selectedIndex].title}"/>
+						<action target="{@form[params.otherBtnTitles[*].title]:}" method="setPath"
+								value="{&quot;params.otherBtnTitles[&quot; + @form[params.otherBtnTitles]:selectedIndex + &quot;].title&quot;}"/>
+
+						<action target="{@form[params.otherBtnTitles[*].actions.clicked]:}" method="setValue" 
+								value="{@base:params.otherBtnTitles[@form[params.otherBtnTitles]:selectedIndex].actions.clicked}"/>
+						<action target="{@form[params.otherBtnTitles[*].actions.clicked]:}" method="setPath"
+								value="{&quot;params.otherBtnTitles[&quot; + @form[params.otherBtnTitles]:selectedIndex + &quot;].actions.clicked&quot;}"/>
+										
+					</when>	
+				</dependentActions>
+			</property>
+			<property formKey="params.otherBtnTitles[*].title" path="params.otherBtnTitles[*].title" input="spark.components.TextInput">
+			</property>
+			<property formKey="params.otherBtnTitles[*].actions.clicked" path="params.otherBtnTitles[*].actions.clicked" input="LabelWithButton"/>
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">			
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

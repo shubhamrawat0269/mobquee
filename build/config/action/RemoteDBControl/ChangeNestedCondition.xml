@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="ChangeNestedCondition" category="ComAction" type="Comm" method="ChangeNestedCondition"
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.pageName" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getPageCacheList(DbTableViewNestedList)}" labelField="Title" valueField="pageid"/>
+				<dependentActions>
+					<when at="initForm, postCommit" condition="compare" compareTarget="{@project:getPageViewType(@form[params.pageName]:value)}" compareBy="EQ" compareWith="">						
+						<action target="{@form[params.remotewhere]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.order]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.remotewhere]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[params.order]:}" method="folded" value="false" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>			
+			<property path="params.remotewhere" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.order" input="spark.components.TextInput"/>
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="ClearAK" category="ComAction" type="Comm" method="ClearAK"
+		helpLink_EN="" helpLink_JP="">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.userid" input="spark.components.TextInput">				
+			</property>
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

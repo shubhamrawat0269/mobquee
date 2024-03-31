@@ -1,0 +1,2650 @@
+{
+    "ActionLocale": [
+    {    
+        "category":"PageTransitions",
+        "type":"Page",
+        "method":"View",
+        "properties": [{
+            "text":"Go To Child Page",
+            "toolTip":"Define the settings of 'Go To Child Page' action which will allow you to navigate to child page",
+            "pageName":"Page Name",
+            "transition":"Transition type",
+            "transferData":"Transfer data",
+            "animationType":"Animation type",
+            "condition":"Condition",
+            "success":"Success",
+            "error":"Error",
+
+            "pageName_toolTip":"Page Name",
+            "transition_toolTip":"Set 'Transition type', for transition between Splitview container's child pages",
+            "transferData_toolTip":"Transfer the data to the child page",
+            "animationType_toolTip":"Animation type\nNot supported for Android apps.",
+            "condition_toolTip":"'Condition'",
+            "success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"PageTransitions",
+        "type":"Page",
+        "method":"SelectTab",
+        "properties": [{
+            "text":"Select Tab",
+            "toolTip":"Define the settings of 'Select Tab' action which will allow you to navigate from one page to any tab page",
+            "tab":"Target Tab ID",
+            "pageTitle":"Target Tab page",
+            "animationType":"Animation type",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "tab_toolTip":"Target Tab ID",
+            "pageTitle_toolTip":"Target Tab page",
+            "animationType_toolTip":"Animation type\nNot supported for Android apps.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"PageTransitions",
+        "type":"Page", 
+        "method":"popViewController", 
+        "properties": [{
+            "text":"Return to Previous page",
+            "toolTip":"Define the settings of 'Return to previous page' action which will allow you to go back to the previous page",
+            "animationType":"Animation type",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "animationType_toolTip":"Animation type\nNot supported for Android apps.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."            
+        }]
+    },
+    {
+        "category":"PageTransitions",
+        "type":"Page", 
+        "method":"popToRootViewController", 
+        "properties": [{
+            "text":"Return to First page",
+            "toolTip":"Define the settings of 'Return to First page' action which will allow you to go back to the parent tab page",
+            "animationType":"Animation type",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "animationType_toolTip":"Animation type\nNot supported for Android apps.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"PageTransitions",
+        "type":"Page", 
+        "method":"ReturnToParentView", 
+        "properties": [{
+            "text":"Return to Any Parent page", 
+            "toolTip":"Define the settings of 'Return To Any Parent Page' action which will allow you to navigate to any parent page in the heirarchy",          
+            "pageName":"Page Name",
+            "transition":"Transition type",
+            "animationType":"Animation type",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "pageName_toolTip":"Parent Page in the hierarchy",
+            "transition_toolTip":"Set 'Transition type', for transition between Splitview container's child pages",
+            "animationType_toolTip":"Animation type\nNot supported for Android apps.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result"
+        }]
+    },
+    {
+        "category":"PageTransitions",
+        "type":"Page", 
+        "method":"TransitToSiblingView", 
+        "properties": [{
+            "text":"Go to Sibling page",
+            "toolTip":"Define the settings of 'Go To Sibling Page' action which will allow you to navigate to sibling page & its children under Splitview page hierarchy, if any.",            
+            "pageName":"Sibling Page Name",
+            "targetPage":"Child Page Name",
+            "transition":"Transition type",
+            "transferData":"Transfer data",
+            "animationType":"Animation type",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "pageName_toolTip":"Sibling Page Name",
+            "targetPage_toolTip":"Child Page in the hierarchy of selected Sibling page",
+            "transition_toolTip":"Set 'Transition type', for transition between Splitview container's child pages",
+            "animationType_toolTip":"Animation type\nNot supported for Android apps.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result"
+        }]
+    },
+    {
+        "category":"PageTransitions",
+        "type":"Page", 
+        "method":"TransitSidebar", 
+        "properties": [{
+            "text":"Transit Sidebar",
+            "toolTip":"",
+            "barPosition":"Bar side",
+            "barFrame.width":"Bar width",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "barPosition_toolTip":"which side of toolbar should be transit",
+            "barFrame.width_toolTip":"Bar width",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result"
+        }]
+    },
+
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"setParentData", 
+        "properties": [{
+            "text":"Update Parent Page Data",
+            "toolTip":"Define the settings of 'Update Parent Page Data' action which will allow you to update the data of the UI placed on the parent page",
+            "name":"Target UI Part",
+            "value":"Updated Data",
+            "reference":"Use Reference UI",
+            "refTargetObject":"Ref. UI Part",
+            "fromName":"From Name",
+            "targetPage":"Page Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name. The name should be one of the UI parts which exists in parent page.",
+            "value_toolTip":"Updated text",
+            "reference_toolTip":"If checked (true), use 'Reference UI Part' for value; else use 'Updated Data' as value",
+            "refTargetObject_toolTip":"Referenced UI part name. Use this field as value when 'Use Reference UI' setting is checked.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"resetViewData", 
+        "properties": [{
+            "text":"Reload the Updated Data",
+            "toolTip":"Define the settings of 'Reload Updated data' action which will allow you to Refresh the data",            
+            "targetPage":"Page Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "targetPage_toolTip":"Target Page Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"setViewData", 
+        "properties": [{
+            "text":"Set the Main Value",
+            "toolTip":"Define the settings of 'Set Main Value' action which will allow you to set the property value of UI part",  
+            "name":"Target UI Part",
+            "value":"Value",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "name_toolTip":"Target UI unique name",
+            "value_toolTip":"Value",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"calculate", 
+        "properties": [{
+            "text":"Calculate",
+            "toolTip":"Define the settings of 'Calculate' action which will allow you to perform calculation based on the applied formula",            
+            "name":"Target UI Part",
+            "value":"Formula",
+            "numberFormat":"Number Format",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "name_toolTip":"Target UI unique name",
+            "value_toolTip":"Formula to be used",
+            "numberFormat_toolTip":"Number format to be displayed",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"appendString", 
+        "properties": [{
+            "text":"Append Text",
+            "toolTip":"Define the settings of 'Append text' action which will allow you to add the text to the  end of the UI part",
+            "name":"Target UI Part",
+            "value":"Data",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "name_toolTip":"Target UI unique name",
+            "value_toolTip":"Text to append",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"clearString", 
+        "properties": [{
+            "text":"Clear Text",
+            "toolTip":"Define the settings of 'Clear Text' action which will allow you to clear the text of the UI part",
+            "name":"Target UI Part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "name_toolTip":"Target UI unique name",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"deleteLastOneCharacter", 
+        "properties": [{
+            "text":"Delete Last Character",
+            "toolTip":"Define the settings of 'Delete Last character' action which will allow you to delete the last character of the UI part",
+            "name":"Target UI Part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "name_toolTip":"Target UI unique name",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"CSV", 
+        "method":"combineToCsv", 
+        "properties": [{
+            "text":"Combine to CSV",
+            "toolTip":"Define the settings of 'Combine to CSV' action which will allow you to combine the CSV formatted data in the  UI part",            
+            "prefix":"Prefix",
+            "result":"Result",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "prefix_toolTip":"Starting name of the UI part to combine the data",
+            "result_toolTip":"Variable Name : To save the combined data",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"CSV", 
+        "method":"splitCsv", 
+        "properties": [{
+            "text":"Split to CSV",
+            "toolTip":"Define the settings of 'Split CSV' action which will allow you to split the data of UI part in the Comma separated value (CSV) Format",            
+            "csvRowData":"CSV Format Data",
+            "prefix":"Prefix",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "csvRowData_toolTip":"",
+            "prefix_toolTip":"Variable Name : To save the split data",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"StrToHex", 
+        "properties": [{
+            "text":"String to Hex",
+            "toolTip":"Define the settings of 'String To Hex' action which will allow you to perform calculation based on the applied formula",            
+            "value":"Value",
+            "numberFormat":"Number Format",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Target UI Part",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "value_toolTip":"",
+            "numberFormat_toolTip":"Number format to be displayed",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "name_toolTip":"Target UI unique name",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MainValue",
+        "type":"MainValue", 
+        "method":"HexToStr", 
+        "properties": [{
+            "text":"Hex to String",
+            "toolTip":"Define the settings of 'Hex To String' action which will allow you to perform calculation based on the applied formula",            
+            "value":"Value",
+            "numberFormat":"Number Format",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Target UI Part",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "value_toolTip":"",
+            "numberFormat_toolTip":"Number format to be displayed",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "name_toolTip":"Target UI unique name",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"GetValue", 
+        "properties": [{
+            "text":"Get Value",
+            "toolTip":""
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"setValue", 
+        "properties": [{
+            "text":"Set Value",
+            "toolTip":"Define the settings of 'Set Value' action which will allow you to Set the value of specific parameters on the UI part",
+            "name":"Target UI Part",
+            "key":"Target UI Property",
+            "value":"Value",
+            "targetPage":"Page Name",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "textName":"Target Text Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "key_toolTip":"Key",
+            "value_toolTip":"Value to be update",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"setImage", 
+        "properties": [{
+            "text":"Set Image",
+            "toolTip":"Define the settings of 'Set Image' action which will allow you to Set an image on the  Image based UI part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "name":"Target UI Part",
+            "reference":"Use Reference UI",
+            "refTargetObject":"Ref. UI Part",
+            "image.srcLocation":"Source",
+            "image.url":"URL",
+            "image.filename":"Image Name",
+            "image.fileext":"Image Extension",
+            "libraryImage":"Gallery Image",
+            "localImage":"Local Image",
+            "animationTime":"Animation Time",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "targetPage_toolTip":"Target Page name",
+            "GroupLis_toolTipt":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Name",
+            "name_toolTip":"Name",
+            "image.srcLocation_toolTip":"Source Location",
+            "image.url_toolTip":"URL",
+            "image.filename_toolTip":"Name of the image",
+            "image.fileext_toolTip":"Extension of the image",
+            "animationTime_toolTip":"Animation Time in seconds. If given, 'fade-in' or 'fade-out' animation will execute depends on image source.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"setColor", 
+        "properties": [{
+            "text":"Set Color",
+            "toolTip":"Define the settings of 'Set Color' action which will allows you to set the color of the UI part properties",
+            "name":"Target UI Part",
+            "color":"Color",
+            "targetPage":"Page Name",
+            "uiproperty":"UI properties",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "color_toolTip":"Color",
+            "targetPage_toolTip":"Target Page name",
+            "uiproperty_toolTip":"UI properties",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+                        
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"setFrame", 
+        "properties": [{
+            "text":"Set Frame",
+            "toolTip":"Define the settings of 'Set Frame' action which will allow you to Change the frame (position and size) of the UI part",
+            "name":"Target UI Part",
+            "x":"X",
+            "y":"Y",
+            "width":"Width",
+            "height":"Height",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "x_toolTip":"X",
+            "y_toolTip":"Y",
+            "width_toolTip":"Width",
+            "height_toolTip":"Height",
+            "targetPage_toolTip":"Target Page name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+          
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"moveObject", 
+        "properties": [{
+            "text":"Move Object",
+            "toolTip":"Define the settings of 'Move object' action which will allow you to move the UI part to a relative position",
+            "name":"Target UI Part",
+            "x":"Position : X",
+            "y":"Position : Y",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "animation":"Animation",
+            "duration":"Duration",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "x_toolTip":"Horizontal X - axis",
+            "y_toolTip":"Vertical Y - axis",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"rotateObject", 
+        "properties": [{
+            "text":"Rotate Object",
+            "toolTip":"Define the settings of 'Rotate object' action which will allow you to Rotate the UI part with specified degree",
+            "name":"Target UI Part",
+            "centerX":"Center X",
+            "centerY":"Center Y",
+            "degree":"Degree",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "animation":"Animation",
+            "duration":"Duration",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "centerX_toolTip":"X- Coordinates of center",
+            "centerY_toolTip":"Y- Coordinates of center",
+            "degree_toolTip":"Degree of rotation",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"movingFocus", 
+        "properties": [{
+            "text":"Move Focus",
+            "toolTip":"Define the settings of 'Moving Focus' action which will allow you to move focus on the UI part",
+            "objectname":"Target UI Part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "objectname_toolTip":"Target UI unique name which will be focused object",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name which will be focused object",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"PropertyControl",
+        "type":"Property", 
+        "method":"setFocusOff", 
+        "properties": [{
+            "text":"Set Focus Off",
+            "toolTip":"Define the settings of 'Set Focus Off' action which will allow you to execute focus off for UI part",
+            "objectname":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "objectname_toolTip":"Target UI unique name which should be focused object",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"Select", 
+        "properties": [{
+            "text":"Select",
+            "toolTip":"Define the settings of 'Select' action which queries the database and gets the results.",
+            "servicename":"Service Name",
+            "tablename":"Table Name",
+            "localwhere":"Where",
+            "order":"Order",
+            "index":"Record Index",
+            "condition":"Condition",
+            "actions.detectRecords":"Detect Records",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "servicename_toolTip":"Service Name",
+            "tablename_toolTip":"Name of table",
+            "localwhere_toolTip":"Where clause",
+            "order_toolTip":"Order",
+            "index_toolTip":"The record index, that the user wants to use as current data on the page",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"insert", 
+        "properties": [{
+            "text":"Insert",
+            "toolTip":"Define the settings of 'Insert' action which will allow you to Insert one record at a time in the local database table",
+            "table":"Table Name",
+            "recordList":"Record",
+            "recordList[*].key":"Field Name",
+            "recordList[*].value":"Value",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "table_toolTip":"Name of table",
+            "recordList_toolTip":"Specify the data set to update or transmit the data",
+            "recordList[*].key_toolTip":"Name of the Database table field",
+            "recordList[*].value_toolTip":"Value to be inserted in the Database",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"update", 
+        "properties": [{
+            "text":"Update",
+            "toolTip":"Define the settings of 'Update Record' action which will allow you to Update the existing record on the local database table",
+            "table":"Table",
+            "where":"Where",
+            "recordList":"Record",
+            "recordList[*].key":"Key",
+            "recordList[*].value":"Value",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "table_toolTip":"Name of table",
+            "where_toolTip":"Where clause",
+            "recordList_toolTip":"Record List",
+            "recordList[*].key_toolTip":"Key",
+            "recordList[*].value_toolTip":"Value to be inserted in the Database",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"delete", 
+        "properties": [{
+            "text":"Delete",
+            "toolTip":"Define the settings of 'Delete' action which will allow you to Delete the existing record from the local database table",
+            "table":"Table",
+            "where":"Where",
+            "recordList":"Record",
+            "recordList[*].key":"Key",
+            "recordList[*].value":"Value",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "table_toolTip":"Name of table",
+            "where_toolTip":"Where clause",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"deleteAllRecords", 
+        "properties": [{
+            "text":"Delete All Records",
+            "toolTip":"Define the settings of 'Delete All' action which will allow you to Delete all the records from the local database table",
+            "table":"Table",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "table_toolTip":"Name of table",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"NumRecords", 
+        "properties": [{
+            "text":"NumRecords",
+            "toolTip":"Define the settings of 'NumRecords' action which queries the database and gets the number of results.",
+            "servicename":"Service Name",
+            "tablename":"Table Name",
+            "localwhere":"Where",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "servicename_toolTip":"Service Name",
+            "tablename_toolTip":"Name of table",
+            "localwhere_toolTip":"Where clause",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"ChangeCondition", 
+        "properties": [{
+            "text":"Change Condition",
+            "toolTip":"Define the actions to update existing DB table list 'display condition' to update where clause or order clause.",
+            "pageName":"Page Name",
+            "group":"Group",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Target UI Part",
+            "Name":"Target UI Part",
+            "localwhere":"Where",
+            "order":"Order",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "pageName_toolTip":"Page Name ",
+            "group_toolTip":"Group",
+            "localwhere_toolTip":"Where clause",
+            "order_toolTip":"Order clause",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"DownloadCSV", 
+        "properties": [{
+            "text":"Download CSV",
+            "toolTip":""
+        }]
+    },
+    {
+        "category":"DbAction",
+        "type":"DataBase", 
+        "method":"UploadCSV", 
+        "properties": [{
+            "text":"Upload CSV",
+            "toolTip":""
+        }]
+    },
+
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"generalLogin", 
+        "properties": [{
+            "text":"General Login",
+            "toolTip":"Define the settings of 'General Login' action which will allow you to use the database table for authentication",
+            "username":"Login ID",
+            "password":"Password",
+            "usernameField":"User Name Field",
+            "passwordField":"Password Field",
+            "servicename":"Service Name",
+            "table":"Table Name",
+            "encrypt":"Encryption",
+            "salt":"Salt",
+            "resultFields":"Result Field",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "username_toolTip":"User's login Id ",
+            "password_toolTip":"Password",
+            "usernameField_toolTip":"User Name Field",
+            "passwordField_toolTip":"Password Field",
+            "servicename_toolTip":"Service Name",
+            "table_toolTip":"Table Name",
+            "encrypt_toolTip":"Encryption",
+            "salt_toolTip":"Salt",
+            "resultFields_toolTip":"Result Field",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"RemoteSelect", 
+        "properties": [{
+            "text":"Remote Select",
+            "toolTip":"Define the settings of 'Remote Select' action which queries the remote database and gets the results.",
+            "servicename":"Service Name",
+            "tablename":"Table Name",
+            "where":"Where",
+            "order":"Order",
+            "index":"Record Index",
+            "fields":"Fields",
+            "fields[*].key":"Key",
+            "fields[*].value":"Value",
+            "condition":"Condition",
+            "actions.detectRecords":"Detect Records",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "servicename_toolTip":"Service Name",
+            "tablename_toolTip":"Name of table",
+            "where_toolTip":"Where clause",
+            "order_toolTip":"Order",
+            "index_toolTip":"The record index, that the user wants to use as current data on the page",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"RemoteInsert", 
+        "properties": [{
+            "text":"Remote Insert",
+            "toolTip":"Define the settings of 'Insert' action which will allow you to Insert one record at a time in the remote database table",
+            "servicename":"Service Name",
+            "table":"Table",
+            "recordList":"Record",
+            "recordList[*].key":"Key",
+            "recordList[*].value":"Value",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "servicename_toolTip":"Service name",
+            "table_toolTip":"Name of table",
+            "recordList[*].key_toolTip":"Key",
+            "recordList[*].value_toolTip":"Value",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"RemoteUpdate", 
+        "properties": [{
+            "text":"Remote Update",
+            "toolTip":"Define the settings of 'Update' action which will allow you to Update the existing record on the remote database table",
+            "servicename":"Service Name",
+            "table":"Table",
+            "where":"Where",
+            "recordList":"Record",
+            "recordList[*].key":"Key",
+            "recordList[*].value":"Value",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "servicename_toolTip":"Service Name",
+            "table_toolTip":"Name of table",
+            "where_toolTip":"Where",
+            "recordList_toolTip":"Record List",
+            "recordList[*].key_toolTip":"Key",
+            "recordList[*].value_toolTip":"Value",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"RemoteDelete", 
+        "properties": [{
+            "text":"Remote Delete",
+            "toolTip":"Define the settings of 'Delete' action which will allow you to Delete the existing record from the remote database table",
+            "servicename":"Service Name",
+            "table":"Table",
+            "where":"Where",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "servicename_toolTip":"Service Name",
+            "table_toolTip":"Name of table",
+            "where_toolTip":"Where",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"RemoteNumRecords", 
+        "properties": [{
+            "text":"Remote NumRecords",
+            "toolTip":"Define the settings of 'Remote NumRecords' action which queries the database and gets the number of results.",
+            "servicename":"Service Name",
+            "tablename":"Table Name",
+            "remotewhere":"Where",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "servicename_toolTip":"Service Name",
+            "tablename_toolTip":"Name of table",
+            "remotewhere_toolTip":"Where clause",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"ChangeRemoteCondition", 
+        "properties": [{
+            "text":"Change Remote Condition",
+            "toolTip":"Define the actions to update existing DB table list 'display condition' to update where clause or order clause.",
+            "pageName":"Page Name",
+            "group":"Group",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Target UI Part",
+            "Name":"Target UI Part",
+            "remotewhere":"Where",
+            "order":"Order",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "pageName_toolTip":"Page Name",
+            "group_toolTip":"Group",
+            "remotewhere_toolTip":"Where",
+            "order_toolTip":"Order",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."            
+        }]
+    },
+    {
+        "category":"RemoteDBControl",
+        "type":"Comm", 
+        "method":"SynchronizeDB", 
+        "properties": [{
+            "text":"Synchronize DB",
+            "toolTip":"Define the settings of 'SynchronizeDB' action which synchronize database between RemoteDB and LocalDB.",
+            "fromService":"From Service",
+            "fromTable":"From Table",
+            "toService":"To Service",
+            "toTable":"To Table",
+            "fromWhere":"From Where",
+            "forceFlag":"Force Flag",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "fromService_toolTip":"From Service",
+            "fromTable_toolTip":"From Table",
+            "toService_toolTip":"To Service",
+            "toTable_toolTip":"To Table",
+            "fromWhere_toolTip":"From Where",
+            "forceFlag_toolTip":"If this field is true, it will force to update it using new record.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."           
+        }]
+    },
+
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"Play", 
+        "properties": [{
+            "text":"Play",
+            "toolTip":"Define the settings of 'Play' action which will allow you to play the media file on the UI part",
+            "name":"Object Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Object Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"Pause", 
+        "properties": [{
+            "text":"Pause",
+            "toolTip":"Define the settings of 'Pause' action which will allow you to pause the media file on the UI part",
+            "name":"Object Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Object Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"StopPlay", 
+        "properties": [{
+            "text":"Stop Play",
+            "toolTip":"Define the settings of 'Stop Play' action which will allow you to stop the media file on the UI part",
+            "name":"Object Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "tab_toolTip":"Name",
+            "name_toolTip":"Object Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"PlaySE", 
+        "properties": [{
+            "text":"Play Sound Effect",
+            "toolTip":"Define the settings of 'Play sound effect' action which will allow you to provide an audio effect to the UI part",
+            "filename":"Sound Effect File",
+            "filename.srcLocation":"Source",
+            "filedetails":"File Details",
+            "filename.url":"URL",
+            "filename.filename":"File Name",
+            "filename.fileext":"File Extension",
+            "bundleSound":"Sound Effect File",
+            "urlSound":"File URL",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "filename_toolTip":"Sound Effect File. Preferable file duration is upto 10 seconds.",
+            "filename.filename_toolTip":"File Name",
+            "filename.fileext_toolTip":"File Extension",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"Record", 
+        "properties": [{
+            "text":"Record",
+            "toolTip":"Define the settings of 'Record' action which will allow you to start the recording",
+            "name":"Object Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Object Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"StopRecord", 
+        "properties": [{
+            "text":"Stop Record",
+            "toolTip":"Define the settings of 'Stop Record' action which will allow you to stop the recording",
+            "name":"Object Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Object Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"SwitchCamera", 
+        "properties": [{
+            "text":"Switch Camera",
+            "toolTip":"Define the settings of 'Switch Camera' action",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "targetUIPart":"Camera UIPart",
+            "side":"Side",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "targetUIPart_toolTip":"Select the Camera UIpart.",
+            "side_toolTip":"Camera Side",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Library", 
+        "method":"TakePhoto", 
+        "properties": [{
+            "text":"Take Photo",
+            "toolTip":"Define the settings of 'Take Photo' action which will allow you to capture the photo through an application",
+            "name":"Camera UIPart",
+            "library":"Library",
+            "watermark":"Photo Text",
+            "photoquality":"Photo Quality",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Camera UIpart Name",
+            "library_toolTip":"Location of file to be saved",
+            "watermark_toolTip":"Text will be embed into photo at bottom-right corner, if provided.",
+            "photoquality_toolTip":"Photo Quality, set the quality of image smoothing.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"QRScanner", 
+        "properties": [{
+            "text":"QR Scanner",
+            "toolTip":"",
+            "variablename":"UIPart Name",
+            "filename":"File Name",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "targetUIPart":"Name",
+            "multiScan":"Multiple Scan",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "variablename_toolTip":"Variable or UI part name.",
+            "filename_toolTip":"A variable storing filename OR filename. File must be an image and must store a QRCode for success.",
+            "targetUIPart_toolTip":"Select the Camera UIpart.",
+            "multiScan_toolTip":"If checked, then at a time scanning of multiple QR codes is possible.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"QRGenerate", 
+        "properties": [{
+            "text":"Generate QR Code",
+            "toolTip":"",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Target UI Part",
+            "Name":"Target UI Part",
+            "value":"Value",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "targetPage_toolTip":"Target Page Name",
+            "name_toolTip":"Select the Image UIpart. Image's location parameter should be 'QRview'",
+            "value_toolTip":"Variable or UI part name.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"OpenGallery", 
+        "properties": [{
+            "text":"Open Device Gallery",
+            "toolTip":"Define the settings of 'Open Device Gallery' action",
+            "mediatype":"Media Type",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Target UI Part",
+            "multiple":"Multiple selection",
+            "limit":"Limit",
+            "refMediaList":"Target UI List",
+            "refMediaList[*].value":"Target UI Part",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "mediatype_toolTip":"Media type",
+            "name_toolTip":"Select the UIpart on the page",
+            "multiple_toolTip":"Allowing multiple selection of media",
+            "limit_toolTip":"Limit for multiple selection",
+            "refMediaList_toolTip":"Reference UI List",
+            "refMediaList[*].value_toolTip":"Reference UI Part",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"UploadMedia", 
+        "properties": [{
+            "text":"Upload Media",
+            "toolTip":"Define the settings of 'Upload Media' action",
+            "mediatype":"Media Type",
+            "targetLocation":"Target Location",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "sourceUIPart":"Media UI Part",
+            "name":"Target UI Part",
+            "isThumbnail":"Thumbnail required",
+            "refThumbnailUI":"Thumbnail UI",
+            "showprogress":"Show progress",
+            "refProgressUI":"Progress UI",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "mediatype_toolTip":"Media type",
+            "targetLocation_toolTip":"Target Location, where media will be upload",
+            "sourceUIPart_toolTip":"Only Media UI parts except Camera",
+            "name_toolTip":"To keep the media-file reference",
+            "isThumbnail_toolTip":"Media thumbnail (a low quality & lesser size media) will be saved.",
+            "refThumbnailUI_toolTip":"If media-thumbnail required, UI-part reference to save server response",
+            "showprogress_toolTip":"Show progress of media uploading. A progress-bar UI must be there on that page.",
+            "refProgressUI_toolTip":"Progress UI reference/name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"DownloadMedia", 
+        "properties": [{
+            "text":"Download Media to Gallery",
+            "toolTip":"Define the settings of 'Download Media to Gallery' action",
+            "sourceUIPart":"Source Reference",
+            "mediatype":"Media Type",
+            "source":"Source Location",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "mediatype_toolTip":"Media type",
+            "source_toolTip":"Source location",
+            "sourceUIPart_toolTip":"Source reference, it could be any ui-part reference or absolute reference",
+            "name_toolTip":"To keep the media-file reference",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"SaveMedia", 
+        "properties": [{
+            "text":"Save Media to Gallery",
+            "toolTip":"Define the settings of 'Save Media to Gallery' action",
+            "mediatype":"Media type",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "sourceUIPart":"Media UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "mediatype_toolTip":"Media type",
+            "sourceUIPart_toolTip":"Only Media UI parts except Camera",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"UploadFile", 
+        "properties": [{
+            "text":"Browse & Upload File",
+            "toolTip":"Define the settings of 'Upload File' action",
+            "type":"File Type",
+            "file.srcLocation":"Source",
+            "file.filename":"File Name",
+            "file.url":"File URL",
+            "name":"Target UI part",
+            "showprogress":"Show progress",
+            "refProgressUI":"Progress UI",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "type_toolTip":"File type",
+            "file.filename_toolTip":"A valid File name with extension or reference.",
+            "file.url_toolTip":"A valid File URL",
+            "name_toolTip":"To keep the  uploaded file reference",
+            "showprogress_toolTip":"Show progress of file uploading. A progress-bar UI must be there on that page.",
+            "refProgressUI_toolTip":"Progress UI reference/name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    { 
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"DownloadFile", 
+        "properties": [{
+            "text":"Download File",
+            "toolTip":""
+        }]
+    },
+    {
+        "category":"MediaControl",
+        "type":"Media", 
+        "method":"ShareVia", 
+        "properties": [{
+            "text":"Share Content Via",
+            "toolTip":"Define the settings of 'Share Content Via' action, where user can share any content via available apps.",
+            "contenttype":"Content Type",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Target UI Part",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "contenttype_toolTip":"Content type",
+            "targetPage_toolTip":"Page Name",
+            "name_toolTip":"Select the UIpart on the page",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+
+    {
+        "category":"MapControl",
+        "type":"GoogleMap", 
+        "method":"ShowLocationInfo", 
+        "properties": [{
+            "text":"Show Location",
+            "toolTip":"Define the settings of 'Show Location' action which will allow you to show the location information on the Map UI part",
+            "name":"Target UI Part",
+            "locationName":"Location Name",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "locationName_toolTip":"Location Name",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },    
+    {
+        "category":"MapControl",
+        "type":"GoogleMap", 
+        "method":"OpenTargetScope", 
+        "properties": [{
+            "text":"Open Target Scope",
+            "toolTip":"efine the settings of 'Open Target Scope' action which will provide the information as overlay of the target location",
+            "name":"Target UI Part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapControl",
+        "type":"GoogleMap", 
+        "method":"CloseTargetScope", 
+        "properties": [{
+            "text":"Close Target Scope",
+            "toolTip":"Define the settings of 'Close Target Scope' action which will remove the overlay",
+            "name":"Target UI Part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapControl",
+        "type":"GoogleMap", 
+        "method":"OpenCurrentPosition", 
+        "properties": [{
+            "text":"Open Current Position",
+            "toolTip":"Define the settings of 'Open Current Position' action which will allow you to show the current position on the Map UI part",
+            "name":"Target UI Part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapControl",
+        "type":"GoogleMap", 
+        "method":"CloseCurrentPosition", 
+        "properties": [{
+            "text":"Close Current Position",
+            "toolTip":"Define the settings of 'Close Current Position' action which will allow you to close the current position on the Map UI part",
+            "name":"Target UI Part",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Target UI Part",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target UI unique name",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Target UI unique name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+
+    {
+        "category":"MapMarkerControl",
+        "type":"MapMarker", 
+        "method":"AddPinMarker", 
+        "properties": [{
+            "text":"Add Pin Marker",
+            "toolTip":"Define the settings of 'Add Pin Marker' action which will allow you to add the marker on Map UI part",
+            "targetPage":"Page Name",
+            "name":"Name",
+            "Name":"Name",
+            "markerid":"Marker ID",
+            "title":"Title",
+            "subtitle":"Sub Title",
+            "markerfile":"Marker File",
+            "leftView":"Left View",
+            "rightView":"Right View",
+            "canShowCallout":"Show Call Out",
+            "address":"Address",
+            "lattitude":"Latitude",
+            "longitude":"Longitude",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.LeftButtonClicked":"On tap Left Button",
+            "actions.RightButtonClicked":"On tap Right Button",
+            
+            "name_toolTip":"Target map object name",
+            "markerid_toolTip":"Unique ID of the marker",
+            "title_toolTip":"Title to be displayed",
+            "subtitle_toolTip":"Sub Title to be displayed",
+            "markerfile_toolTip":"Marker File",
+            "leftView_toolTip":"Style of Left View button",
+            "rightView_toolTip":"Style of Right View button",
+            "canShowCallout_toolTip":"Show Call Out",
+            "address_toolTip":"Address",
+            "lattitude_toolTip":"Location Latitude",
+            "longitude_toolTip":"Location Longitude",
+            "targetPage_toolTip":"Target Page Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result.",
+            "actions.LeftButtonClicked_toolTip":"On tap Left Button",
+            "actions.RightButtonClicked_toolTip":"On tap Right Button"
+        }]
+    },
+    { 
+        "category":"MapMarkerControl",
+        "type":"MapMarker", 
+        "method":"AddMarker", 
+        "properties": [{
+            "text":"Add Custom Marker",
+            "toolTip":"Define the settings of 'Add Marker' action which will allow you to add the marker on Map UI part",
+            "targetPage":"Page Name",
+            "name":"Name",
+            "Name":"Name",
+            "markerid":"Marker ID",
+            "markerType":"Marker Type",
+            "title":"Title",
+            "subtitle":"Sub Title",
+            "markerfile":"Marker Image File",
+            "anchorX":"Anchor X-point",
+            "anchorY":"Anchor Y-point",
+            "leftViewImage":"Left View Image",
+            "rightViewImage":"Right View Image",
+            "canShowCallout":"Show Call Out",
+            "address":"Address",
+            "lattitude":"Latitude",
+            "longitude":"Longitude",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.LeftButtonClicked":"On tap Left Button",
+            "actions.RightButtonClicked":"On tap Right Button",
+            
+            "name_toolTip":"Target map object name",
+            "markerid_toolTip":"Unique ID of the marker",
+            "markerType_toolTip":"Marker Type",
+            "title_toolTip":"Title to be displayed",
+            "subtitle_toolTip":"Sub Title",
+            "markerfile_toolTip":"Marker File",
+            "anchorX_toolTip":"Anchor X-point",
+            "anchorY_toolTip":"Anchor Y-point",
+            "leftViewImage_toolTip":"Left View Image",
+            "rightViewImage_toolTip":"Right View Image",
+            "canShowCallout_toolTip":"Show Call Out",
+            "lattitude_toolTip":"Location Latitude",
+            "longitude_toolTip":"Location Longitude"
+        }]
+    },
+    {
+        "category":"MapMarkerControl",
+        "type":"MapMarker",
+        "method":"removeMarker", 
+        "properties": [{
+            "text":"Remove Marker",
+            "toolTip":"Define the settings of 'Remove Marker' action which will allow you to remove the marker from Map UI part",
+            "name":"Name",
+            "Name":"Name",
+            "markerid":"Marker ID",
+            "targetPage":"Page Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Target map object name",
+            "markerid_toolTip":"Unique ID of the marker",
+            "targetPage_toolTip":"Target Page Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"ShowRoute", 
+        "properties": [{
+            "text":"Show Route",
+            "toolTip":"Define the settings of 'Show Route' action which will allow you to get the dynamic directions on the Map UI part",
+            "name":"Name",
+            "fromLocation":"From Location",
+            "toLocation":"To Location",
+            "trafic":"Best Route",
+            "highway":"HighWay",
+            "avoid":"Avoid Route Options",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Name",
+            "fixedRoute":"Fixed Route",
+            "fixedRouteFile":"Fixed route file",
+            "fixedRouteFiletype":"File type",
+            "elevationEqv":"Equivalent exchange",
+            "unit":"Unit",
+            "timeCalculation":"Time Calculation",
+            "arrivalTime":"Arrival Time",
+            "departureTime":"Departure Time",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Map UI Name",
+            "fromLocation_toolTip":"Start Location",
+            "toLocation_toolTip":"End Location",
+            "trafic_toolTip":"Recommended travel mode",
+            "avoid_toolTip":"Avoid Route Options, when travel mode selected as 'car'",
+            "highway_toolTip":"By Highway",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Map UI Name",
+            "fixedRoute_toolTip":"Flag for fix route.",
+            "fixedRouteFile_toolTip":"Fixed route file",
+            "fixedRouteFiletype_toolTip":"File type",	
+            "elevationEqv_toolTip":"How much elevation(m) is equal with distance(km). Default is '100m/km'",
+            "unit_toolTip":"Unit",
+            "timeCalculation_toolTip":"Time Calculation",
+            "arrivalTime_toolTip":"Arrival date and time. It should be converted to UTC Second since 1st Jan 1970.",
+            "departureTime_toolTip":"Departure date and time. It should be converted to UTC Second since 1st Jan 1970.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"ClearRoute", 
+        "properties": [{
+            "text":"Clear Route",
+            "toolTip":"Define the settings of 'Clear Route' action which will allow you to clear the directions on the Map UI part",
+            "name":"Name",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "Name":"Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Map UI Name",
+            "targetPage_toolTip":"Target Page Name",
+            "GroupList_toolTip":"Group List",
+            "CellList_toolTip":"Cell List",
+            "Name_toolTip":"Map UI Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"LoadFixedRouteFile", 
+        "properties": [{
+            "text":"Load Fixed Route",
+            "toolTip":"Define the settings of 'Load Fixed Route' action which will allow you to upload files for fixed route on the Map",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Name",
+            "Name":"Name",
+            "fixedRouteFile":"Fixed route file",
+            "fixedRouteFiletype":"File type",		
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error"
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"ShowFixedRoute", 
+        "properties": [{
+            "text":"Show Fixed Route",
+            "toolTip":"Define the settings of 'Show Fixed Route' action which will allow you to show fixed route on the Map",
+            "targetPage":"Page Name",
+            "GroupList":"Group List",
+            "CellList":"Cell List",
+            "name":"Name",
+            "Name":"Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error"
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"AddWayPoint", 
+        "properties": [{
+            "text":"Add WayPoint",
+            "toolTip":"",
+            "targetPage":"Page Name",
+            "name":"Name",
+            "location":"Waypoint",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "targetPage_toolTip":"Page Name",
+            "name_toolTip":"Name",
+            "location_toolTip":"Waypoint location as (latitude,longitude) or (address)",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"StartNavigation",  
+        "properties": [{
+            "text":"Start Navigation", 
+            "toolTip":"",
+            "Sname":"Name",
+            "StargetPage":"Page Name",
+            "SderouteDistance":"De-route distance(m)",
+            "SderouteEvent":"De-route Actions",
+            "SturnLocationDistances":"Distances from next turning location",
+            "SturnLocationDistances[*].value":"Distance(m)",
+            "SturnLocationEvent":"Actions",
+            "Scondition":"Condition",
+            "Sactions.success":"Success",
+            "Sactions.error":"Error",
+
+            "Sname_toolTip":"Name",
+            "StargetPage_toolTip":"Page Name",
+            "SderouteDistance_toolTip":"Distance(in meter) of current location far from original route",
+            "SderouteEvent_toolTip":"The event will be triggered if the current location is far from original route. These must be triggered only one time for every one minute. ",
+            "SturnLocationDistances_toolTip":"Approaching distance(in meter) for next turning location. Multiple values allowed.",
+            "SturnLocationEvent_toolTip":"The event will be triggered if the current location is on route and coming to next point with mentioned distance(s). It will be triggered only one time for each distance for next turning location.",
+            "Scondition_toolTip":"'Condition'",
+            "Sactions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "Sactions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute",
+        "method":"StopNavigation",   
+        "properties": [{
+            "text":"Stop Navigation",
+            "toolTip":"",
+            "name":"Name",
+            "targetPage":"Page Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+
+            "name_toolTip":"Name",
+            "targetPage_toolTip":"Page Name",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"GetStartStep", 
+        "properties": [{
+            "text":"Get Start Step",           
+            "toolTip":"",
+            "targetPage":"Page Name",
+            "name":"Name",
+            "location":"Location",
+            "address":"Address",
+            "step":"Step text",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "targetPage_toolTip":"Page Name",
+            "name_toolTip":"Name",
+            "location_toolTip":"Location as (latitude),(longitude)",
+            "address_toolTip":"Address of the location",
+            "step_toolTip":"Step text",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"GetNextStep", 
+        "properties": [{
+            "text":"Get Next Step",  
+            "toolTip":"",
+            "targetPage":"Page Name",
+            "name":"Name",
+            "location":"Location",
+            "address":"Address",
+            "step":"Step text",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "targetPage_toolTip":"Page Name",
+            "name_toolTip":"Name",
+            "location_toolTip":"Location as (latitude),(longitude)",
+            "address_toolTip":"Address of the location",
+            "step_toolTip":"Step text",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"GetPreviousStep", 
+        "properties": [{
+            "text":"Get Previous Step",  
+            "toolTip":"",
+            "targetPage":"Page Name",
+            "name":"Name",
+            "location":"Location",
+            "address":"Address",
+            "step":"Step text",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "targetPage_toolTip":"Page Name",
+            "name_toolTip":"Map UI name",
+            "location_toolTip":"Location as (latitude),(longitude)",
+            "address_toolTip":"Address of the location",
+            "step_toolTip":"Step text",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"GetCurrentStep", 
+        "properties": [{
+            "text":"Get Current Step",  
+            "toolTip":"",
+            "targetPage":"Page Name",
+            "name":"Name",
+            "location":"Location",
+            "address":"Address",
+            "step":"Step text",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "targetPage_toolTip":"Page Name",
+            "name_toolTip":"Name",
+            "location_toolTip":"Location as (latitude),(longitude)",
+            "address_toolTip":"Address of the location",
+            "step_toolTip":"Step text",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+            
+        }]
+    },
+    {
+        "category":"MapRouteControl",
+        "type":"MapRoute", 
+        "method":"RouteList", 
+        "properties": [{
+            "text":"Route List",  
+            "toolTip":"",
+            "name":"Name",
+            "targetPage":"Page Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error"
+        }]
+    },
+
+    {
+        "category":"GPSControl",
+        "type":"Motion", 
+        "method":"StartGPS", 
+        "properties": [{
+            "text":"Start GPS",
+            "toolTip":"Define the settings of 'Start GPS' action which will allow you to fetch the Device's GPS data in an application",
+            "accuracy":"Accuracy",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.notAvailable":"Not Available",
+            "actions.ChangeLocation":"Change Location",
+            
+            "accuracy_toolTip":"Accuracy",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result.",
+            "actions.notAvailable_toolTip":"Not Available",
+            "actions.ChangeLocation_toolTip":"Change Location"
+        }]
+    },
+    {
+        "category":"GPSControl",
+        "type":"Motion", 
+        "method":"StopGPS", 
+        "properties": [{
+            "text":"Stop GPS",
+            "toolTip":"Define the settings of 'Stop GPS' action which will allow you to stop the GPS in an application",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.notAvailable":"Not Available",
+            
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result.",
+            "actions.notAvailable_toolTip":"Not Available"
+        }]
+    },
+    {
+        "category":"GPSControl",
+        "type":"Motion", 
+        "method":"StartGPSTrack", 
+        "properties": [{
+            "text":"Start GPS Track",
+            "toolTip":"",
+            "filename":"Log Filename",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.notAvailable":"Not Available",
+
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result.",
+            "actions.notAvailable_toolTip":"Not Available"
+        }]
+    },
+    {
+        "category":"GPSControl",
+        "type":"Motion", 
+        "method":"StopGPSTrack", 
+        "properties": [{
+            "text":"Stop GPS Track",
+            "toolTip":"",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.notAvailable":"Not Available",
+
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result.",
+            "actions.notAvailable_toolTip":"Not Available"
+        }]
+    },
+    {
+        "category":"GPSControl",
+        "type":"Motion", 
+        "method":"ConvertGPSLogToFile", 
+        "properties": [{
+            "text":"Convert GPS Log to Route File",
+            "toolTip":"",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.notAvailable":"Not Available",
+
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result.",
+            "actions.notAvailable_toolTip":"Not Available"
+        }]
+    },
+
+    {
+        "category":"TimerControl",
+        "type":"Sensor", 
+        "method":"StartTimer", 
+        "properties": [{
+            "text":"Start Timer",
+            "toolTip":"Define the settings of 'Start Timer' action. The timer trigger the 'On Success' event after interval time.",
+            "name":"Timer Name",
+            "type":"Type",
+            "interval":"Interval",
+            "repeat":"Repeat",
+            "device":"Device",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"User need to specify the timer name, which should be unique name in the app.",
+            "type_toolTip":"Type of the timer",
+            "interval_toolTip":"Interval time in seconds.",
+            "repeat_toolTip":"If repeat is checked, it will continue to run the action. Otherwise, it will trigger only one time.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"TimerControl",
+        "type":"Sensor", 
+        "method":"StopTimer", 
+        "properties": [{
+            "text":"Stop Timer",
+            "toolTip":"Define the settings of 'Stop Timer' action. This function will stop the running timer which has specified timer name.",
+            "name":"Timer Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"User need to specify the timer name, which need to be stopped. If there is not such timer, it will trigger error.",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+
+    {
+        "category":"WarningControl",
+        "type":"Warning", 
+        "method":"Alert", 
+        "properties": [{
+            "text":"Alert",
+            "toolTip":"Define the settings of 'Alert' action which will allow you to display warning message in a dialogue box",
+            "Style":"Style",
+            "Title":"Title",
+            "message":"Message",
+            "cancelTitle":"Cancel Title",
+            "condition":"Condition",
+            "actions.onTapOk":"On tap OK",
+            "actions.onTapCancel":"On tap Cancel",
+            
+            "Style_toolTip":"Dialogue box appearance",
+            "Title_toolTip":"Title to be displayed",
+            "message_toolTip":"Message to be displayed",
+            "cancelTitle_toolTip":"Button title to be displayed",
+            "condition_toolTip":"'Condition'",
+            "actions.onTapOk_toolTip":"'On tap OK' is an event that occurs when default Ok button is tapped. You can register the action to operate in this result.",
+            "actions.onTapCancel_toolTip":"'On tap Cancel' is an event that occurs when Cancel button is tapped. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"WarningControl",
+        "type":"Warning", 
+        "method":"ActionSheet", 
+        "properties": [{
+            "text":"Action Sheet",
+            "toolTip":"Define the settings of 'Action sheet' action which will allow you to display a dialogue box  with a message and series of buttons",
+            "style":"Style",
+            "Title":"Title",
+            "cancelTitle":"Cancel Title",
+            "otherBtnTitles":"Buttons Name",
+            "otherBtnTitles[*].title":"Button Name",
+            "otherBtnTitles[*].actions.clicked":"On Click",
+            "destructiveButtonTitle":"For Destructive",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "style_toolTip":"Dialogue box appearance",
+            "Title_toolTip":"Title to be displayed",
+            "cancelTitle_toolTip":"Cancel Title",
+            "otherBtnTitles_toolTip":"Additional buttons",
+            "otherBtnTitles[*].title_toolTip":"Button Name",
+            "otherBtnTitles[*].actions.clicked_toolTip":"On Click",
+            "destructiveButtonTitle_toolTip":"For Destructive",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"WarningControl",
+        "type":"Warning", 
+        "method":"StartWaitIndicator", 
+        "properties": [{
+            "text":"Start Wait Indicator",
+            "toolTip":"Define the settings of 'Start Wait Indicator' action which indicates that an operation is in process",
+            "timeout":"Time Out(s)",
+            "message":"Message",
+            "type":"Indicator type",
+            "indicator":"Indicator image",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "timeout_toolTip":"Time Out in seconds",
+            "type_toolTip":"Indicator type",
+            "indicator_toolTip":"Image should be lightweight. Preferable resolution is 44 x 44.",
+            "message_toolTip":"Message to be displayed",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"WarningControl",
+        "type":"Warning", 
+        "method":"StopWaitIndicator", 
+        "properties": [{
+            "text":"Stop Wait Indicator",
+            "toolTip":"Define the settings of 'Stop Wait Indicator' action which will allow you stop the start wait indicator",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"WarningControl",
+        "type":"Warning", 
+        "method":"ShowDialog",
+        "properties": [{
+            "text":"Show Dialog Form",
+            "toolTip":"Apply action to pop-up the dialog form",
+            "name":"Dialog Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Name of the dialog form which need to display",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"WarningControl",
+        "type":"Warning", 
+        "method":"HideDialog",
+        "properties": [{       
+            "text":"Hide Dialog Form",
+            "toolTip":"Apply action to hide the dialog form",
+            "name":"Dialog Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Name of the dialog form which need to be hide",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }] 
+    },
+    {
+        "category":"WarningControl",
+        "type":"Warning", 
+        "method":"TimeOutEvent", 
+        "properties": [{
+            "text":"Time Out",  
+            "toolTip":""
+        }]
+    },
+
+    {
+        "category":"ContactControl",
+        "type":"Contact", 
+        "method":"CallContact", 
+        "properties": [{
+            "text":"Phone Call",
+            "toolTip":"Phone call settings",
+            "phonenumber":"Phone Number",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "phonenumber_toolTip":"Phone Number",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"ContactControl",
+        "type":"Contact", 
+        "method":"InsertPerson", 
+        "properties": [{
+            "text":"Insert Contact",
+            "toolTip":"",
+            "service":"Service",
+            "groupName":"Group Name",
+            "familyName":"Family Name",
+            "firstName":"First Name",
+            "nickName":"Nick Name",
+            "phoneNumber":"Phone Number",
+            "address":"Address",
+            "companyName":"Company Name",
+            "email":"Email",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error"
+        }]
+    },
+
+    {
+        "category":"EmailControl",
+        "type":"Email", 
+        "method":"canSendMail", 
+        "properties": [{
+            "text":"Can Send Mail",
+            "toolTip":"Define the settings of 'Can Send email' action which will allow you to verify the system connectivity for email sending.",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"EmailControl",
+        "type":"Email", 
+        "method":"openMessageEditor", 
+        "properties": [{
+            "text":"Open Message Editor",
+            "toolTip":"Define the settings of 'Email Composer' action which will allow you to open the email composer of the system",
+            "subject":"Subject",
+            "toRecipientsList[*].EmailRecipient":"Recipient",
+            "toRecipientsList":"Recipients List",
+            "ccRecipientsList[*].EmailRecipient":"Cc Recipients",
+            "ccRecipientsList":"Cc Recipients List",
+            "bccRecipientsList[*].EmailRecipient":"Bcc Recipients",
+            "bccRecipientsList":"Bcc Recipients List",
+            "messageBody":"Message",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "subject_toolTip":"Subject",
+            "toRecipientsList[*].EmailRecipient_toolTip":"Recipients",
+            "toRecipientsList_toolTip":"Recipients List",
+            "ccRecipientsList[*].EmailRecipient_toolTip":"Carbon Copy of Recipients",
+            "ccRecipientsList_toolTip":"Cc Recipients List",
+            "bccRecipientsList[*].EmailRecipient_toolTip":"Blind Carbon Copy of Recipients",
+            "bccRecipientsList_toolTip":"Bcc Recipients List",
+            "messageBody_toolTip":"Email Content",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+
+    {
+        "category":"SystemControl",
+        "type":"SystemControl", 
+        "method":"CallExternalApp", 
+        "properties": [{
+            "text":"Call External App",
+            "toolTip":"Define the settings of 'Call External App' action which executes external application via given command.",
+            "command":"Command",
+            "name":"Callback Target UI",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "command_toolTip":"Command",
+            "name_toolTip":"For some external app, we need to store callback data",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"SystemControl",
+        "type":"SystemControl", 
+        "method":"NetworkAvailable", 
+        "properties": [{
+            "text":"Network Available",
+            "toolTip":"Define the settings of 'Network Available' action",
+            "targetURL":"Target URL",
+            "networkLevel":"Network Level",
+            "condition":"Condition",
+            "actions.success":"Available",
+            "actions.error":"Not Available",
+            "actions.networkLevel1":"Network Level 1",
+            "actions.networkLevel2":"Network Level 2",
+            "actions.networkLevel3":"Network Level 3",
+            "actions.networkLevel4":"Network Level 4",
+            "actions.networkLevel5":"Network Level 5",
+
+            "targetURL_toolTip":"Target URL",
+            "networkLevel_toolTip":"Network Level",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Network Available' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Network Not Available' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"SystemControl",
+        "type":"SystemControl", 
+        "method":"Loop", 
+        "properties": [{
+            "text":"Loop",
+            "toolTip":"Loop action. 'Success' sub-actions will be executed for each loop. For 'Loop condition'; Use '&&' for 'AND' operator and '||' for 'OR' operator, if needed.",
+            "initialList":"Initial",
+            "initialList[*].key":"Key",
+            "initialList[*].value":"Value",
+            "nextList":"Next",
+            "nextList[*].key":"Key",
+            "nextList[*].value":"Value",
+            "where":"Loop condition",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"SystemControl",
+        "type":"SystemControl", 
+        "method":"CallCustomAction", 
+        "properties": [{
+            "text":"Call Custom Action",
+            "toolTip":""
+        }]
+    },
+    {
+        "category":"SystemControl",
+        "type":"SystemControl", 
+        "method":"UploadFiletoFolder", 
+        "properties": [{
+            "text":"Upload File to Folder",
+            "toolTip":""
+        }]
+    },
+    {
+        "category":"SystemControl",
+        "type":"SystemControl", 
+        "method":"PayViaPaytm", 
+        "properties": [{
+            "text":"Payment Via Paytm",  
+            "toolTip":"'Payment via Paytm' action.",
+            "customerId":"Customer Id",
+            "mobileno":"Mobile Number",
+            "email":"Email",
+            "orderId":"Order Id",
+            "txnamount":"Amount",
+            "merchantId":"Merchant Id",
+            "industrytypeId":"IndustryType Id",
+            "website":"Website",
+            "checksumGenerator":"Checksum Generator",
+            "checksumVerifier":"Checksum Verifier",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "customerId_toolTip":"'Customer ID' is the customer identifier. This could be a unique user Id that the Merchant has assigned to its customers.",
+            "mobileno_toolTip":"Consumer Mobile Number",
+            "email_toolTip":"Consumer Email Id.",
+            "orderId_toolTip":"'Order ID' is the Merchant Transaction ID which should be unique for every transaction. Duplicate order id will be rejected by the Paytm gateway.",
+            "txnamount_toolTip":"Transaction Amount",
+            "merchantId_toolTip":"'Merchant ID' that is issued by Paytm to the merchant. This is unique for each merchant that integrates with Paytm.",
+            "industrytypeId_toolTip":"Industry Type Id. Provided by Paytm.",
+            "website_toolTip":"Website. Provided by Paytm.",
+            "checksumGenerator_toolTip":"Checksum Generator URL",
+            "checksumVerifier_toolTip":"Checksum Verifier URL",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+
+    {
+        "category":"SendPushNotificationControl",
+        "type":"SendPushNotification", 
+        "method":"RegisterUsersForPushNotification", 
+        "properties": [{
+            "text":"Register Users for Push Notification",
+            "toolTip":"Register Users for Push Notification",
+            "userid":"User Id",
+            "clientid":"Client Id",
+            "group":"Group",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "userid_toolTip":"User Id",
+            "clientid_toolTip":"Client Id",
+            "group_toolTip":"Group",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"SendPushNotificationControl",
+        "type":"SendPushNotification", 
+        "method":"SendPushMessage", 
+        "properties": [{
+            "text":"Send Push Message",
+            "toolTip":"Send Push Message via comm server to device directly, if target device app is running and already executed 'ReadyToReceiveMessage' else via comm server to public push notification center.",
+            "userid":"User Id",
+            "group":"Group",
+            "messageType":"Message Type",
+            "messageText":"Message Text",
+            "messageSound":"Message Sound",
+            "customMessage":"Custom Message",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            "actions.noUser":"NoUser"
+        }]
+    },
+
+    {
+        "category":"GadgetControl",
+        "type":"Gadget", 
+        "method":"ShowGadget", 
+        "properties": [{
+            "text":"Show Gadget",
+            "toolTip":"Apply action to make visible the gadget(if it is hidden), only when Gadget category as 'Popup Dialog'.",
+            "name":"Gadget Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Name of the Gadget which need to display",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    },
+    {
+        "category":"GadgetControl",
+        "type":"Gadget", 
+        "method":"HideGadget", 
+        "properties": [{
+            "text":"Hide Gadget",
+            "toolTip":"Apply action to hide the gadget(if it is visible), only when Gadget category as 'Popup Dialog'.",
+            "name":"Gadget Name",
+            "condition":"Condition",
+            "actions.success":"Success",
+            "actions.error":"Error",
+            
+            "name_toolTip":"Name of the Gadget which should be hidden",
+            "condition_toolTip":"'Condition'",
+            "actions.success_toolTip":"'Success' is an event that occurs when this action is successful. You can register the action to operate in this result.",
+            "actions.error_toolTip":"'Error' is an event that occurs when this action has failed. You can register the action to operate in this result."
+        }]
+    }
+
+]}

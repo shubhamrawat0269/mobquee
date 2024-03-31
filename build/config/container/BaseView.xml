@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="BaseView" visible="false" imagePath="assets/toolbox/ico_notExist.png" description="Here is the BaseView description">
+	<properties>
+		<type name="Type">
+			<property path="Title" dataType="String" input="spark.components.TextInput">
+				<validations>
+					<validation validator="RequiredValueValidator"/>
+					<validation validator="UniqPageTitleValidator">
+						<args>
+							<arg property="projectDic" value="{@project:}"/>
+							<arg property="pageid" value="{@base:pageid}"/>
+						</args>
+					</validation>
+				</validations>
+			</property>
+			<property path="moduleName" dataType="String" input="spark.components.TextInput">
+			</property>
+			<property path="srcLocation" dataType="array" input="spark.components.DropDownList" init="bundle" disable="true">
+				<dataSource>
+					<data name="bundle"/>
+					<data name="remoteFile"/>
+				</dataSource>
+			</property>
+			<property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			<property path="backgroundGradient" dataType="String" input="spark.components.TextInput"/>
+			<property path="wireframe" input="TextInputWithButton" disable="true"/>
+			<property path="wireframeUnvisible" input="spark.components.CheckBox" init="0" disable="true"/>			
+		</type>
+
+		<type name="NavigationBar">			
+			<property path="NavigationBarHidden" dataType="Boolean" input="spark.components.CheckBox" init="1" value="0">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[NavigationBarHidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[navigationBar.title]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[navigationBar.prompt]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[navigationBar.barStyle]:}" method="hide" value="true" caseOf="true" />						
+						<action target="{@form[navigationBar.tintColor]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[navigationBar.leftBarButton.type]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[navigationBar.rightBarButton.type]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[navigationBar.prompt]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.title]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.tintColor]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.leftBarButton.type]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.leftBarButton.systemItem]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.leftBarButton.text]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.rightBarButton.type]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.rightBarButton.systemItem]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.rightBarButton.text]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="hide" value="false" caseOf="false" />
+						<action method="dependentConditions" caseOf="false">
+							<when condition="compare" compareTarget="{@form[TabBarHidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+								<action target="{@form[navigationBar.barStyle]:}" method="hide" value="true" caseOf="true" />
+								<action target="{@form[navigationBar.barStyle]:}" method="hide" value="false" caseOf="false" />
+							</when>
+						</action>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="navigationBar.barStyle" dataType="array" input="spark.components.DropDownList" init="Default" copyable="true">
+				<dataSource>
+					<data name="Default"/>
+					<data name="BlackOpaque"/>
+					<data name="BlackTranslucent"/>
+					<data name="Translucent"/>
+					<data name="Custom"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[navigationBar.barStyle]:value}" compareBy="EQ" compareWith="Custom" at="initForm, postCommit">
+						<action target="{@form[navigationBar.tintColor]:}" method="folded" value="false" caseOf="true" />
+						<action target="{@form[navigationBar.tintColor]:}" method="folded" value="true" caseOf="false" />
+						<action target="{@form[TabBase.tintColor]:}" method="folded" value="false" caseOf="true" />
+						<action target="{@form[TabBase.tintColor]:}" method="folded" value="true" caseOf="false" />
+					</when>			
+    			</dependentActions>
+			</property>
+			<property path="navigationBar.tintColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0" copyable="true"/>
+			<property path="navigationBar.title" datadataType="String" input="spark.components.TextInput" copyable="true"/>
+			<property path="navigationBar.prompt" datadataType="String" input="spark.components.TextInput" copyable="true"/>
+			<property path="navigationBar.leftBarButton.type" dataType="array" input="spark.components.DropDownList" copyable="true">
+				<dataSource>
+					<data name=" "/>
+					<data name="SystemItem"/>
+					<data name="TextItem"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[navigationBar.leftBarButton.type]:value}" compareBy="EQ" compareWith="" at="initForm, postCommit">
+						<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+				    <when condition="compare" compareTarget="{@form[navigationBar.leftBarButton.type]:value}" compareBy="EQ" compareWith="SystemItem" at="initForm, postCommit">
+						<action target="{@form[navigationBar.leftBarButton.systemItem]:}" method="folded" value="true" caseOf="false"/>						
+						<action target="{@form[navigationBar.leftBarButton.text]:}" method="folded" value="true" caseOf="true"/>
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[NavigationBarHidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+								<action target="{@form[navigationBar.leftBarButton.systemItem]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[navigationBar.leftBarButton.systemItem]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>
+					<when condition="compare" compareTarget="{@form[navigationBar.leftBarButton.type]:value}" compareBy="EQ" compareWith="TextItem" at="initForm, postCommit">
+						<action target="{@form[navigationBar.leftBarButton.text]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[navigationBar.leftBarButton.text]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="folded" value="false" caseOf="true"/>
+					</when>			
+    			</dependentActions>
+			</property>
+			<property path="navigationBar.leftBarButton.systemItem" dataType="array" input="spark.components.DropDownList" init="" copyable="true">
+				<dataSource>
+					<data name="add"/>
+					<data name="action"/>
+					<data name="back"/>
+					<data name="bookmark"/>
+					<data name="camera"/>
+					<data name="compose"/>
+					<data name="fast-forward"/>
+					<data name="organize"/>
+					<data name="page-curl"/>
+					<data name="pause"/>
+					<data name="play"/>
+					<data name="refresh"/>
+					<data name="reply"/>
+					<data name="rewind"/>
+					<data name="search"/>
+					<data name="settings"/>
+					<data name="stop"/>
+					<data name="trash"/>
+				</dataSource>	
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[navigationBar.leftBarButton.systemItem]:value}" compareBy="EQ" compareWith="" at="initForm, postCommit">
+						<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="folded" value="true" caseOf="true"/>
+						<action method="dependentConditions" caseOf="false">
+							<when condition="compare" compareTarget="{@form[navigationBar.leftBarButton.type]:value}" compareBy="EQ" compareWith=" " at="initForm, postCommit">
+								<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="folded" value="true" caseOf="true"/>
+								<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="folded" value="false" caseOf="false"/>	
+							</when>
+						</action>
+						<action method="dependentConditions" caseOf="false">
+							<when condition="compare" compareTarget="{@form[NavigationBarHidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+								<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[navigationBar.leftBarButton.actions.clicked]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>
+    			</dependentActions>
+			</property>
+			<property path="navigationBar.leftBarButton.text" input="spark.components.TextInput" copyable="true"/>
+			<property path="navigationBar.leftBarButton.actions.clicked" input="LabelWithButton" copyable="true"/>
+			<property path="navigationBar.rightBarButton.type" dataType="array" input="spark.components.DropDownList" copyable="true">
+				<dataSource>
+					<data name=" "/>
+					<data name="SystemItem"/>
+					<data name="TextItem"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[navigationBar.rightBarButton.type]:value}" compareBy="EQ" compareWith=" " at="initForm, postCommit">
+						<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+				    <when condition="compare" compareTarget="{@form[navigationBar.rightBarButton.type]:value}" compareBy="EQ" compareWith="SystemItem" at="initForm, postCommit">
+						<action target="{@form[navigationBar.rightBarButton.systemItem]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[navigationBar.rightBarButton.text]:}" method="folded" value="true" caseOf="true"/>
+						<action method="dependentConditions" caseOf="true">
+							<when condition="compare" compareTarget="{@form[NavigationBarHidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+								<action target="{@form[navigationBar.rightBarButton.systemItem]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[navigationBar.rightBarButton.systemItem]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>
+					<when condition="compare" compareTarget="{@form[navigationBar.rightBarButton.type]:value}" compareBy="EQ" compareWith="TextItem" at="initForm, postCommit">
+						<action target="{@form[navigationBar.rightBarButton.text]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[navigationBar.rightBarButton.text]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="folded" value="false" caseOf="true"/>
+					</when>			
+    			</dependentActions>
+			</property>
+			<property path="navigationBar.rightBarButton.systemItem" dataType="array" input="spark.components.DropDownList" copyable="true">
+				<dataSource>
+					<data name="add"/>
+					<data name="action"/>
+					<data name="back"/>
+					<data name="bookmark"/>
+					<data name="camera"/>
+					<data name="compose"/>
+					<data name="fast-forward"/>
+					<data name="organize"/>
+					<data name="page-curl"/>
+					<data name="pause"/>
+					<data name="play"/>
+					<data name="refresh"/>
+					<data name="reply"/>
+					<data name="rewind"/>
+					<data name="search"/>
+					<data name="settings"/>
+					<data name="stop"/>
+					<data name="trash"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[navigationBar.rightBarButton.systemItem]:value}" compareBy="EQ" compareWith="" at="initForm, postCommit">
+						<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="folded" value="true" caseOf="true"/>
+						<action method="dependentConditions" caseOf="false">
+							<when condition="compare" compareTarget="{@form[navigationBar.rightBarButton.type]:value}" compareBy="EQ" compareWith=" " at="initForm, postCommit">
+								<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="folded" value="true" caseOf="true"/>
+								<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="folded" value="false" caseOf="false"/>	
+							</when>
+						</action>
+						<action method="dependentConditions" caseOf="false">
+							<when condition="compare" compareTarget="{@form[NavigationBarHidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+								<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="folded" value="false" caseOf="true"/>
+								<action target="{@form[navigationBar.rightBarButton.actions.clicked]:}" method="folded" value="true" caseOf="false"/>
+							</when>
+						</action>
+					</when>
+    			</dependentActions>
+			</property>
+			<property path="navigationBar.rightBarButton.text" input="spark.components.TextInput" copyable="true"/>
+			<property path="navigationBar.rightBarButton.actions.clicked" input="LabelWithButton" copyable="true"/>
+		</type>
+
+		<type name="ToolBarTop">
+			<property path="toolBarTop.hidden" dataType="Boolean" input="spark.components.CheckBox"  value="0" enabled="true" copyable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[toolBarTop.hidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[toolBarTop.frame.height]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarTop.frame.height]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarTop.backgroundColor]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarTop.backgroundColor]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarTop.backgroundGradient]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarTop.backgroundGradient]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarTop.Children]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarTop.Children]:}" method="hide" value="false" caseOf="false" />
+					</when>
+				</dependentActions>
+			</property>			
+			<property path="toolBarTop.frame.height" input="spark.components.NumericStepper" min="10" init="40" max="1000"  copyable="true"/>
+			<property path="toolBarTop.backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			<property path="toolBarTop.backgroundGradient" dataType="String" input="spark.components.TextInput"/>
+			<property path="toolBarTop.Children" input="LabelWithButton" popup="ToolBarEditor"/>
+		</type>
+		<type name="ToolBarBottom">	
+			<property path="toolBarBottom.hidden" dataType="Boolean" input="spark.components.CheckBox" init="" value="0" enabled="true" copyable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[toolBarBottom.hidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[toolBarBottom.frame.height]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarBottom.frame.height]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarBottom.backgroundColor]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarBottom.backgroundColor]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarBottom.backgroundGradient]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarBottom.backgroundGradient]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarBottom.Children]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarBottom.Children]:}" method="hide" value="false" caseOf="false" />
+					</when>
+				</dependentActions>
+			</property>
+			<property path="toolBarBottom.frame.height" input="spark.components.NumericStepper" min="10" init="40" max="1000"  copyable="true"/>
+			<property path="toolBarBottom.backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			<property path="toolBarBottom.backgroundGradient" dataType="String" input="spark.components.TextInput"/>
+			<property path="toolBarBottom.Children" input="LabelWithButton" popup="ToolBarEditor"/>
+		</type>
+		<type name="ToolBarLeft">	
+			<property path="toolBarLeft.hidden" dataType="Boolean" input="spark.components.CheckBox" init="" value="0" enabled="true" copyable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[toolBarLeft.hidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[toolBarLeft.fixed]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarLeft.view]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarLeft.frame.width]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarLeft.backgroundColor]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarLeft.backgroundGradient]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarLeft.Children]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarLeft.fixed]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarLeft.view]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarLeft.frame.width]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarLeft.frame.height]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarLeft.backgroundColor]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarLeft.backgroundGradient]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarLeft.Children]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarLeft.tableData]:}" method="hide" value="false" caseOf="false" />
+					</when>
+				</dependentActions>
+			</property>
+			<property path="toolBarLeft.fixed" dataType="Boolean" input="spark.components.CheckBox" init="" value="0" copyable="true"/>
+			<property path="toolBarLeft.view" dataType="array" input="spark.components.DropDownList" init="FreeLayout" copyable="true">
+				<dataSource>
+					<data name="FreeLayout"/>
+					<data name="FreeScroll"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[toolBarLeft.view]:value}" compareBy="EQ" compareWith="FreeLayout" at="initForm, postCommit">
+						<action target="{@form[toolBarLeft.frame.height]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[toolBarLeft.tableData]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[toolBarLeft.view]:value}" compareBy="EQ" compareWith="FreeScroll" at="initForm, postCommit">
+						<action target="{@form[toolBarLeft.frame.height]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[toolBarLeft.frame.height]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[toolBarLeft.tableData]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[toolBarLeft.view]:value}" compareBy="EQ" compareWith="TableView" at="initForm, postCommit">
+						<action target="{@form[toolBarLeft.tableData]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[toolBarLeft.tableData]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[toolBarLeft.Children]:}" method="folded" value="true" caseOf="true"/>
+					</when>			
+    			</dependentActions>
+			</property>
+			<property path="toolBarLeft.frame.width" input="spark.components.NumericStepper" min="50" init="240" max="1000" inc="10" copyable="true"/>
+			<property path="toolBarLeft.frame.height" input="spark.components.NumericStepper" min="300" init="480" max="1000" inc="10" copyable="true"/>
+			<property path="toolBarLeft.backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			<property path="toolBarLeft.backgroundGradient" dataType="String" input="spark.components.TextInput"/>			
+			<property path="toolBarLeft.Children" input="LabelWithButton" popup="ToolBarEditor"/>
+			<property path="toolBarLeft.tableData" input="LabelWithButton" popup="TableViewEditor" disable="true"/>
+		</type>
+		<type name="ToolBarRight"> 
+			<property path="toolBarRight.hidden" dataType="Boolean" input="spark.components.CheckBox" init="" value="0" enabled="true" copyable="true">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[toolBarRight.hidden]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[toolBarRight.fixed]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarRight.view]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarRight.frame.width]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarRight.backgroundColor]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarRight.backgroundGradient]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarRight.Children]:}" method="hide" value="true" caseOf="true" />
+						<action target="{@form[toolBarRight.fixed]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarRight.view]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarRight.frame.width]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarRight.frame.height]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarRight.backgroundColor]:}" method="hide" value="false" caseOf="false" />						
+						<action target="{@form[toolBarRight.backgroundGradient]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarRight.Children]:}" method="hide" value="false" caseOf="false" />
+						<action target="{@form[toolBarRight.tableData]:}" method="hide" value="false" caseOf="false" />
+					</when>
+				</dependentActions>
+			</property>
+			<property path="toolBarRight.fixed" dataType="Boolean" input="spark.components.CheckBox" init="" value="0" copyable="true"/>
+			<property path="toolBarRight.view" input="spark.components.DropDownList" init="FreeLayout" copyable="true">
+				<dataSource>
+					<data name="FreeLayout"/>
+					<data name="FreeScroll"/>
+				</dataSource>
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[toolBarRight.view]:value}" compareBy="EQ" compareWith="FreeLayout" at="initForm, postCommit">
+						<action target="{@form[toolBarRight.frame.height]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[toolBarRight.frame.height]:}" method="folded" value="false" caseOf="false"/>
+					</when>			
+					<when condition="compare" compareTarget="{@form[toolBarRight.view]:value}" compareBy="EQ" compareWith="FreeScroll" at="initForm, postCommit">
+						<action target="{@form[toolBarRight.frame.height]:}" method="folded" value="true" caseOf="false"/>
+						<action target="{@form[toolBarRight.frame.height]:}" method="folded" value="false" caseOf="true"/>
+					</when>
+    			</dependentActions>
+			</property>
+			<property path="toolBarRight.frame.width" input="spark.components.NumericStepper" min="50" init="240" max="1000" inc="10" copyable="true"/>
+			<property path="toolBarRight.frame.height" input="spark.components.NumericStepper" min="300" init="480" max="1000" inc="10" copyable="true"/>
+			<property path="toolBarRight.backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" init="0"/>
+			<property path="toolBarRight.backgroundGradient" dataType="String" input="spark.components.TextInput"/>	
+			<property path="toolBarRight.Children" input="LabelWithButton" popup="ToolBarEditor"/>
+		</type>
+		<type name="PageOverlay">	
+			<property path="pageOverlay.Children" input="LabelWithButton" popup="ToolBarEditor" source="overlay"/>
+		</type>
+		<type name="Actions">
+			<property path="actions.swipeLR" input="LabelWithButton" />
+			<property path="actions.swipeRL" input="LabelWithButton" />	
+			<property path="actions.beforeViewPage" input="LabelWithButton" />
+			<property path="actions.afterViewPage" input="LabelWithButton" />
+			<property path="actions.becameAwake" input="LabelWithButton" />
+		</type>
+
+	</properties>
+</item>

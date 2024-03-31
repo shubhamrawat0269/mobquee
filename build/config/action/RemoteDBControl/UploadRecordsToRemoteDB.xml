@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="UploadRecordsToRemoteDB" category="ComAction" type="Comm" method="UploadRecordsToRemoteDB">
+	<properties>
+		<type name="parameters" input="None">
+		
+			<property path="params.servicename" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getServices(remote)}" labelField="label" valueField="value"/>
+				<dependentActions>
+					<when at="initForm,postCommit" stopCommit="true">
+						<action target="{@form[params.table]:}" method="setOptions" value="{@project:getDbTableDicsByServiceName(@form[params.servicename]:value)}" labelField="tablename" valueField="tablename"/>
+					</when>	
+				</dependentActions>
+			</property>
+			<property path="params.table" input="spark.components.DropDownList">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			    <dataSource source="{@project:getDbTableDicsByServiceName(@form[params.servicename]:value)}" labelField="tablename" valueField="tablename"/>
+			</property>
+			
+			<property path="params.type" input="spark.components.DropDownList" init="excel">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+				<dataSource>
+				 	<data name="excel"/>
+			  	</dataSource>
+			</property>
+			<property path="params.file.srcLocation" input="spark.components.DropDownList" init="device">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+				<dataSource>
+				 	<data name="device"/>
+			  	</dataSource>
+			  	<dependentActions>
+ 					<when condition="compare" compareTarget="{@form[params.file.srcLocation]:value}" compareBy="EQ" compareWith="bundle" at="initForm, postCommit">
+						<action target="{@form[params.file.filename]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.file.url]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[params.file.srcLocation]:value}" compareBy="EQ" compareWith="url" at="initForm, postCommit">
+						<action target="{@form[params.file.url]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.file.filename]:}" method="folded" value="true" caseOf="true"/>
+					</when>
+					<when condition="compare" compareTarget="{@form[params.file.srcLocation]:value}" compareBy="EQ" compareWith="remoteFile" at="initForm, postCommit">
+						<action target="{@form[params.file.filename]:}" method="folded" value="false" caseOf="true"/>
+						<action target="{@form[params.file.url]:}" method="folded" value="true" caseOf="true"/>
+					</when>			
+					<when condition="compare" compareTarget="{@form[params.file.srcLocation]:value}" compareBy="EQ" compareWith="device" at="initForm, postCommit">
+						<action target="{@form[params.file.filename]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.file.url]:}" method="folded" value="true" caseOf="true"/>
+					</when>	
+ 				</dependentActions>
+			</property>
+			<property path="params.file.filename" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.file.url" input="spark.components.TextInput">
+				<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			
+			<property path="params.getlogs" input="spark.components.CheckBox" init="0">
+				<dependentActions>
+					<when condition="compare" compareTarget="{@form[params.getlogs]:value}" compareBy="EQ" compareWith="0" at="initForm, postCommit">
+						<action target="{@form[params.loguid]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.loguid]:}" method="folded" value="false" caseOf="false"/>
+						<action target="{@form[params.fieldrecords]:}" method="folded" value="true" caseOf="true"/>
+						<action target="{@form[params.fieldrecords]:}" method="folded" value="false" caseOf="false"/>
+					</when>
+				</dependentActions>
+			</property>
+			<property path="params.loguid" input="spark.components.TextInput"/>
+			<property path="params.fieldrecords" input="spark.components.TextInput"/>
+
+		</type>
+				
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+			<property path="actions.notAvailable" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

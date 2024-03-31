@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="StartScan" category="IoTAction" type="IoT" method="StartScan"
+		helpLink_EN="" helpLink_JP="" platformSpecific="true">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.name" input="spark.components.TextInput">
+			  	<validations><validation validator="RequiredValueValidator"/></validations>
+			</property>
+			<property path="params.refresh_timer" input="spark.components.NumericStepper" init="30" min="1" max="300" inc="1" />
+			
+			<property path="params.deffile" input="spark.components.TextInput">
+			</property>			
+		</type>
+		
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+			<property path="actions.onDetectDevice" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

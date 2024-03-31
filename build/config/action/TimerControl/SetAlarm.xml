@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="setAlarm" category="SensorAction" type="Sensor" method="setAlarm">
+	<properties>
+		<type name="parameters" input="None">
+			<property path="params.name" input="spark.components.TextInput"/>	
+			<property path="params.time" input="spark.components.TextInput"/>	
+			<property path="params.repeat" input="spark.components.DropDownList">
+			  <dataSource>					
+					<data name="MON" value ="0"/>
+					<data name="TUE" value ="0"/>					
+					<data name="WED" value ="0"/>
+					<data name="THU" value ="0"/>
+					<data name="FRI" value ="0"/>
+					<data name="SAT" value ="0"/>
+					<data name="SUN" value ="0"/>
+					<data name="WeekDay" value ="0"/>
+					<data name="WeekEnd" value ="0"/>
+					<data name="Daily" value ="0"/>
+				</dataSource>
+			</property>
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>

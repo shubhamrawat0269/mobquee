@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item targetClass="MoveMedia" category="LibraryAction" type="Library" method="MoveMedia">
+	<properties>
+		<type name="parameters" input="None">			
+			<property path="params.media" input="spark.components.DropDownList">
+			  <dataSource>
+					<data name="Voice" value ="0"/>
+					<data name="Sound" value ="1"/>
+					<data name="Video" value ="0"/>
+				</dataSource>
+			</property>
+			<property path="params.filename" input="TextInputWithButton"/>
+			<property path="params.from" input="spark.components.DropDownList">
+			  <dataSource>
+					<data name="PhotoAlbum" value ="0"/>
+					<data name="PhotoLibrary" value ="0"/>
+					<data name="Camera" value ="0"/>
+					<data name="Local" value ="0"/>
+				</dataSource>
+			</property>
+			<property path="params.to" input="spark.components.DropDownList">
+			  <dataSource>
+					<data name="PhotoAlbum" value ="0"/>
+					<data name="PhotoLibrary" value ="0"/>
+					<data name="Camera" value ="0"/>
+					<data name="Local" value ="0"/>
+				</dataSource>
+			</property>
+		</type>
+		<type name="condition" input="HRule">
+			<property path="params.condition" input="LabelWithButton"/>
+		</type>
+		<type name="resultEvents" input="HRule">
+			<property path="actions.success" input="LabelWithButton"/>
+			<property path="actions.error" input="LabelWithButton"/>
+		</type>
+	</properties>
+</item>
