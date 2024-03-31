@@ -31,13 +31,11 @@ import {
   Dialog,
   DialogActions,
   DialogTitle,
-  Fab,
   Paper,
   Tabs,
   Tab,
   List,
   TextField,
-  Avatar,
 } from "@mui/material";
 
 import { makeStyles, withStyles } from "@mui/styles";
@@ -102,8 +100,6 @@ class AppEditor extends React.Component {
   }
 
   componentDidMount() {
-    //console.log("............. AppEditor componentDidMount ............");
-
     this.fetchUIList();
     this.fetchUIPartsDic();
     this.fetchPageData();
@@ -1514,7 +1510,7 @@ function AppContainer(props) {
             <div className="page-list-header">
               <div className="page-list-info">
                 <h4>Page List</h4>
-                <Avatar
+                {/* <Avatar
                   className="page-list-num"
                   style={{
                     position: "absolute",
@@ -1527,7 +1523,7 @@ function AppContainer(props) {
                   }}
                 >
                   {pagelistPageData.length}
-                </Avatar>
+                </Avatar> */}
               </div>
               <div className="menu-open-btn">
                 <MenuOpen className="icon" onClick={handleListClose} />
@@ -1559,18 +1555,12 @@ function AppContainer(props) {
             />
           </section>
         )}
-        {/* below section cover Middle Page Editor section here   width: 97.5vw;*/}
         <div
           id={
             props.pallete === PALLETE_SIDE.EDITOR_SETTING
               ? "app-editor-middle-section"
               : "app-editor-swap-section"
           }
-          // className={
-          //   props.isShrinkable
-          //     ? "page-list-collapse-menu"
-          //     : "page-list-drawer-menu"
-          // }
         >
           {props.pallete === PALLETE_SIDE.EDITOR_SETTING ? (
             <>
@@ -1728,14 +1718,11 @@ function AppContainer(props) {
 
 function PageExplorer(props) {
   const appConfig = props.appconfig;
-  //const parameters = {pagedata: props.pagedata.pagedata, list: props.pagedata.list};
 
   const [pagelistdata, setPagelistData] = useState({
     pagedata: props.pagedata.pagedata,
     list: props.pagedata.list,
   });
-  //console.log("pagelistdata >>>>>>>>>>>>", pagelistdata);
-  //console.log(props.pagedata, "....pagelistdata >>>>>>>>>>>>", pagelistdata);
 
   const [action, setAction] = useState("");
   const [openalert, setOpenalert] = useState(false);
@@ -1766,15 +1753,6 @@ function PageExplorer(props) {
   function handleUpdatePagelist(pagelistdata) {
     setPagelistData(pagelistdata);
     props.onPagelistUpdate(pagelistdata);
-  }
-
-  function handleOpenPageModule() {
-    if (props.openedPages.length === 0) {
-      setPageMapping(true);
-    } else {
-      setOpenalert(true);
-      setAlertMsg("Please close all opened pages.");
-    }
   }
 
   function handleClosePageModule() {
@@ -1812,7 +1790,7 @@ function PageExplorer(props) {
               <h4>Manage Page List</h4>
             </button>
 
-            <Tooltip title={<h6>Set Module-Name to Pages</h6>}>
+            {/* <Tooltip title={<h6>Set Module-Name to Pages</h6>}>
               <Fab
                 edge="end"
                 size="small"
@@ -1824,7 +1802,7 @@ function PageExplorer(props) {
                   <path d="M0 0h24v24H0z" fill="none" />
                 </SvgIcon>
               </Fab>
-            </Tooltip>
+            </Tooltip> */}
           </Grid>
         </Toolbar>
       </AppBar>
@@ -3732,33 +3710,6 @@ function getAllChildrenOnPage(_page, scrIndex) {
     });
   }
 
-  // let cntLeft = -1;
-  // toolBarLeft -> undefined ??
-  // if (_page._toolBarLeft.length > 0) {
-  //   _page._toolBarLeft.forEach((_leftToolbar) => {
-  //     cntLeft++;
-  //     if (cntLeft === scrIndex) {
-  //       for (let l = 0; l < _leftToolbar.Children.length; l++) {
-  //         let _leftToolbarUIContainerDic = _leftToolbar.Children[l];
-  //         let _leftToolbarChildPartDic =
-  //           _leftToolbarUIContainerDic["uiParts"][scrIndex];
-  //         if (_leftToolbarChildPartDic) {
-  //           if (!_leftToolbarChildPartDic["_enabledOnScreen"]) continue;
-  //         }
-  //         arrChildren.push(_leftToolbar.Children[l]);
-  //         if (_leftToolbar.Children[l]["viewType"] === "TileList") {
-  //           let arrlTileItems =
-  //             _leftToolbar.Children[l]["uiParts"][scrIndex].dataarray[0][
-  //               "Fields"
-  //             ];
-  //           for (let l0 = 0; l0 < arrlTileItems.length; l0++) {
-  //             arrChildren.push(arrlTileItems[l0]);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   });
-  // }
   let cntRight = -1;
   if (_page._toolBarRight && _page._toolBarRight.length > 0) {
     _page._toolBarRight.forEach((_rightToolbar) => {

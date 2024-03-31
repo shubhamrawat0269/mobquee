@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./PageListViewStyle.css";
 
 import imgBaseViewSource from "../../../assets/pagetype/iconBaseView.png";
@@ -12,29 +12,17 @@ import imgSplitViewSource from "../../../assets/pagetype/iconSplitView.png";
 import imgPageScrollViewSource from "../../../assets/pagetype/iconPageScrollView.png";
 import imgProjectSource from "../../../assets/pagetype/iconApp.png";
 import AlertWindow from "../../../components/AlertWindow";
-import {
-  ArrowForwardOutlined,
-  Close,
-  East,
-  North,
-  South,
-  ExpandLess,
-  ExpandMore,
-} from "@mui/icons-material";
+import { Close, ExpandLess, ExpandMore } from "@mui/icons-material";
 
 import { getTabModuleAccess, checkProjectRole } from "../Utility";
 import {
-  FormControlLabel,
   Input,
   List,
   ListItem,
   ListItemText,
   Collapse,
   Snackbar,
-  Switch,
   Tooltip,
-  Fab,
-  SvgIcon,
 } from "@mui/material";
 
 export default function PageListView(props) {
@@ -42,7 +30,6 @@ export default function PageListView(props) {
   const projectdata = props.projectdata;
   const data = props.listdata;
   const records = data.list;
-  //console.log(props, "------------ PAGELIST ---------", records);
 
   useEffect(() => {
     const _pagelisttop = sessionStorage.getItem("pageListTop");
@@ -57,7 +44,7 @@ export default function PageListView(props) {
   const [multiChecked, setMultiChecked] = React.useState(false);
   const [multiSelectedPages, setMultiSelectedPages] = React.useState([]);
   const resetMS = props.resetmultiselection;
-  React.useEffect(() => {
+  useEffect(() => {
     if (resetMS) setMultiSelectedPages([]);
   }, [resetMS]);
 
@@ -96,16 +83,8 @@ export default function PageListView(props) {
     props.updatePageList(_page);
   }
 
-  const handleChange = (event) => {
-    setMultiChecked(event.target.checked);
-  };
-
   const [showFinder, setShowFinder] = React.useState(false);
   const [findpageId, setFindPageId] = React.useState(-1);
-  function handleOpenFinder() {
-    setShowFinder(!showFinder);
-    setFindPageId(-1);
-  }
 
   function handleCloseFinder() {
     setShowFinder(false);
@@ -139,22 +118,6 @@ export default function PageListView(props) {
 
   return (
     <div className="page-lst-section">
-      {/* {!showFinder && (
-        <section id="page-list-folder-section">
-          <FormControlLabel
-            style={{ width: "100%", margin: 0 }}
-            label={<h4>Enable Multiple Selection</h4>}
-            control={
-              <Switch
-                color="primary"
-                size="small"
-                checked={multiChecked}
-                onChange={handleChange}
-              />
-            }
-          />
-        </section>
-      )}
       <PageFinder
         originalData={props["listdata"]["pagedata"]}
         listData={records}
@@ -162,54 +125,7 @@ export default function PageListView(props) {
         onSelectPage={handlePageSelection}
         onFindPage={handlePageFinder}
         onClose={handleCloseFinder}
-      /> */}
-
-      {/* This is previous code of Akshay sir to be test out  */}
-      {!showFinder && (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <FormControlLabel
-            style={{ width: "100%", margin: 0 }}
-            label={<h4>Enable Multiple Selection</h4>}
-            control={
-              <Switch
-                color="primary"
-                size="small"
-                checked={multiChecked}
-                onChange={handleChange}
-              />
-            }
-          />
-          <Fab
-            color="default"
-            size="small"
-            style={{ width: "4.5rem" }}
-            aria-label="Find Page"
-            onClick={handleOpenFinder}
-          >
-            <SvgIcon>
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-            </SvgIcon>
-          </Fab>
-        </div>
-      )}
-      {showFinder && (
-        <PageFinder
-          originalData={props["listdata"]["pagedata"]}
-          listData={records}
-          source={props.source}
-          onSelectPage={handlePageSelection}
-          onFindPage={handlePageFinder}
-          onClose={handleCloseFinder}
-        />
-      )}
-
+      />
       <List
         id="pagelist"
         component="nav"
@@ -973,14 +889,9 @@ function ListBranch(props) {
 }
 
 function PageFinder(props) {
-  const [searchvalue, setSearchValue] = React.useState("");
-  const [searcherror, setSearchError] = React.useState(false);
-  const [showitems, setShowItems] = React.useState(false);
-  const [filterlist, setFilterList] = React.useState([]);
-  const [moveNumber, setMoveNumber] = React.useState(0);
-  const [snackbaropen, setSnackbarOpen] = React.useState(false);
-  const [message, setMessage] = React.useState("");
-  const [timeout, setTimeState] = React.useState(null);
+  const [searchvalue, setSearchValue] = useState("");
+  const [searcherror, setSearchError] = useState(false);
+  const [timeout, setTimeState] = useState(null);
 
   function handleClosePageFinder() {
     setSearchValue("");
@@ -1088,97 +999,24 @@ function PageFinder(props) {
     }
   }
 
-  function handleMovePreviousMatch() {
-    if (moveNumber > 1) {
-      let prevNum = moveNumber - 1;
-      setMoveNumber(prevNum);
-
-      const _index = prevNum - 1;
-      const _pageObj = filterlist[_index];
-      props.onSelectPage(_pageObj["pageid"]);
-    } else {
-      setSnackbarOpen(true);
-      setMessage("No further previous match available");
-    }
-  }
-  function handleMoveNextMatch() {
-    if (moveNumber < filterlist.length) {
-      let nextNum = moveNumber + 1;
-      setMoveNumber(nextNum);
-
-      const _index = nextNum - 1;
-      const _pageObj = filterlist[_index];
-      props.onSelectPage(_pageObj["pageid"]);
-    } else {
-      setSnackbarOpen(true);
-      setMessage("No further next match available");
-    }
-  }
-
-  function handleOpenSearchedPage() {
-    //console.log(props.originalData, "---->", searchvalue, "******", filterlist, moveNumber);
-    if (filterlist.length > 0) {
-      const _index = moveNumber - 1;
-      const _pageObj = filterlist[_index];
-      props.onFindPage(_pageObj["pageid"]);
-    } else {
-      setSnackbarOpen(true);
-      setMessage("No match found");
-    }
-  }
-
-  function handleSnackbarClose(event) {
-    setSnackbarOpen(false);
-  }
-
   return (
     <section id="search-section">
       <Input
-        aria-label="Search Input"
-        className="search-list-inbox"
-        type="text"
         required
-        placeholder="Search by Page Title"
-        value={searchvalue}
-        onChange={handleSearchInput}
+        type="text"
         error={searcherror}
+        value={searchvalue}
+        aria-label="Search Input"
+        placeholder="Search"
+        className="search-list-inbox"
+        onChange={handleSearchInput}
       />
-      {showitems && (
-        <div className="arrow-icon-section">
-          <Tooltip title={<h6>Previous Match</h6>}>
-            <South onClick={handleMovePreviousMatch} />
-          </Tooltip>
-          <Tooltip title={<h6>Next Match</h6>}>
-            <North onClick={handleMoveNextMatch} />
-          </Tooltip>
 
-          {props.source !== "manage" && (
-            <Tooltip title={<h6>Open Selected page</h6>}>
-              <East onClick={handleOpenSearchedPage} />
-            </Tooltip>
-          )}
-          {props.source === "manage" && (
-            <Tooltip title={<h6>Set Page Selected</h6>}>
-              <ArrowForwardOutlined onClick={handleOpenSearchedPage} />
-            </Tooltip>
-          )}
-        </div>
-      )}
       <div className="page-list-close-icon">
         <Tooltip title={<h6>Close</h6>}>
           <Close onClick={handleClosePageFinder} />
         </Tooltip>
       </div>
-      <Snackbar
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        open={snackbaropen}
-        onClose={handleSnackbarClose}
-        autoHideDuration={3000}
-        ContentProps={{
-          "aria-describedby": "message-id",
-        }}
-        message={<h4 className="notification-msg">{message}</h4>}
-      />
     </section>
   );
 }

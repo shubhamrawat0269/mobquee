@@ -1,21 +1,16 @@
 #search-section {
-    /* display: flex;
-    gap: 0;
-    border: 1px solid var(--brdr-clr); */
-
     display: flex;
     gap: 0;
     width: 28rem;
-    border: 1px solid var(--brdr-clr);
     margin: 0 auto;
 }
 
 #search-section input {
-    padding: 1rem 0.35rem !important;
-    /* border: 0.1rem solid var(--brdr-clr); */
     background-color: #FFF;
-    max-width: 19vw;
-    width: 95%;
+    height: 3.5vh;
+    border-radius: 0rem;
+    font-size: 1.35rem;
+    font-weight: 500;
 }
 
 #search-section input:after {
@@ -39,6 +34,11 @@
     height: 3.5rem;
     display: grid;
     place-content: center;
+    background: white;
+    position: absolute;
+    border-left: 1px solid silver;
+    right: 1rem;
+    width: 3.5rem;
 }
 
 .search-list-inbox {
@@ -47,7 +47,7 @@
     cursor: none !important;
     display: block !important;
     position: relative !important;
-    font-family: 'Poppins' !important;
+    /* font-family: 'Poppins' !important; */
     height: inherit !important;
     line-height: 0;
     letter-spacing: 0;

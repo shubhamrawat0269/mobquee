@@ -56,7 +56,8 @@ function AppHeader(props) {
     <section id="header-section">
       <nav className="navigation-bar">
         <div className="horizontal-align">
-          <img className="logo-img" src={logo} alt="logo-img" />
+          {/* <img className="logo-img" src={logo} alt="logo-img" /> */}
+          <h3 className="icon">MobQuee</h3>
         </div>
         <div className="header-icons">
           {theme === THEME_TYPE.LIGHT_THEME && (
