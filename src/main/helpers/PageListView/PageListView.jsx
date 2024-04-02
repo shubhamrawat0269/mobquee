@@ -12,18 +12,10 @@ import imgSplitViewSource from "../../../assets/pagetype/iconSplitView.png";
 import imgPageScrollViewSource from "../../../assets/pagetype/iconPageScrollView.png";
 import imgProjectSource from "../../../assets/pagetype/iconApp.png";
 import AlertWindow from "../../../components/AlertWindow";
-import { Close, ExpandLess, ExpandMore } from "@mui/icons-material";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 import { getTabModuleAccess, checkProjectRole } from "../Utility";
-import {
-  Input,
-  List,
-  ListItem,
-  ListItemText,
-  Collapse,
-  Snackbar,
-  Tooltip,
-} from "@mui/material";
+import { List, ListItem, ListItemText, Collapse } from "@mui/material";
 
 export default function PageListView(props) {
   const appConfig = props.appConfig;
@@ -40,9 +32,9 @@ export default function PageListView(props) {
     }
   }, []);
 
-  const [selectedId, setSelectedId] = React.useState(-1);
-  const [multiChecked, setMultiChecked] = React.useState(false);
-  const [multiSelectedPages, setMultiSelectedPages] = React.useState([]);
+  const [selectedId, setSelectedId] = useState(-1);
+  const [multiChecked, setMultiChecked] = useState(false);
+  const [multiSelectedPages, setMultiSelectedPages] = useState([]);
   const resetMS = props.resetmultiselection;
   useEffect(() => {
     if (resetMS) setMultiSelectedPages([]);
@@ -83,8 +75,8 @@ export default function PageListView(props) {
     props.updatePageList(_page);
   }
 
-  const [showFinder, setShowFinder] = React.useState(false);
-  const [findpageId, setFindPageId] = React.useState(-1);
+  const [showFinder, setShowFinder] = useState(false);
+  const [findpageId, setFindPageId] = useState(-1);
 
   return (
     <div className="page-lst-section">
@@ -127,7 +119,7 @@ function ListBranch(props) {
   for (let i = 0; i < _level; i++) {
     _arrlevel.push(i);
   }
-  const _text = <h5>{props.node.title}</h5>; // + ' :: ' +props.node.id;
+  const _text = <h5 className="node--title">{props.node.title}</h5>;
 
   let _color = "";
   if (_level === 1) {
@@ -847,138 +839,5 @@ function ListBranch(props) {
         />
       )}
     </div>
-  );
-}
-
-function PageFinder(props) {
-  const [searchvalue, setSearchValue] = useState("");
-  const [searcherror, setSearchError] = useState(false);
-  const [timeout, setTimeState] = useState(null);
-
-  function handleClosePageFinder() {
-    setSearchValue("");
-    setSearchError(false);
-    setFilterList([]);
-    setMoveNumber(0);
-    setSnackbarOpen(false);
-
-    props.onClose();
-  }
-
-  function handleSearchInput(event) {
-    clearTimeout(timeout);
-
-    const val = event.target.value;
-    //console.log(filterlist, searchvalue, "... handleFindPage >>>", val);
-    if (val.length > 0) {
-      const allowedChars = /\w/g;
-      let allowedTitle = val.match(allowedChars);
-      if (!allowedTitle) {
-        setSearchError(true);
-        setShowItems(false);
-        setFilterList([]);
-        setMoveNumber(0);
-        return;
-      }
-      if (allowedTitle && val.length !== allowedTitle.length) {
-        setSearchError(true);
-        setShowItems(false);
-        setFilterList([]);
-        setMoveNumber(0);
-        return;
-      }
-
-      setSearchValue(val);
-      //handleFindPage(val);
-      const timeout1 = setTimeout(handleFindPage, 750, val, props);
-      setTimeState(timeout1);
-    } else {
-      setSearchError(true);
-      setSearchValue("");
-      setShowItems(false);
-      setMoveNumber(0);
-      setFilterList([]);
-    }
-  }
-
-  function getSortedList(pagelist, updatedlist) {
-    for (let i = 0; i < pagelist.length; i++) {
-      const _pageObj = pagelist[i];
-      if (_pageObj["id"] !== "-1") {
-        updatedlist.push({
-          pageid: _pageObj["id"],
-          Title: _pageObj["title"],
-          level: _pageObj["level"],
-        });
-
-        let childPages = _pageObj["children"];
-        if (childPages.length > 0) {
-          updatedlist = getSortedList(childPages, updatedlist);
-        }
-      }
-    }
-    return updatedlist;
-  }
-  function handleFindPage(strsearch, props) {
-    //console.log(props.listData, props['originalData'], "... handleFindPage >>>", strsearch);
-    //const pageData = JSON.parse(JSON.stringify(props['originalData']));
-    let pageData = [];
-    pageData = getSortedList(props.listData, pageData);
-
-    setSearchError(false);
-    setSnackbarOpen(false);
-    if (strsearch.length === 0) {
-      setSearchError(true);
-    } else {
-      let pageList = pageData.filter(function (item) {
-        const pageName = item.Title.toLowerCase();
-        const pageText =
-          pageName.indexOf(".") > 0 ? pageName.split(".")[0] : pageName;
-        return pageText.indexOf(strsearch.toLowerCase()) > -1;
-      });
-
-      if (pageList.length === 0) {
-        setSearchError(true);
-        setFilterList([]);
-      } else {
-        //pageList.sort((a, b) => a.pageid - b.pageid);
-
-        setFilterList(pageList);
-        setShowItems(true);
-        setMoveNumber(1);
-
-        const _pageObj = pageList[0];
-        props.onSelectPage(_pageObj["pageid"]);
-      }
-      console.log(
-        props.listData,
-        pageData,
-        "... handleFindPage >>>",
-        strsearch,
-        "******",
-        pageList
-      );
-    }
-  }
-
-  return (
-    <section id="search-section">
-      <Input
-        required
-        type="text"
-        error={searcherror}
-        value={searchvalue}
-        aria-label="Search Input"
-        placeholder="Search"
-        className="search-list-inbox"
-        onChange={handleSearchInput}
-      />
-
-      <div className="page-list-close-icon">
-        <Tooltip title={<h6>Close</h6>}>
-          <Close onClick={handleClosePageFinder} />
-        </Tooltip>
-      </div>
-    </section>
   );
 }

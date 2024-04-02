@@ -62,15 +62,13 @@
     display: none !important;
 }
 
+.node--title {
+    font-size: 1.12rem;
+}
+
 .notification-msg {
     color: #FFF;
 }
-
-
-.page-list-item {
-    max-height: 2.5rem;
-}
-
 
 .page-list-item:focus {
     background-color: var(--swap-clr) !important;
