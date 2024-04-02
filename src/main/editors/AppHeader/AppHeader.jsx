@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import "./AppHeaderStyle.css";
-import logo from "../../../assets/logo.png";
 import ProjectDetails from "../../helpers/ProjectDetails/ProjectDetails";
-import { Close, ChangeHistory, Menu } from "@mui/icons-material";
+import { Close, Menu } from "@mui/icons-material";
 
 import { IconButton, Tooltip } from "@mui/material";
 import { THEME_TYPE } from "../../../utils/THEME_TYPE";
@@ -13,10 +12,7 @@ import useToSetTheme from "../../../hooks/useToSetTheme";
 import { toggleTheme } from "../../../utils/functions/helper";
 
 function AppHeader(props) {
-  // const [theme, setTheme] = useState("light-theme");
   const { theme, setTheme } = useToSetTheme();
-  const [prjdetailsopen, setPrjDetailsOpen] = useState(false);
-
   const apiParam = {
     apiURL: props.appconfig.apiURL,
     userid: props.appconfig.userid,
@@ -73,14 +69,12 @@ function AppHeader(props) {
               />
             </Tooltip>
           )}
-          {!prjdetailsopen && (
-            <Tooltip title={<h6>Project Details</h6>}>
-              <Menu
-                className="theme-icon icon"
-                onClick={() => handleSidebar("triangle-icon")}
-              />
-            </Tooltip>
-          )}
+          <Tooltip title={<h6>Project Details</h6>}>
+            <Menu
+              className="theme-icon icon"
+              onClick={() => handleSidebar("triangle-icon")}
+            />
+          </Tooltip>
         </div>
       </nav>
       <section id="project-info-sidebar">{projectSideBar("right")}</section>
