@@ -352,10 +352,6 @@
     font-size: 1rem;
 }
 
-.setting-pallete-tab-section {
-    background-color: var(--tab-bg) !important;
-}
-
 .tab {
     min-width: 9.5rem !important;
     font-size: 1.15rem !important;

@@ -49,7 +49,6 @@ import {
   ExitToApp,
   ExpandMore,
   Help,
-  Notes,
 } from "@mui/icons-material";
 import { PALLETE_SIDE } from "../../../utils/namespaces/PALLETE_SIDE";
 
@@ -253,9 +252,6 @@ function SettingPallete(props) {
   const [anchorDocument, setAnchorDocument] = React.useState(null);
   const openDocument = Boolean(anchorDocument);
 
-  function handleDocumentOpen(event) {
-    setAnchorDocument(event.currentTarget);
-  }
   function handleDocumentClose() {
     setAnchorDocument(null);
   }
@@ -316,54 +312,15 @@ function SettingPallete(props) {
   }
 
   function handlePageContainerData(containerData) {
-    //console.log(props.source, data, "... containerData >>>>", containerData);
     data["Containers"] = containerData;
   }
 
   function handleUpdatePageContainerState(containerData) {
-    //console.log(data, "... containerData >>>>", containerData);
     props.onUpdatePropertyValue("Containers", containerData, props.source);
   }
 
   function handleUIGrouping(groupData) {
     data["parent"] = groupData;
-
-    /* let _container = props.editorContainer;
-    let _uiname = data['name'];
-    
-    let uiChildren = [];
-    //console.log(currentScreenIndex, "******", data, "...handle EnableUIs >>> ", _container, _uiname, value);
-    if(_container === "toolBarTop"){
-      uiChildren = data._toolBarTop[currentScreenIndex].Children;
-    }else if(_container === "toolBarBottom"){
-      uiChildren = data._toolBarBottom[currentScreenIndex].Children;
-    }else if(_container === "toolBarLeft"){
-      uiChildren = data._toolBarLeft[currentScreenIndex].Children;
-    }else if(_container === "toolBarRight"){
-      uiChildren = data._toolBarRight[currentScreenIndex].Children;
-    }else if(_container === "pageOverlay"){
-      uiChildren = data.pageOverlay.Children;
-    }
-    else {
-      if(data.viewType === "BaseView") {
-        uiChildren = data.Children;
-      }else if(data.viewType === "ScrollView") {
-        uiChildren = data.Children[0].Children;
-      }else if(data.viewType.indexOf("TableViewList") > -1){
-        if(data.Children[0]['_tmpCellStyle'] === "custom") {
-          uiChildren = data.Children[0].Group[0]['RecordCellDef']['Fields'];
-        }    
-      }
-    }
-
-    if(uiChildren) {
-      uiChildren.forEach(uichild => {
-        let uipart = uichild.uiParts[currentScreenIndex];
-        if(uipart['name'] === _uiname) {
-          uipart['_enabledOnScreen'] = value;
-        }
-      });
-    } */
 
     let changeforAllScreen = false;
     let screens = props.appdata["availableScreens"];
@@ -382,8 +339,6 @@ function SettingPallete(props) {
 
       if (changeforAllScreen) {
         for (let index = 0; index < screens.length; index++) {
-          //if(index === currentScreenIndex)  continue;
-
           let editorChildrenArr = getChildrenArray(
             props.editorContainer,
             props.editorParent,
@@ -401,8 +356,6 @@ function SettingPallete(props) {
         }
       }
     }
-
-    //console.log(currentScreenIndex, props.editorContainer, data, "... groupData >>>>", groupData);
     props.onUpdatePropertyValue("parent", groupData, "uipart");
   }
 
@@ -421,9 +374,6 @@ function SettingPallete(props) {
       <div className="setting-pallete-heading">
         <h4>{getSettingWindowTitle(data.viewType, locale)}</h4>
         <div className="setting-pallete-inner-icons">
-          <Tooltip className="icon" title={<h6>Document</h6>}>
-            <Notes onClick={handleDocumentOpen} />
-          </Tooltip>
           <Tooltip className="icon" title={<h6>Switch Pallete</h6>}>
             <ExitToApp onClick={switchContainer} />
           </Tooltip>
@@ -596,29 +546,6 @@ function SettingPallete(props) {
             </Paper>
           </TabContainer>
         )}
-        <section className="setting-pallete-tab-section">
-          <AppBar
-            className="setting-pallete-tab-section"
-            position="static"
-            color="default"
-          >
-            <Tabs
-              value={value}
-              onChange={handleTabChange}
-              className="tabs"
-              indicatorColor="primary"
-            >
-              <Tab className="tab" wrapped label="Properties" />
-              <Tab
-                className="tab"
-                wrapped
-                label="Enabled UIs"
-                disabled={disableTab}
-              />
-              <Tab className="tab" wrapped label="Group(s)" />
-            </Tabs>
-          </AppBar>
-        </section>
       </div>
     </Box>
   );
