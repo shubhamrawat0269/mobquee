@@ -1510,20 +1510,6 @@ function AppContainer(props) {
             <div className="page-list-header">
               <div className="page-list-info">
                 <h4>Page List</h4>
-                {/* <Avatar
-                  className="page-list-num"
-                  style={{
-                    position: "absolute",
-                    top: 8,
-                    left: 100,
-                    width: 28,
-                    height: 28,
-                    fontSize: 12,
-                    backgroundColor: "rgba(0, 0, 0, 0.667)",
-                  }}
-                >
-                  {pagelistPageData.length}
-                </Avatar> */}
               </div>
               <div className="menu-open-btn">
                 <MenuOpen className="icon" onClick={handleListClose} />
@@ -1853,7 +1839,7 @@ function PageExplorer(props) {
 }
 
 function UIExplorer(props) {
-  const [expanded, setExpanded] = React.useState("Container");
+  const [expanded, setExpanded] = React.useState("TextAndImage");
   const dispatch = useDispatch();
   const handleExpandCollapse = (name, id) => (event) => {
     setExpanded(name);
@@ -1929,39 +1915,10 @@ function UIExplorer(props) {
     openSubToolbar(id);
   }
 
-  useEffect(() => {
-    if (expanded === "Container") {
-      document.getElementById("Container").classList.add("active-tool");
-      document
-        .getElementsByClassName("Container")[0]
-        .classList.add("active-tool");
-      document
-        .getElementsByClassName("Container")[1]
-        .classList.add("color-appearance");
-    } else {
-      document.getElementById("Container").classList.remove("active-tool");
-      document
-        .getElementsByClassName("Container")[0]
-        .classList.remove("active-tool");
-      document
-        .getElementsByClassName("Container")[1]
-        .classList.remove("color-appearance");
-    }
-  }, [expanded]);
-
   return (
     <div id="uiexplorer" className="app-editor-toolbar-list">
       <ol className="toolbar-menu-icons">
         <div className="menus">
-          <li
-            className="grid grid-center tool-menus-icon Container"
-            onClick={() => openToolMenuBar("Container", "Container")}
-          >
-            <CheckBoxOutlineBlank
-              style={{ fontSize: "2rem" }}
-              onMouseEnter={openDrawer}
-            />
-          </li>
           <li
             className="grid grid-center tool-menus-icon Text"
             onClick={() => openToolMenuBar("TextAndImage", "Text and Image")}
@@ -1977,15 +1934,8 @@ function UIExplorer(props) {
               onMouseEnter={openDrawer}
             />
           </li>
-          <li
-            className="grid grid-center tool-menus-icon Media"
-            onClick={() =>
-              openToolMenuBar("MediaAndLibrary", "Media and Library")
-            }
-          >
-            <PermMedia style={{ fontSize: "2rem" }} onMouseEnter={openDrawer} />
-          </li>
-          <li
+
+          {/* <li
             className="grid grid-center tool-menus-icon Selector"
             onClick={() => openToolMenuBar("Selector", "Selector")}
           >
@@ -2002,7 +1952,7 @@ function UIExplorer(props) {
               style={{ fontSize: "2rem" }}
               onMouseEnter={openDrawer}
             />
-          </li>
+          </li> */}
         </div>
       </ol>
       <section id="app-editor-toollist">
