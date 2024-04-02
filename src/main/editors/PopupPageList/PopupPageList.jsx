@@ -450,36 +450,13 @@ function ManagePageList(props) {
   const pageTypes = [
     {
       viewType: "BaseView",
-      Title: "Free Layout Page",
+      Title: "Non Scroll Page",
       image: imgBaseViewSource,
     },
     {
       viewType: "ScrollView",
-      Title: "Free Scroll Page",
+      Title: "Scroll Page",
       image: imgScrollViewSource,
-    },
-    /*{ viewType : "TableView", Title : "Fixed data-set Record View Page", image : imgTableViewSource },
-				{ viewType : "TableViewList", Title : "Fixed data-set List View Page", image : imgTableViewListSource },*/
-    // {
-    //   viewType: "DbTableView",
-    //   Title: "DB Record View Page",
-    //   image: imgDbTableViewSource,
-    // },
-    {
-      viewType: "DbTableViewList",
-      Title: "DB List View Page",
-      image: imgDbTableViewListSource,
-    },
-    {
-      viewType: "DbTableViewNestedList",
-      Title: "DB Nested List View Page",
-      image: imgRemoteTableViewSource,
-    },
-    /*{ viewType : "SplitView", Title : "SplitView Container Page", image : imgSplitViewSource },*/
-    {
-      viewType: "PageScrollView",
-      Title: "PageScroll Container Page",
-      image: imgPageScrollViewSource,
     },
   ];
 
@@ -786,7 +763,6 @@ function ManagePageList(props) {
         }
       }
 
-
       let fields = pagetitle;
       fields = pageobj["Title"];
       setPageTitle(fields);
@@ -844,8 +820,6 @@ function ManagePageList(props) {
           }
         });
       } else if (action === "cut") {
-        
-
         let isnamechanged = false;
         if (_cutcopyPage["Title"] !== pagetitle) {
           isnamechanged = true;
@@ -877,7 +851,6 @@ function ManagePageList(props) {
         );
       }
     }
-
   }
 
   function setPageDocument() {
@@ -895,7 +868,6 @@ function ManagePageList(props) {
   function setChildPageProp(pageContainerDic) {
     let screensArr = projectdata["availableScreens"];
     for (let i = 0; i < screensArr.length; i++) {
-
       let navigationBarDic = pageContainerDic._navigationBars[i];
       navigationBarDic.title = pageContainerDic["Title"];
       if (navigationBarDic.prompt === undefined) {
@@ -943,13 +915,11 @@ function ManagePageList(props) {
   function resetChildPageProp(pageContainerDic) {
     let screensArr = projectdata["availableScreens"];
     for (let i = 0; i < screensArr.length; i++) {
-    
       let navigationBarDic = pageContainerDic._navigationBars[i];
       navigationBarDic.title = pageContainerDic["Title"];
       if (navigationBarDic.prompt === undefined) {
         navigationBarDic.prompt = "";
       }
-
     }
   }
 
@@ -1003,7 +973,6 @@ function ManagePageList(props) {
             relaodPageList("-999", result.page);
           } else if (action === "cut") {
             if (pastedpagedata.parentid === "App_1234567890") {
-
               let swappedPages;
               const tabPageList = getTabPagesList();
 
@@ -1042,7 +1011,6 @@ function ManagePageList(props) {
                   setChildpage_asEoHTabpage(pastedpagedata, pageH);
                 });
               }
-
             } else {
               setAlertMessage("Cut page pasted successfully.");
               setOpenAlert(true);
@@ -1514,35 +1482,8 @@ function ManagePageList(props) {
     setPageTitle(fields);
   }
 
-  function handleModuleTitle(e) {
-    let moduleContent = e.target.value;
-    const capitalizeModuleContent = capitalizeFirstLetter(moduleContent);
-
-    if (capitalizeModuleContent.length > 0) {
-      const allowedChars = /[a-zA-Z0-9 ]/g;
-      let allowedTitle = capitalizeModuleContent.match(allowedChars);
-      if (!allowedTitle) {
-        setModuleError(true);
-        return;
-      }
-      if (
-        allowedTitle &&
-        capitalizeModuleContent.length !== allowedTitle.length
-      ) {
-        setModuleError(true);
-        return;
-      }
-      setModuleError(false);
-    }
-    dispatch(setModuleName(capitalizeModuleContent));
-  }
-
   function handleTitleFocus(e) {
     setShowError(false);
-  }
-
-  function handleModuleFocus(e) {
-    setModuleError(false);
   }
 
   function validatePageTitle() {
@@ -1851,27 +1792,18 @@ function ManagePageList(props) {
               onFocus={handleTitleFocus}
               onDragOver={dropNotAllowed}
             />
-            {/* <TextField
-              id="newmoduletitle"
-              name="moduletitle"
-              style={{ width: "33vw" }}
-              className="user-module-box"
-              required
-              autoFocus
-              fullWidth
-              label={<h4 style={{ color: "grey" }}>Set Module Name</h4>}
-              value={modleName}
-              helperText="Only alphabets, numbers & space allowed."
-              error={moduleError}
-              margin="normal"
-              variant="outlined"
-              onChange={handleModuleTitle}
-              onFocus={handleModuleFocus}
-              onDragOver={dropNotAllowed}
-            /> */}
             <div className="new-page-layout-option">
               <h4>Drag page type and drop on page list.</h4>
-              <List component="nav" dense={true} draggable="false">
+              <List
+                component="nav"
+                style={{
+                  display: "grid",
+                  gap: "1rem",
+                  gridTemplateColumns: "auto auto",
+                }}
+                dense={true}
+                draggable="false"
+              >
                 {pageTypes.map((item, index) => (
                   <ListItem
                     key={index}

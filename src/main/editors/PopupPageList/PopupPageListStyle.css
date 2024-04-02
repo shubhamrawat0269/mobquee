@@ -33,8 +33,12 @@
 
 .new-page-layout-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  width: 20rem;
+  padding: 1rem !important;
+  border: 1px solid var(--tab-brder);
 }
 
 .popup-page-list-btn {
@@ -117,7 +121,5 @@
   display: grid;
   gap: 1.25rem;
   grid-template-columns: 0.5fr 0.5fr;
-  /* height: inherit;
-  overflow-x: hidden;
-  overflow-y: scroll; */
+  height: 100%;
 }

@@ -27,7 +27,8 @@
 }
 
 .page-lst-section {
-    height: 50rem;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .page-list-close-icon {
