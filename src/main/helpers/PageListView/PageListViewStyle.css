@@ -1,13 +1,13 @@
 #search-section {
     display: flex;
     gap: 0;
-    width: 28rem;
+    width: 22rem;
     margin: 0 auto;
 }
 
 #search-section input {
     background-color: #FFF;
-    height: 3.5vh;
+    padding: 0.85rem;
     border-radius: 0rem;
     font-size: 1.35rem;
     font-weight: 500;
@@ -37,7 +37,7 @@
     background: white;
     position: absolute;
     border-left: 1px solid silver;
-    right: 1rem;
+    right: 2.5rem;
     width: 3.5rem;
 }
 

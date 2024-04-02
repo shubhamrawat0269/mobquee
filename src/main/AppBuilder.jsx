@@ -7,24 +7,11 @@ import { setAppConfig, setAppCredentials } from "./ServiceActions";
 class AppBuilder extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      error: null,
-      showlist: false,
-      loadproject: false,
-
-      hostname: "",
-      port: "",
-      userid: "",
-      sessionid: "",
-      projectid: "",
-      locale: "",
-    };
   }
 
   componentDidMount() {
     this.clearSessionStorage();
-    this.fetchConfig().then((response) => this.getAppCredential());
+    this.fetchConfig().then(() => this.getAppCredential());
   }
 
   clearSessionStorage() {
@@ -42,7 +29,6 @@ class AppBuilder extends React.Component {
             xmlDoc.getElementsByTagName("server")[0].childNodes[0].nodeValue;
           const port =
             xmlDoc.getElementsByTagName("port")[0].childNodes[0].nodeValue;
-          // console.log("servername >>", servername, port);
 
           let _apiUrl = "https://" + servername + ":" + port + "/appexe/api/";
 
@@ -76,8 +62,7 @@ class AppBuilder extends React.Component {
   }
 
   render() {
-    const { error, apiParam, loadproject } = this.props;
-
+    const { apiParam, loadproject } = this.props;
     return loadproject && <AppData show={loadproject} appconfig={apiParam} />;
   }
 }
