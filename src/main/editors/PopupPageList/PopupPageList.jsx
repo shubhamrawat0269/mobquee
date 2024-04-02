@@ -786,9 +786,6 @@ function ManagePageList(props) {
         }
       }
 
-      /* setAlertTitle('');
-      setAlertMessage("After 'paste', need to review those actions which has reference of this page.");
-      setOpenAlert(true); */
 
       let fields = pagetitle;
       fields = pageobj["Title"];
@@ -798,8 +795,6 @@ function ManagePageList(props) {
       setAction("cut");
     }
   }
-
-  /////////// Copy Page //////////////
 
   function handleCopyPage() {
     let _selectedPage = selectedPage;
@@ -826,7 +821,6 @@ function ManagePageList(props) {
 
     let _cutcopyPage = cutcopyPage;
     if (_cutcopyPage) {
-      //console.log("paste Page >>", _cutcopyPage);
       if (action === "cut" && _cutcopyPage.pageid === _selectedPage.id) {
         setAlertTitle("");
         setAlertMessage("Please choose a different page to paste");
@@ -834,9 +828,7 @@ function ManagePageList(props) {
         return;
       }
 
-      //console.log(pagetitle, "<< paste Page >>", _selectedPage);
       if (action === "copy") {
-        //console.log("<< copy paste Page >>", _cutcopyPage);
         let copypastedPage = JSON.parse(JSON.stringify(_cutcopyPage)); //Object.assign({}, _cutcopyPage);
         copypastedPage.pageid = "";
         copypastedPage.Title = pagetitle;
@@ -852,14 +844,7 @@ function ManagePageList(props) {
           }
         });
       } else if (action === "cut") {
-        //console.log("<< cut paste Page >>", _cutcopyPage);
-        /* const _parentid = (_selectedPage['id']) ? _selectedPage['id'] : "App";
-        if(_parentid === "App")  {
-          setAlertTitle('');
-          setAlertMessage("Cut-paste not allowed on application root.");
-          setOpenAlert(true);
-          return;
-        } */
+        
 
         let isnamechanged = false;
         if (_cutcopyPage["Title"] !== pagetitle) {
@@ -886,17 +871,13 @@ function ManagePageList(props) {
                 props.onUpdateOwnerTabs(result.page, "cutrename");
               } else {
                 props.onUpdateOwnerTabs(result.page, "add");
-                //props.onEditPageHeirarchy(result.page, "add");
               }
             }
           }
         );
       }
-      //setAction('paste');
     }
 
-    //setSelectedPage({});
-    //setCutcopyPage({});
   }
 
   function setPageDocument() {
@@ -914,7 +895,6 @@ function ManagePageList(props) {
   function setChildPageProp(pageContainerDic) {
     let screensArr = projectdata["availableScreens"];
     for (let i = 0; i < screensArr.length; i++) {
-      //pageContainerDic.NavigationBarHidden = false;
 
       let navigationBarDic = pageContainerDic._navigationBars[i];
       navigationBarDic.title = pageContainerDic["Title"];
@@ -955,7 +935,6 @@ function ManagePageList(props) {
           onElse: [],
           notAvailable: [],
         };
-        //actionDic['Document'] = setDocument_forPage();
 
         navigationBarDic.leftBarButton.actions.clicked.push(actionDic);
       }
@@ -964,23 +943,18 @@ function ManagePageList(props) {
   function resetChildPageProp(pageContainerDic) {
     let screensArr = projectdata["availableScreens"];
     for (let i = 0; i < screensArr.length; i++) {
-      //pageContainerDic.NavigationBarHidden = true;
-
+    
       let navigationBarDic = pageContainerDic._navigationBars[i];
       navigationBarDic.title = pageContainerDic["Title"];
       if (navigationBarDic.prompt === undefined) {
         navigationBarDic.prompt = "";
       }
 
-      /* navigationBarDic.leftBarButton.type = '';
-      navigationBarDic.leftBarButton.systemItem = '';
-      navigationBarDic.leftBarButton.actions = []; */
     }
   }
 
   function pastePageHandler(pastedpagedata, cutcopyParentId) {
     setWaiting(true);
-    //console.log(action, cutcopyParentId, "<<<<<--- pastePageHandler -->>>>>", pastedpagedata.parentid, pastedpagedata);
 
     if (pastedpagedata.parentid === "App") {
       resetChildPageProp(pastedpagedata);
@@ -1013,17 +987,12 @@ function ManagePageList(props) {
     })
       .then((response) => response.json())
       .then((result) => {
-        //result = {"response":"ACK","count":1,"page":{....},"command":"pagenew"}
-        //console.log('pastepage result:', result);
         if (result.response === "NACK") {
-          //var _err = {message: result.error};
-          //console.log("pastepage : Error >>", _err);
           setAlertTitle("");
           setAlertMessage(result.error);
           setOpenAlert(true);
           setWaiting(false);
         } else {
-          //console.log(action, "....pastepage : Success >> ", result.page);
           setAlertTitle("");
           if (action === "copy") {
             setAlertMessage(
@@ -1034,17 +1003,11 @@ function ManagePageList(props) {
             relaodPageList("-999", result.page);
           } else if (action === "cut") {
             if (pastedpagedata.parentid === "App_1234567890") {
-              // There are 2 cases -->
-              // 1. pasted page was already a tab-page
-              // 2. pasted page was a child page, now pasted as tab-page
-              // Now, that pasted page should remain in the end-of-hierarchy
-              // so we need to 'swap' later tab-pages
 
               let swappedPages;
               const tabPageList = getTabPagesList();
 
               if (cutcopyParentId === "App") {
-                // pasted-page is already a tab-page
                 let pastedPageIndex = -1;
                 for (let i = 0; i < tabPageList.length; i++) {
                   if (tabPageList[i]["pageid"] === pastedpagedata.pageid) {
@@ -1080,29 +1043,9 @@ function ManagePageList(props) {
                 });
               }
 
-              /* const lastIndex = tabPageList.length -1;           
-              const lastTabBasedPageid = (lastIndex > 0) ? tabPageList[lastIndex]['pageid'] : -1;
-              if(lastTabBasedPageid > -1 && pastedpagedata.parentid === "App") {
-                
-                let pastedPageIndex = -1;
-                for (let i = 0; i < tabPageList.length; i++) {
-                  if(tabPageList[i]['pageid'] === pastedpagedata.pageid) {
-                    pastedPageIndex = i;
-                    break;
-                  }                
-                }
-                if(pastedPageIndex === -999999999) {    //if(pastedPageIndex > -1) {
-                  const swappedPages = tabPageList.slice(pastedPageIndex);
-                  console.log(cutcopyPage['parentid'], "** swappedPages **", swappedPages);
-                  swapPagesOrder(lastTabBasedPageid, pastedpagedata.pageid, swappedPages, 0);
-                }else {
-                  relaodPageList(pastedpagedata.pageid, result.page);
-                }
-              } */
             } else {
               setAlertMessage("Cut page pasted successfully.");
               setOpenAlert(true);
-              //props.onUpdateOwnerTabs(pastedpagedata, "add");
               relaodPageList(pastedpagedata.pageid, result.page);
             }
           }
@@ -1908,7 +1851,7 @@ function ManagePageList(props) {
               onFocus={handleTitleFocus}
               onDragOver={dropNotAllowed}
             />
-            <TextField
+            {/* <TextField
               id="newmoduletitle"
               name="moduletitle"
               style={{ width: "33vw" }}
@@ -1925,7 +1868,7 @@ function ManagePageList(props) {
               onChange={handleModuleTitle}
               onFocus={handleModuleFocus}
               onDragOver={dropNotAllowed}
-            />
+            /> */}
             <div className="new-page-layout-option">
               <h4>Drag page type and drop on page list.</h4>
               <List component="nav" dense={true} draggable="false">

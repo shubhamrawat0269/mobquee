@@ -26,6 +26,7 @@ import {
 } from "@mui/material";
 
 export default function PageListView(props) {
+  console.log(props);
   const appConfig = props.appConfig;
   const projectdata = props.projectdata;
   const data = props.listdata;

@@ -2,10 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "./module.css";
 import AppData from "./AppData/AppData";
-import ProjectsList from "./helpers/projectsList";
-import ErrorBoundary from "../components/ErrorBoundary";
 import { setAppConfig, setAppCredentials } from "./ServiceActions";
-import { apiEndPoint } from "../utils/urlConfig";
 
 class AppBuilder extends React.Component {
   constructor(props) {
@@ -31,11 +28,6 @@ class AppBuilder extends React.Component {
   }
 
   clearSessionStorage() {
-    for (let key in sessionStorage) {
-      if (!sessionStorage.hasOwnProperty(key)) {
-        continue; // skip keys like "setItem", "getItem" etc
-      }
-    }
     sessionStorage.clear();
   }
 
@@ -72,69 +64,21 @@ class AppBuilder extends React.Component {
   }
 
   getAppCredential() {
-    // let credential = this.getURLCredential(window.location.href);
-    let credential = this.getURLCredential(apiEndPoint.url);
-    if (credential) {
-      if (credential.projectid) {
-        this.setState({ showlist: false });
-
-        let credentials = {
-          userid: credential.userid,
-          sessionid: credential.sessionid,
-          projectid: credential.projectid,
-          locale: credential.lang,
-        };
-        this.props.dispatch(setAppCredentials(credentials));
-        this.props.dispatch({ type: "LOADAPP" });
-      } else {
-        let localcredentials = {
-          userid: "stagetivauser1",
-          sessionid: "bd14da9c0f954c9a4f7395c21df386b1",
-          projectid: "",
-          locale: "en",
-        };
-        this.props.dispatch(setAppCredentials(localcredentials));
-
-        this.setState({ showlist: true });
-        this.setState({ loadproject: false });
-      }
-    }
-  }
-  getURLCredential(appURL) {
-    let assoc = {};
-
-    let searchString = appURL.split("?")[1];
-    if (searchString) {
-      let keyValues = searchString.split("&");
-      for (let i = 0; i < keyValues.length; i++) {
-        const element = keyValues[i];
-        let key = element.split("=");
-        if (key.length > 1) {
-          assoc[key[0]] = key[1];
-        }
-      }
-    }
-
-    return assoc;
+    this.props.dispatch(
+      setAppCredentials({
+        userid: "stagemobiloustesting90",
+        sessionid: "7cf0d817168b6ab583bfe2edeade4a14",
+        projectid: "302128",
+        locale: "en",
+      })
+    );
+    this.props.dispatch({ type: "LOADAPP" });
   }
 
   render() {
-    const showlist = this.state.showlist;
-    const { error, apiParam, loadproject } = this.props; // set via redux-mapStateToProps
+    const { error, apiParam, loadproject } = this.props;
 
-    if (error) {
-      return (
-        <div className="backdropStyle">App Loading Error: {error.message}</div>
-      );
-    } else if (showlist) {
-      return <ProjectsList show={showlist} appconfig={apiParam} />;
-    } else if (loadproject) {
-      return (
-        <ErrorBoundary>
-          <AppData show={loadproject} appconfig={apiParam} />
-        </ErrorBoundary>
-      );
-    }
+    return loadproject && <AppData show={loadproject} appconfig={apiParam} />;
   }
 }
 
