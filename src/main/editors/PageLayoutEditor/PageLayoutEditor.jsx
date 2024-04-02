@@ -311,7 +311,7 @@ function PageLayout(props) {
           id="pagecontainer"
           style={{
             width: `calc(${containerWidth}px)`,
-            height: `calc(${containerHeight}px)`,
+            height: `546px`,
             overflow: "auto",
             background: bgGradient,
           }}

@@ -769,7 +769,7 @@ function LayoutWindow(props) {
           style={{
             transform: scale,
             width: `calc(${layoutWidth + rulersize}px)`,
-            height: `calc(${layoutHeight + rulersize + headerheight + 25}px)`,
+            height: `630px`,
           }}
         >
           <div className="page-explorer-drag"></div>
@@ -813,7 +813,7 @@ function LayoutWindow(props) {
               className="page-editor-page-layout"
               style={{
                 width: layoutWidth,
-                height: layoutHeight,
+                height: "580px",
                 backgroundColor: bgColor,
                 borderRadius: 0,
                 border: "1px solid",
@@ -826,7 +826,7 @@ function LayoutWindow(props) {
                 className="page-editor-grid-canvas"
                 style={{
                   width: layoutWidth,
-                  height: `calc(${layoutHeight - contentheight}px)`,
+                  height: `540px`,
                   marginTop: contentmargin,
                 }}
               >
