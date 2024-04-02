@@ -26,7 +26,6 @@ import {
 } from "@mui/material";
 
 export default function PageListView(props) {
-  console.log(props);
   const appConfig = props.appConfig;
   const projectdata = props.projectdata;
   const data = props.listdata;
@@ -87,46 +86,8 @@ export default function PageListView(props) {
   const [showFinder, setShowFinder] = React.useState(false);
   const [findpageId, setFindPageId] = React.useState(-1);
 
-  function handleCloseFinder() {
-    setShowFinder(false);
-    setFindPageId(-1);
-  }
-
-  function handlePageSelection(pageid) {
-    console.log(
-      multiChecked,
-      props.source,
-      "... handlePageSelection >>>",
-      pageid
-    );
-    if (showFinder && multiChecked) {
-      setMultiSelectedPages([]);
-    }
-    setSelectedId(pageid);
-    setFindPageId(pageid);
-    const node =
-      props.source === "manage"
-        ? document.getElementById("m_" + pageid)
-        : document.getElementById(pageid);
-    if (node) {
-      node.scrollIntoView(false);
-    }
-  }
-
-  function handlePageFinder(pageid) {
-    getSelectedPage({ id: pageid });
-  }
-
   return (
     <div className="page-lst-section">
-      <PageFinder
-        originalData={props["listdata"]["pagedata"]}
-        listData={records}
-        source={props.source}
-        onSelectPage={handlePageSelection}
-        onFindPage={handlePageFinder}
-        onClose={handleCloseFinder}
-      />
       <List
         id="pagelist"
         component="nav"

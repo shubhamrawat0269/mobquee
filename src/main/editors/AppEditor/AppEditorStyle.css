@@ -1,6 +1,6 @@
 #page-explorer-section {
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     color: var(--heading);
 }
 
@@ -151,8 +151,8 @@
 
 .page-list-container {
     left: 0;
+    top: 0;
     width: 30rem;
-    height: 95vh;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     position: absolute;
@@ -183,7 +183,7 @@
     padding: 1rem;
     display: flex;
     justify-content: space-between;
-    height: 89vh;
+    height: 94%;
 }
 
 .folder-icon {
