@@ -31,9 +31,7 @@
 			</property>
 			<property path="text" dataType="String" input="spark.components.TextInput" copyable="true" validator="numFieldValidator"/>
 			<property path="placeholder" dataType="String" input="spark.components.TextInput" maxlength="50" copyable="true"/>
-			<property path="setInputlabel" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
 			<property path="editable" dataType="Boolean" input="spark.components.CheckBox" value="true" copyable="true"/>
-			<property path="inputFormat" dataType="String" input="spark.components.TextInput" copyable="true" validator="numFieldValidator"/>
 			<property path="displayFormat" input="spark.components.DropDownList" copyable="true">
 				<dataSource>
 					<data name=""/>
@@ -126,7 +124,6 @@
 			<property path="charLimit" dataType="Number" input="spark.components.NumericStepper" min="-1" max="9999" inc="1" init="-1" copyable="true"/>
 	        <property path="minRange" dataType="String" input="spark.components.TextInput" copyable="true"/>
 			<property path="maxRange" dataType="String" input="spark.components.TextInput" copyable="true"/>
-			<property path="secure" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
 			<property path="required" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
 			<property path="showIcon" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true">
 				<dependentActions>
@@ -170,12 +167,6 @@
 						<action target="{@form[customIcon]:}" method="hide" value="true" caseOf="false"/>
 					</when>
 				</dependentActions>
-			</property>
-			<property path="keyboardType" input="spark.components.DropDownList" dataType="array" init="Default" copyable="true">
-			  	<dataSource labelField="name" valueField="name">
-					<data name="Default" toolTip=""/>
-					<data name="Number" toolTip="Pop-up numeric and dot character keyboard"/>
-				</dataSource>
 			</property>
 			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
 	        <property path="taborder" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" copyable="true"/>
@@ -233,13 +224,6 @@
 			<property path="padding.left" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" inc="1" init="2" copyable="true"/>
 			<property path="padding.right" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" inc="1" init="2" copyable="true"/>
 			<property path="padding.bottom" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" inc="1" init="2" copyable="true"/>
-		</type>
-		<type name="Actions">
-			<property path="actions.DidBeginEditing" input="LabelWithButton" />
-			<property path="actions.DidChange" input="LabelWithButton" />
-			<property path="actions.DidEndEditing" input="LabelWithButton" />
-			<property path="actions.DidEndEditingError" input="LabelWithButton" />
-			<property path="actions.DidPressEnter" input="LabelWithButton" />			
 		</type>
 		<type name="Geometry" @stopCommit="true">
 			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>

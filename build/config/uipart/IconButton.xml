@@ -17,7 +17,6 @@
 			</property>
 			<property path="title" dataType="String" input="spark.components.TextInput" copyable="true"/>
 		    <property path="iconImage" dataType="ImageFileDic" input="TextInputWithButton" copyable="true"/>
-			<property path="iconSelectedImage" dataType="ImageFileDic" input="TextInputWithButton" copyable="true"/>
 			<property path="iconPosition" input="spark.components.DropDownList" dataType="array" init="start" sortable="false">
 				<dataSource>
 					<data name="start"/>
@@ -34,11 +33,8 @@
 					<data name="xlarge"/>
 				</dataSource>
 			</property>
-		    <property path="showElevation" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
-			<property path="enableRipple" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
-			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
-			<property path="taborder" dataType="Number" input="spark.components.NumericStepper" min="0" max="1000" copyable="true"/>	
-		 </type>
+		    <property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
+		</type>
 		<type name="Style" @stopCommit="true">
 			<property path="backgroundColor" dataType="ColorDic" input="mx.controls.ColorPicker" copyable="true"/>
 			<property path="backgroundColor.alpha" input="spark.components.NumericStepper" min="0.0" max="1.0" inc="0.1" copyable="true"/>
@@ -78,9 +74,6 @@
 			<property path="padding.right" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
 			<property path="padding.bottom" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
 		</type>
-		<type name="Actions">
-			<property path="actions.clicked" input="LabelWithButton" />
-	    </type>
 		<type name="Geometry" @stopCommit="true">
 			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
 			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
