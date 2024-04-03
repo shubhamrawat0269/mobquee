@@ -36,8 +36,6 @@
 					<data name="WordWrap"/>
 				</dataSource>
 			</property>
-			<property path="showElevation" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
-			<property path="enableRipple" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
 			<property path="hidden" dataType="Boolean" input="spark.components.CheckBox" value="false" copyable="true"/>
 		</type>
 		<type name="Style" @stopCommit="true">
@@ -117,11 +115,6 @@
 			<property path="padding.left" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
 			<property path="padding.right" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
 			<property path="padding.bottom" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
-		</type>
-		<type name="Actions">
-			<property path="actions.clicked" input="LabelWithButton" />
-			<property path="actions.flickRL" input="LabelWithButton" />
-			<property path="actions.flickLR" input="LabelWithButton" />	
 		</type>
 		<type name="Geometry" @stopCommit="true">
 			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>

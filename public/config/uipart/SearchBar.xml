@@ -77,12 +77,6 @@
 			<property path="padding.right" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
 			<property path="padding.bottom" dataType="Number" input="spark.components.NumericStepper" min="0" max="100" inc="1" init="2" copyable="true"/>
 		</type>
-		<type name="Actions">
-			<property path="actions.textBeginEditing" input="LabelWithButton" />
-			<property path="actions.texEndEditing" input="LabelWithButton" />			
-			<property path="actions.textDidChanged" input="LabelWithButton" />
-			<property path="actions.CancelClicked" input="LabelWithButton" />			
-		</type>
 		<type name="Geometry" @stopCommit="true">
 			<property path="frame.x" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
 			<property path="frame.y" dataType="Number" input="spark.components.NumericStepper" min="0" max="10000" copyable="true"/>
